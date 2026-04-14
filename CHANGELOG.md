@@ -1,4 +1,15 @@
-# Changelog — Executive AI Advantage Summit
+# Changelog — The AI Mastery Summit
+
+## Returning Visitor Social Proof Counter (2026-04-14)
+**What changed:** The "4,127+ Advisors Trained" stat now increments by a random 1–5 each time a returning visitor loads either page, creating a live sense of momentum.
+**How it works:** A small inline `localStorage` script in `<head>` runs synchronously on every page load. First visit: stores the base count (4127) and a `advisorVisited` flag. All subsequent visits: increments `advisorCount` by `Math.floor(Math.random()*5)+1`, writes it back, and exposes it as `window.__advisorCount`. All `data-target="4127"` count-up animations and every `.advisor-count-val` text node are updated to use this value before the IntersectionObserver fires.
+**Coverage:** All instances updated on both `index.html` and `vip.html` — cred bar shimmer, hero photo overlay, float stat, book section body copy, book stats countup, bio body copy, track record span, VIP bullet copy, VIP bio paragraph, VIP scott-cred span, VIP countup animation.
+**Why:** Returning visitors see progress — more advisors trained since their last visit — reinforcing social proof momentum without any backend.
+**Files changed:** `src/index.html`, `src/vip.html`
+**Git commit:** `feat: increment advisor count on return visit via localStorage` | hash: `24c1cbf`
+**Status:** ✅ Deployed to https://the-ai-mastery-summit.netlify.app
+
+---
 
 ## OG Social Sharing Card — Branded 1200×630 Image (2026-04-13)
 **What changed:** Created and deployed a branded Open Graph image (`src/og-image.png`). Updated `og:image` and `twitter:image` to point to it. No other changes.
