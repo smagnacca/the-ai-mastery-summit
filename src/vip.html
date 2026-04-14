@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Your VIP Pass — Executive AI Advantage Summit</title>
+  <title>Your VIP Pass — The AI Mastery Summit</title>
   <meta name="description" content="You're registered — now elevate your experience. Add the VIP Pass and get an autographed copy of Storyselling in the Age of AI plus the post-event Implementation Workshop." />
   <meta name="robots" content="noindex, nofollow" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -12,35 +12,35 @@
   <script src="https://js.stripe.com/v3/"></script>
   <style>
     :root {
-      --green-deep: #006644;
-      --green-mid: #00875A;
-      --green-courtyard: #597C31;
-      --green-sherwood: #9EB28F;
-      --green-pale: #E8F0E4;
+      --green-deep: #1A3A6B;
+      --green-mid: #2855A0;
+      --green-courtyard: #3A6090;
+      --green-sherwood: #8AADD4;
+      --green-pale: #E8EDF7;
       --gold-bright: #DDD055;
       --gold-mango: #EEAF00;
       --gold-ocre: #AD9001;
       --gold-cream: #FFF8E1;
       --gold-pale: #FFFDF5;
       --blue-alfresco: #567B8A;
-      --dark-forest: #0A1A10;
-      --dark-card: rgba(19, 42, 27, 0.7);
+      --dark-forest: #060C18;
+      --dark-card: rgba(13, 21, 38, 0.7);
       --dark-border: rgba(255, 255, 255, 0.08);
-      --dark-surface: #0F2518;
+      --dark-surface: #0A1020;
       --glass-bg: rgba(255, 255, 255, 0.03);
       --glass-border: rgba(255, 255, 255, 0.1);
-      --light-bg: #F8FAF7;
+      --light-bg: #F5F7FA;
       --light-card: #FFFFFF;
-      --light-border: #E2E8DE;
+      --light-border: #E2E8F0;
       --white: #F9FAFB;
       --muted: #6B7280;
-      --text-dark: #1A2E1A;
+      --text-dark: #1A2040;
       --text-secondary: #4B5563;
-      --gradient-hero: radial-gradient(ellipse at 28% 30%, #004D30 0%, #0C2518 45%, #071510 80%, #030D08 100%);
+      --gradient-hero: radial-gradient(ellipse at 28% 30%, #0D2045 0%, #080D1A 45%, #050810 80%, #020408 100%);
       --gradient-warm: linear-gradient(90deg, #EEAF00 0%, #DDD055 50%, #EEAF00 100%);
-      --gradient-green: linear-gradient(135deg, #006644 0%, #00875A 100%);
-      --gradient-cream: linear-gradient(180deg, #FFFDF5 0%, #F8FAF7 100%);
-      --gradient-deep: linear-gradient(180deg, #0C1F14 0%, #132A1B 50%, #0C1F14 100%);
+      --gradient-green: linear-gradient(135deg, #1A3A6B 0%, #2855A0 100%);
+      --gradient-cream: linear-gradient(180deg, #FFFDF5 0%, #F5F7FA 100%);
+      --gradient-deep: linear-gradient(180deg, #080D1A 0%, #0D1526 50%, #080D1A 100%);
       --max-width: 1100px;
       --section-padding: 100px 0;
       --font-body: 'Inter', system-ui, sans-serif;
@@ -74,7 +74,7 @@
 
     /* === ANIMATIONS === */
     @keyframes marquee { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
-    @keyframes pulse-glow { 0%,100%{box-shadow:0 8px 32px rgba(0,102,68,0.45),0 0 40px rgba(238,175,0,0.15)} 50%{box-shadow:0 8px 48px rgba(0,102,68,0.7),0 0 80px rgba(0,102,68,0.2),0 0 60px rgba(238,175,0,0.3)} }
+    @keyframes pulse-glow { 0%,100%{box-shadow:0 8px 32px rgba(0,102,68,0.45),0 0 40px rgba(238,175,0,0.15)} 50%{box-shadow:0 8px 48px rgba(0,102,68,0.7),0 0 80px rgba(26,58,107,0.2),0 0 60px rgba(238,175,0,0.3)} }
     .pulse-cta { animation: pulse-glow 3.0s ease-in-out infinite; }
     @keyframes gold-text-glow { 0%,100%{text-shadow:0 0 8px rgba(238,175,0,0.4),0 0 16px rgba(238,175,0,0.2)} 50%{text-shadow:0 0 16px rgba(238,175,0,0.8),0 0 32px rgba(238,175,0,0.4),0 0 48px rgba(238,175,0,0.2)} }
     .gold-glow-text { animation: gold-text-glow 3.0s ease-in-out infinite; color: var(--gold-mango); font-weight: 800; }
@@ -155,7 +155,7 @@
     @keyframes scroll-bounce { 0%,100%{transform:rotate(45deg) translate(0,0);opacity:0.3} 50%{transform:rotate(45deg) translate(4px,4px);opacity:0.7} }
 
     /* === VIDEO SECTION === */
-    .video-section { padding:var(--section-padding); background:linear-gradient(135deg,#003D28 0%,#006644 40%,#1A4D2E 100%); text-align:center; color:var(--white); position:relative; overflow:hidden; }
+    .video-section { padding:var(--section-padding); background:linear-gradient(135deg,#0D2045 0%,#1A3A6B 40%,#1A4D2E 100%); text-align:center; color:var(--white); position:relative; overflow:hidden; }
     .video-section::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 60% 40%, rgba(238,175,0,0.06), transparent 60%); pointer-events:none; }
     .video-section .container { position:relative; z-index:1; }
     .video-eyebrow { display:inline-flex; align-items:center; gap:8px; background:rgba(238,175,0,0.1); border:1px solid rgba(238,175,0,0.25); border-radius:30px; padding:8px 20px; font-size:12px; font-weight:700; color:var(--gold-mango); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:20px; }
@@ -165,7 +165,7 @@
     .video-wrapper iframe { width:100%; height:100%; border:none; }
 
     /* === BENEFIT CARDS === */
-    .benefits-section { padding:var(--section-padding); background:linear-gradient(180deg,#071510 0%,#0C2015 50%,#071510 100%); position:relative; overflow:hidden; }
+    .benefits-section { padding:var(--section-padding); background:linear-gradient(180deg,#050810 0%,#0C2015 50%,#050810 100%); position:relative; overflow:hidden; }
     .benefits-section::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 20% 50%, rgba(0,102,68,0.12), transparent 60%); }
     .benefits-section::after { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 80% 50%, rgba(238,175,0,0.05), transparent 60%); }
     .benefits-section .container { position:relative; z-index:1; }
@@ -179,7 +179,7 @@
     .benefit-card.gold-card { border-color:rgba(238,175,0,0.25); background:rgba(238,175,0,0.03); animation:register-box-glow 9s ease-in-out infinite; }
     .benefit-card.gold-card::before { background:linear-gradient(135deg,rgba(238,175,0,0.08) 0%,transparent 50%); }
     .benefit-tag { display:inline-flex; align-items:center; gap:6px; background:rgba(238,175,0,0.1); border:1px solid rgba(238,175,0,0.25); border-radius:20px; padding:5px 14px; font-size:11px; font-weight:700; color:var(--gold-mango); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:24px; }
-    .benefit-tag.green-tag { background:rgba(0,102,68,0.15); border-color:rgba(0,102,68,0.3); color:var(--green-sherwood); }
+    .benefit-tag.green-tag { background:rgba(26,58,107,0.15); border-color:rgba(26,58,107,0.3); color:var(--green-sherwood); }
     .benefit-card h3 { font-size:22px; font-weight:800; color:var(--white); margin-bottom:14px; line-height:1.2; }
     .benefit-card p { font-size:15px; color:rgba(255,255,255,0.65); line-height:1.7; margin-bottom:24px; }
     .benefit-book-img { width:130px; margin:0 auto 28px; animation:book-float 5s ease-in-out infinite; }
@@ -210,7 +210,7 @@
     .stack-savings .your-price-label { font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--muted); margin-bottom:8px; }
     .stack-savings .your-price { font-size:64px; font-weight:900; color:var(--green-deep); line-height:1; }
     .stack-savings .your-price sup { font-size:28px; vertical-align:top; margin-top:10px; }
-    .stack-savings .savings-tag { display:inline-block; background:rgba(0,102,68,0.08); border:1px solid rgba(0,102,68,0.2); border-radius:8px; padding:6px 16px; font-size:13px; font-weight:700; color:var(--green-deep); margin-top:10px; }
+    .stack-savings .savings-tag { display:inline-block; background:rgba(26,58,107,0.08); border:1px solid rgba(26,58,107,0.2); border-radius:8px; padding:6px 16px; font-size:13px; font-weight:700; color:var(--green-deep); margin-top:10px; }
 
     /* === TESTIMONIALS / SOCIAL PROOF === */
     .proof-section { padding:var(--section-padding); background:var(--gradient-deep); color:var(--white); position:relative; overflow:hidden; }
@@ -299,7 +299,7 @@
     .pay-btn-intro { animation:pay-intro-pulse 1.4s ease-out 0.6s 1 !important; }
 
     /* === PAYMENT SECTION === */
-    .payment-section { padding:100px 0 80px; background:linear-gradient(135deg,#003D28 0%,#006644 40%,#1A4D2E 100%); position:relative; color:var(--white); }
+    .payment-section { padding:100px 0 80px; background:linear-gradient(135deg,#0D2045 0%,#1A3A6B 40%,#1A4D2E 100%); position:relative; color:var(--white); }
     .payment-section::before { content:''; position:absolute; inset:0; background:url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1920&q=80') center/cover no-repeat; opacity:0.04; }
     .payment-section .container { position:relative; z-index:1; }
     .payment-section h2 { font-size:clamp(26px,4vw,42px); font-weight:900; text-align:center; margin-bottom:10px; }
@@ -349,7 +349,7 @@
     .footer-back:hover { color:var(--white); }
 
     /* === VIRTUAL VIP PASS CARD === */
-    .vip-pass-section { padding:80px 0 60px; background:linear-gradient(180deg,#071510 0%,#0A1D12 100%); position:relative; overflow:hidden; text-align:center; }
+    .vip-pass-section { padding:80px 0 60px; background:linear-gradient(180deg,#050810 0%,#0A1D12 100%); position:relative; overflow:hidden; text-align:center; }
     .vip-pass-section::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 50% 60%, rgba(238,175,0,0.07), transparent 65%); pointer-events:none; }
     .vip-pass-section .container { position:relative; z-index:1; }
     .vip-pass-intro { font-size:12px; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:rgba(255,255,255,0.35); margin-bottom:14px; }
@@ -419,7 +419,7 @@
     .vip-corner-br { bottom:10px; right:10px; border-bottom:2px solid rgba(238,175,0,0.6); border-right:2px solid rgba(238,175,0,0.6); border-radius:0 0 2px 0; }
 
     /* === IMAGINE SECTION === */
-    .imagine-section { padding:var(--section-padding); background:linear-gradient(135deg,#003D28 0%,#006644 40%,#1A4D2E 100%); color:var(--white); position:relative; overflow:hidden; }
+    .imagine-section { padding:var(--section-padding); background:linear-gradient(135deg,#0D2045 0%,#1A3A6B 40%,#1A4D2E 100%); color:var(--white); position:relative; overflow:hidden; }
     .imagine-section::before { content:''; position:absolute; inset:0; background:url('https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1920&q=80') center/cover no-repeat; opacity:0.04; }
     .imagine-section .container { position:relative; z-index:1; max-width:820px; }
     .imagine-section h2 { font-size:clamp(28px,4vw,44px); font-weight:900; text-align:center; margin-bottom:12px; }
@@ -445,8 +445,8 @@
     .imagine-sub { font-size:14px; color:rgba(255,255,255,0.55); line-height:1.6; margin-top:4px; }
 
     /* === SCOTT BIO CARD === */
-    .scott-bio-section { padding:80px 0; background:linear-gradient(180deg,#071510 0%,#0C2015 100%); color:var(--white); position:relative; overflow:hidden; }
-    .scott-bio-section::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 30% 50%,rgba(0,102,68,0.15),transparent 65%); }
+    .scott-bio-section { padding:80px 0; background:linear-gradient(180deg,#050810 0%,#0C2015 100%); color:var(--white); position:relative; overflow:hidden; }
+    .scott-bio-section::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 30% 50%,rgba(26,58,107,0.15),transparent 65%); }
     .scott-bio-section .container { position:relative; z-index:1; }
     .scott-bio-card { display:grid; grid-template-columns:280px 1fr; gap:56px; align-items:center; max-width:880px; margin:0 auto; background:rgba(255,255,255,0.03); border:1px solid rgba(238,175,0,0.18); border-radius:28px; padding:48px 44px; backdrop-filter:blur(16px); }
     .scott-bio-photo { position:relative; }
@@ -597,6 +597,63 @@
       flex-shrink: 0;
     }
     .b2-avatar-wrap img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; }
+  
+    /* ==========================================================
+       MOBILE PERFORMANCE — disable heavy animations on phones
+       ========================================================== */
+    @media (max-width: 768px) {
+      /* Kill the two heaviest background animations */
+      .hero-bg-img,
+      [class*="hero-bg"] { animation: none !important; }
+
+      /* Remove mesh blobs entirely — major GPU consumers */
+      .mesh-blob,
+      [class*="mesh-blob"] { display: none !important; }
+
+      /* Remove noise texture overlay */
+      .noise-overlay { display: none !important; }
+
+      /* Cap backdrop-filter blur (very expensive on mobile GPUs) */
+      [style*="backdrop-filter"],
+      .glass-card, .nav-inner, .register-box,
+      .vip-modal, .bonus-modal-inner, .modal-inner,
+      .sticky-nav { backdrop-filter: blur(8px) !important; -webkit-backdrop-filter: blur(8px) !important; }
+
+      /* Disable all shimmer/sweep overlay pseudo-elements */
+      .book-shine, .card-sweep, .holo-sweep, .holo-shine { display: none !important; }
+
+      /* Stop all glow/pulse/float loops — they repaint every frame */
+      [class*="glow"],
+      [class*="pulse-glow"],
+      [class*="float"] { animation: none !important; }
+
+      /* Slow down marquee (less repaints per second) */
+      .marquee-track { animation-duration: 50s !important; }
+
+      /* Enable native smooth scroll on iOS */
+      html, body { -webkit-overflow-scrolling: touch; }
+
+      /* Contain layout/style recalcs to the section */
+      section, .hero, footer { contain: layout style; }
+
+      /* Disable 3D perspective transforms — expensive on low-end phones */
+      [style*="perspective"],
+      [class*="tilt"] { transform: none !important; perspective: none !important; }
+
+      /* Minimum touch target sizes (WCAG 2.5.5) */
+      .cta-btn, .cta-btn-gold, .nav-cta, button, .register-link { min-height: 48px; }
+    }
+
+    /* Respect OS-level reduce-motion preference */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -619,7 +676,7 @@
 
     <div class="container">
       <div class="hero-content">
-        <span class="hero-masthead">Executive AI Advantage Summit — June 18–20, 2026</span>
+        <span class="hero-masthead">The AI Mastery Summit — June 18–20, 2026</span>
 
         <div class="hero-eyebrow">
           <span class="live-dot"></span>
@@ -701,7 +758,7 @@
           <!-- TOP ROW -->
           <div class="vip-card-top">
             <div class="vip-card-brand">
-              <span class="vip-card-summit-name">Executive AI Advantage Summit · June 18–20, 2026</span>
+              <span class="vip-card-summit-name">The AI Mastery Summit · June 18–20, 2026</span>
               <span class="vip-card-label">VIP PASS</span>
               <span class="vip-card-subtitle">Virtual · Official Attendee Credential</span>
             </div>
@@ -909,7 +966,7 @@
   <section class="value-stack-section">
     <div class="container">
       <div style="text-align:center;">
-        <div class="eyebrow-light fade-in" style="display:inline-flex;align-items:center;gap:8px;background:rgba(0,102,68,0.08);border:1px solid rgba(0,102,68,0.2);border-radius:30px;padding:8px 20px;font-size:12px;font-weight:700;color:var(--green-deep);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:20px;">💎 The Value Breakdown</div>
+        <div class="eyebrow-light fade-in" style="display:inline-flex;align-items:center;gap:8px;background:rgba(26,58,107,0.08);border:1px solid rgba(26,58,107,0.2);border-radius:30px;padding:8px 20px;font-size:12px;font-weight:700;color:var(--green-deep);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:20px;">💎 The Value Breakdown</div>
       </div>
       <h2 class="fade-in">$148 of Value.<br><span class="grad-text">For $49.</span></h2>
       <p class="sub fade-in" style="color:var(--text-secondary);">This is a one-time offer, available only because you just registered. It closes when the summit begins.</p>
@@ -1026,7 +1083,7 @@
       <div class="payment-box">
         <div class="payment-summary">
           <div class="desc">
-            Executive AI Advantage Summit — VIP Pass
+            The AI Mastery Summit — VIP Pass
             <span>Autographed Book + Implementation Workshop</span>
           </div>
           <div class="amount">
@@ -1155,7 +1212,7 @@
   <footer class="footer">
     <div class="container">
       <a href="index.html" class="footer-back">← Back to Summit Home</a>
-      <div class="copyright">© 2026 Scott Magnacca · Executive AI Advantage Summit</div>
+      <div class="copyright">© 2026 Scott Magnacca · The AI Mastery Summit</div>
       <div class="disclaimer">This VIP Pass is available exclusively to registered attendees. Physical book ships to US and Canada addresses. Implementation Workshop date confirmed via email post-purchase. All sales final.</div>
     </div>
   </footer>
@@ -1186,7 +1243,7 @@
           theme: 'night',
           variables: {
             colorPrimary: '#EEAF00',
-            colorBackground: '#0C1F14',
+            colorBackground: '#080D1A',
             colorText: '#F9FAFB',
             borderRadius: '8px',
             fontFamily: 'Inter, system-ui, sans-serif'
