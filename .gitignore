@@ -3,7 +3,6 @@
 *.mp3
 *.webm
 vip-template-reference.pdf
-src/demis-hassabis.jpg
 
 # Node / build
 node_modules/
