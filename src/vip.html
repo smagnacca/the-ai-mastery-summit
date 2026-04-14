@@ -655,6 +655,15 @@
     }
 
   </style>
+  <script>
+  (function(){
+    var K='advisorCount',V='advisorVisited',B=4127;
+    var n=parseInt(localStorage.getItem(K))||B;
+    if(localStorage.getItem(V)){n+=Math.floor(Math.random()*5)+1;}
+    localStorage.setItem(K,n);localStorage.setItem(V,'1');
+    window.__advisorCount=n;
+  })();
+  </script>
 </head>
 <body>
   <div class="noise-overlay"></div>
@@ -834,7 +843,7 @@
           <h3>Autographed Copy of<br><em>Storyselling in the Age of AI</em></h3>
           <p>A personally signed limited edition sent directly to you. This isn't a PDF — it's a physical artifact from the summit, signed by Scott and shipped to your door.</p>
           <ul class="benefit-list">
-            <li>The exact framework 4,127+ advisors use to close clients with AI-powered storytelling</li>
+            <li>The exact framework <span class="advisor-count-val">4,127+</span> advisors use to close clients with AI-powered storytelling</li>
             <li>Chapters on ROI-first positioning, decision intelligence, and hybrid advisor identity</li>
             <li>Harvard Business Review-referenced research on what clients actually respond to in 2026</li>
             <li>Personally inscribed — a signed copy you'll return to again and again</li>
@@ -882,14 +891,14 @@
         <div class="scott-bio-text">
           <div class="scott-bio-eyebrow">Your Guide — Scott Magnacca</div>
           <h2>20 Years Distilled Into 3 Days.<br><span class="shimmer-gold">You Get the Shortcut.</span></h2>
-          <p>Scott has trained <strong>4,127+ financial advisors and executives</strong> across Fidelity Investments, major wirehouses, and independent practices — teaching them to close more business by telling better stories. Now he's applied that same framework to AI.</p>
+          <p>Scott has trained <strong class="advisor-count-val">4,127+</strong> financial advisors and executives across Fidelity Investments, major wirehouses, and independent practices — teaching them to close more business by telling better stories. Now he's applied that same framework to AI.</p>
           <p>His book <em>Storyselling in the Age of AI</em> is referenced in <strong>Harvard Business Review's 2026 research</strong> on what clients actually respond to. This isn't theory. It's a battle-tested system, refined across hundreds of stages and thousands of client conversations.</p>
           <p><strong>AI won't replace financial advisors. But an advisor who uses AI effectively will replace those who don't.</strong> The VIP Pass is how you make sure you're on the right side of that line.</p>
           <div class="scott-creds">
             <span class="scott-cred">4 Books Published</span>
             <span class="scott-cred">Fidelity Investments</span>
             <span class="scott-cred">Harvard Business Review</span>
-            <span class="scott-cred">4,127+ Advisors Trained</span>
+            <span class="scott-cred"><span class="advisor-count-val">4,127+</span> Advisors Trained</span>
             <span class="scott-cred">20+ Years Speaking</span>
           </div>
         </div>
@@ -1364,7 +1373,7 @@
             // count-up on the advisors number
             if (el.id === 'countUpNum' || el.querySelector('#countUpNum')) {
               const numEl = document.getElementById('countUpNum');
-              setTimeout(() => countUp(numEl, 4127, 1400), 100);
+              setTimeout(() => countUp(numEl, window.__advisorCount, 1400), 100);
             }
             // start color animations after Harvard/Fidelity appear
             const harvard = el.querySelector('.proof-harvard') || (el.classList.contains('proof-harvard') ? el : null);
@@ -1896,6 +1905,9 @@
       }
 
     })();
+
+    // Sync advisor count display
+    document.querySelectorAll('.advisor-count-val').forEach(function(el){el.textContent=window.__advisorCount.toLocaleString()+'+';});
   </script>
 </body>
 </html>

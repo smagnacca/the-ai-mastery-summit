@@ -702,6 +702,15 @@
     }
 
   </style>
+  <script>
+  (function(){
+    var K='advisorCount',V='advisorVisited',B=4127;
+    var n=parseInt(localStorage.getItem(K))||B;
+    if(localStorage.getItem(V)){n+=Math.floor(Math.random()*5)+1;}
+    localStorage.setItem(K,n);localStorage.setItem(V,'1');
+    window.__advisorCount=n;
+  })();
+  </script>
 </head>
 <body>
 <div class="noise-overlay"></div>
@@ -751,7 +760,7 @@
             </div>
             <div class="cred-bar-divider"></div>
             <div class="cred-bar-item">
-              <span class="cred-bar-num shimmer-gold">4,127+</span>
+              <span class="cred-bar-num shimmer-gold advisor-count-val">4,127+</span>
               <span class="cred-bar-sub">Leaders Trained</span>
             </div>
           </div>
@@ -787,7 +796,7 @@
             <img src="headshot-formal-2.png" alt="Scott Magnacca — The AI Mastery Summit Host" />
             <div class="hero-photo-overlay">
               <h3>Scott Magnacca</h3>
-              <p>Harvard ALM in Psychology · 4,127+ Advisors Trained</p>
+              <p>Harvard ALM in Psychology · <span class="advisor-count-val">4,127+</span> Advisors Trained</p>
             </div>
           </div>
           <div class="hero-float-stat" style="top:20px;right:-20px;"><span class="num grad-text" data-target="56" data-suffix="%" data-prefix="Earn a " data-duration="7000">0%</span><span class="label">Wage Premium</span></div>
@@ -886,7 +895,7 @@
         </div>
         <div class="book-info">
           <p class="book-fade">Scott Magnacca's book is the definitive guide to combining <strong>AI's computational power</strong> with the art of <strong>human persuasion and connection</strong>.</p>
-          <p class="book-fade">This summit distills the core frameworks from the book into three actionable, hands-on sessions. You'll walk away with the same tools and strategies that have helped <strong>4,127+ financial advisors</strong> transform their practices.</p>
+          <p class="book-fade">This summit distills the core frameworks from the book into three actionable, hands-on sessions. You'll walk away with the same tools and strategies that have helped <strong class="advisor-count-val">4,127+</strong> financial advisors transform their practices.</p>
           <p class="book-fade">The book draws on Scott's unique background — studying the <strong style="color:var(--gold-mango);">science of influence</strong> at Harvard and building businesses at one of the world's top entrepreneurial colleges — combined with decades of real-world sales experience.</p>
           <div class="book-stats">
             <div class="book-stat"><span class="num grad-text" data-target="4127" data-suffix="+">0</span><span class="label">Advisors Trained</span></div>
@@ -1021,7 +1030,7 @@
           <p>I learned how businesses are built at one of the world's top entrepreneurial colleges. I learned the <strong>science of why people say yes</strong> at Harvard.</p>
           <p>But my real education came from cold calls, lost deals, and the relentless grind of hitting quota. I wasn't just studying strategy — I was living it on the front lines.</p>
           <p>When AI emerged, I didn't see a threat. I saw an <strong style="color:var(--gold-mango);">unprecedented opportunity</strong>. An unfair advantage that everyone has access to, but very few know how to effectively apply.</p>
-          <p>I've since trained <strong>4,127+ financial advisors</strong> across North America on AI adoption. This summit distills everything into 3 focused days.</p>
+          <p>I've since trained <strong class="advisor-count-val">4,127+</strong> financial advisors across North America on AI adoption. This summit distills everything into 3 focused days.</p>
           <p style="font-size:14px;color:var(--text-secondary);margin-top:-4px;">Co-participant with HBR author Tom Davenport on Babson College's AI in Teaching Taskforce.</p>
           <p style="color:var(--gold-mango);font-family:var(--font-accent);font-style:italic;font-size:18px;margin-top:24px;">"Learn in days what took me decades to master."</p>
         </div>
@@ -1082,7 +1091,7 @@
           <span style="font-size:14px;color:var(--light-border);">|</span>
           <span style="font-size:17px;font-weight:700;font-family:'Crimson Text',Georgia,serif;color:#A6192E;letter-spacing:0.02em;">Harvard University</span>
           <span style="font-size:14px;color:var(--light-border);">|</span>
-          <span style="font-size:16px;font-weight:800;color:var(--text-secondary);">4,127+ Advisors</span>
+          <span style="font-size:16px;font-weight:800;color:var(--text-secondary);"><span class="advisor-count-val">4,127+</span> Advisors</span>
           <span style="font-size:14px;color:var(--light-border);">|</span>
           <span style="font-size:16px;font-weight:800;color:var(--text-secondary);">Published Author — 4 Books in Print</span>
           <span style="font-size:14px;color:var(--light-border);">|</span>
@@ -1338,6 +1347,10 @@
     // Fade in
     const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible');});},{threshold:0.1});
     document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
+
+    // Sync advisor count from localStorage
+    document.querySelectorAll('[data-target="4127"]').forEach(function(el){el.dataset.target=window.__advisorCount;});
+    document.querySelectorAll('.advisor-count-val').forEach(function(el){el.textContent=window.__advisorCount.toLocaleString()+'+';});
 
     // Stat count-up (supports data-prefix and data-duration)
     const statObs=new IntersectionObserver(e=>{e.forEach(x=>{if(!x.isIntersecting||x.target.dataset.counted)return;x.target.dataset.counted='1';const t=parseInt(x.target.dataset.target),sf=x.target.dataset.suffix||'',pf=x.target.dataset.prefix||'',dur=parseInt(x.target.dataset.duration)||3500,st=performance.now();function tick(now){const p=Math.min((now-st)/dur,1),ez=1-Math.pow(1-p,3),c=Math.round(t*ez);x.target.textContent=pf+c.toLocaleString()+sf;if(p<1)requestAnimationFrame(tick);else x.target.style.animation='stat-flash 0.72s ease-out';}requestAnimationFrame(tick);});},{threshold:0.3});
