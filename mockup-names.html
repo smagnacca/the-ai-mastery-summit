@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Event Name Mockups — AI Summit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --green-deep: #006644;
+      --green-mid: #00875A;
+      --gold-mango: #EEAF00;
+      --gold-bright: #DDD055;
+      --gold-cream: #FFF8E1;
+      --dark-forest: #0A1A10;
+      --dark-card: #132A1B;
+      --white: #F9FAFB;
+      --font-body: 'Inter', system-ui, sans-serif;
+      --font-accent: 'Playfair Display', Georgia, serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--font-body);
+      background: #111;
+      color: var(--white);
+      padding: 40px 24px 80px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* === PAGE HEADER === */
+    .page-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+    .page-header h1 {
+      font-size: 28px;
+      font-weight: 900;
+      color: var(--white);
+      letter-spacing: -0.03em;
+      margin-bottom: 8px;
+    }
+    .page-header p {
+      color: rgba(255,255,255,0.45);
+      font-size: 14px;
+    }
+
+    /* === SECTION LABELS === */
+    .section-label {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold-mango);
+      margin-bottom: 6px;
+    }
+    .section-title {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 6px;
+      letter-spacing: -0.02em;
+    }
+    .section-desc {
+      font-size: 13px;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 28px;
+      max-width: 600px;
+    }
+    .variation-block {
+      margin-bottom: 72px;
+    }
+
+    /* === CARD GRID === */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    /* === HERO CARD === */
+    .hero-card {
+      background: radial-gradient(ellipse at 28% 30%, #004D30 0%, #0C2518 45%, #071510 80%, #030D08 100%);
+      border: 1px solid rgba(238,175,0,0.2);
+      border-radius: 20px;
+      padding: 28px 24px;
+      position: relative;
+      overflow: hidden;
+      min-height: 280px;
+    }
+    .hero-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 70% 80%, rgba(238,175,0,0.07) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    /* Name label below card */
+    .card-name-label {
+      text-align: center;
+      font-size: 11px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.35);
+      margin-top: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    /* === SHARED BADGE STYLES === */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(238,175,0,0.1);
+      border: 2px solid rgba(238,175,0,0.3);
+      border-radius: 40px;
+      padding: 10px 20px;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--gold-mango);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    /* === VARIATION A: Masthead above badge === */
+    .event-masthead {
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold-mango);
+      opacity: 0.7;
+      margin-bottom: 10px;
+    }
+
+    /* === VARIATION B: Photo overlay === */
+    .photo-mock {
+      width: 100%;
+      height: 180px;
+      border-radius: 14px;
+      border: 2px solid rgba(238,175,0,0.5);
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(160deg, #1a3a2a 0%, #0c2018 50%, #081508 100%);
+      box-shadow: 0 0 40px rgba(238,175,0,0.3), 0 0 80px rgba(238,175,0,0.12);
+    }
+    .photo-mock-face {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 120px;
+      background: linear-gradient(180deg, #8a7060 0%, #6b5540 60%, transparent 100%);
+      border-radius: 40px 40px 0 0;
+      opacity: 0.6;
+    }
+    .photo-mock-bg {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 30%, rgba(0,100,60,0.3) 0%, transparent 70%);
+    }
+    .photo-overlay-name {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 12px 14px;
+      background: linear-gradient(180deg, rgba(10,26,16,0.92) 0%, transparent 100%);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold-mango);
+    }
+    .photo-bottom-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 12px 14px;
+      background: linear-gradient(0deg, rgba(10,26,16,0.95) 0%, transparent 100%);
+    }
+    .photo-bottom-overlay .pbo-name {
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--white);
+      display: block;
+    }
+    .photo-bottom-overlay .pbo-sub {
+      font-size: 10px;
+      color: rgba(158,178,143,0.8);
+      display: block;
+    }
+
+    /* === VARIATION C: Masthead + tagline === */
+    .event-tagline {
+      font-family: var(--font-accent);
+      font-style: italic;
+      font-size: 12px;
+      color: rgba(255,248,225,0.65);
+      margin-bottom: 16px;
+      margin-top: 4px;
+      display: block;
+    }
+
+    /* === SHIMMER ANIMATION === */
+    @keyframes metallic-shimmer {
+      0%   { background-position: 0% 50%; }
+      50%  { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    .shimmer-gold {
+      background: linear-gradient(90deg, #EEAF00, #DDD055, #FDE68A, #DDD055, #EEAF00);
+      background-size: 300% 100%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: metallic-shimmer 3.0s ease-in-out infinite;
+    }
+
+    /* === H1 MOCK === */
+    .h1-mock {
+      font-size: 24px;
+      font-weight: 900;
+      line-height: 1.08;
+      margin-bottom: 10px;
+      color: var(--white);
+      letter-spacing: -0.03em;
+    }
+    .h1-mock .gold { color: var(--gold-mango); }
+
+    /* === DIVIDER === */
+    .divider {
+      border: none;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      margin: 48px 0 36px;
+    }
+
+    /* === WINNER LABEL === */
+    .recommended {
+      display: inline-block;
+      background: rgba(238,175,0,0.15);
+      border: 1px solid rgba(238,175,0,0.4);
+      border-radius: 20px;
+      padding: 3px 12px;
+      font-size: 10px;
+      font-weight: 800;
+      color: var(--gold-mango);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-left: 10px;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page-header">
+    <h1>Event Name Mockups</h1>
+    <p>3 name candidates × 3 placement variations — pick a winner before touching index.html</p>
+  </div>
+
+  <!-- ============================================================
+       VARIATION A — MASTHEAD ABOVE BADGE
+  ============================================================ -->
+  <div class="variation-block">
+    <div class="section-label">Variation A</div>
+    <div class="section-title">Masthead Above Badge <span class="recommended">Recommended</span></div>
+    <div class="section-desc">Small all-caps event name sits above the floating badge. Clean, magazine-style. Badge changes to "⚡ FREE · LIMITED SEATS" since the name now lives above it.</div>
+    <div class="card-grid">
+
+      <!-- A1: THE HUMAN AI SUMMIT -->
+      <div>
+        <div class="hero-card">
+          <div class="event-masthead">The Human AI Summit</div>
+          <div class="badge">⚡ Free · Limited Seats</div>
+          <br><br>
+          <div class="h1-mock">
+            3 Days. 90 Minutes.<br>
+            <span class="shimmer-gold">Close the AI Skills Gap.</span>
+          </div>
+        </div>
+        <div class="card-name-label">Option 1 — "The Human AI Summit"</div>
+      </div>
+
+      <!-- A2: THE APPLIED AI SUMMIT -->
+      <div>
+        <div class="hero-card">
+          <div class="event-masthead">The Applied AI Summit</div>
+          <div class="badge">⚡ Free · Limited Seats</div>
+          <br><br>
+          <div class="h1-mock">
+            3 Days. 90 Minutes.<br>
+            <span class="shimmer-gold">Close the AI Skills Gap.</span>
+          </div>
+        </div>
+        <div class="card-name-label">Option 2 — "The Applied AI Summit"</div>
+      </div>
+
+      <!-- A3: THE AI MASTERY SUMMIT -->
+      <div>
+        <div class="hero-card">
+          <div class="event-masthead">The AI Mastery Summit</div>
+          <div class="badge">⚡ Free · Limited Seats</div>
+          <br><br>
+          <div class="h1-mock">
+            3 Days. 90 Minutes.<br>
+            <span class="shimmer-gold">Close the AI Skills Gap.</span>
+          </div>
+        </div>
+        <div class="card-name-label">Option 3 — "The AI Mastery Summit"</div>
+      </div>
+
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- ============================================================
+       VARIATION B — PHOTO OVERLAY REVEAL
+  ============================================================ -->
+  <div class="variation-block">
+    <div class="section-label">Variation B</div>
+    <div class="section-title">Event Name Over the Photo</div>
+    <div class="section-desc">Name appears as a semi-transparent banner at the top of Scott's photo. Cinematic. Slides in on scroll. Photo still has the name + credentials overlay at the bottom.</div>
+    <div class="card-grid">
+
+      <!-- B1 -->
+      <div>
+        <div class="hero-card" style="padding: 20px;">
+          <div class="photo-mock">
+            <div class="photo-mock-bg"></div>
+            <div class="photo-mock-face"></div>
+            <div class="photo-overlay-name">✦ The Human AI Summit</div>
+            <div class="photo-bottom-overlay">
+              <span class="pbo-name">Scott Magnacca</span>
+              <span class="pbo-sub">Harvard ALM in Psychology · 4,127+ Advisors Trained</span>
+            </div>
+          </div>
+        </div>
+        <div class="card-name-label">Option 1 — "The Human AI Summit"</div>
+      </div>
+
+      <!-- B2 -->
+      <div>
+        <div class="hero-card" style="padding: 20px;">
+          <div class="photo-mock">
+            <div class="photo-mock-bg"></div>
+            <div class="photo-mock-face"></div>
+            <div class="photo-overlay-name">✦ The Applied AI Summit</div>
+            <div class="photo-bottom-overlay">
+              <span class="pbo-name">Scott Magnacca</span>
+              <span class="pbo-sub">Harvard ALM in Psychology · 4,127+ Advisors Trained</span>
+            </div>
+          </div>
+        </div>
+        <div class="card-name-label">Option 2 — "The Applied AI Summit"</div>
+      </div>
+
+      <!-- B3 -->
+      <div>
+        <div class="hero-card" style="padding: 20px;">
+          <div class="photo-mock">
+            <div class="photo-mock-bg"></div>
+            <div class="photo-mock-face"></div>
+            <div class="photo-overlay-name">✦ The AI Mastery Summit</div>
+            <div class="photo-bottom-overlay">
+              <span class="pbo-name">Scott Magnacca</span>
+              <span class="pbo-sub">Harvard ALM in Psychology · 4,127+ Advisors Trained</span>
+            </div>
+          </div>
+        </div>
+        <div class="card-name-label">Option 3 — "The AI Mastery Summit"</div>
+      </div>
+
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- ============================================================
+       VARIATION C — MASTHEAD + TAGLINE BELOW BADGE
+  ============================================================ -->
+  <div class="variation-block">
+    <div class="section-label">Variation C</div>
+    <div class="section-title">Masthead + Tagline Below Badge</div>
+    <div class="section-desc">Name above the badge, then the confirmed tagline "AI Is the Equalizer. Psychology Is the Edge." appears in italic serif just below. Nothing else on the page changes.</div>
+    <div class="card-grid">
+
+      <!-- C1 -->
+      <div>
+        <div class="hero-card">
+          <div class="event-masthead">The Human AI Summit</div>
+          <div class="badge">⚡ Free · Limited Seats</div>
+          <span class="event-tagline">AI Is the Equalizer. Psychology Is the Edge.</span>
+          <div class="h1-mock">
+            3 Days. 90 Minutes.<br>
+            <span class="shimmer-gold">Close the AI Skills Gap.</span>
+          </div>
+        </div>
+        <div class="card-name-label">Option 1 — "The Human AI Summit"</div>
+      </div>
+
+      <!-- C2 -->
+      <div>
+        <div class="hero-card">
+          <div class="event-masthead">The Applied AI Summit</div>
+          <div class="badge">⚡ Free · Limited Seats</div>
+          <span class="event-tagline">AI Is the Equalizer. Psychology Is the Edge.</span>
+          <div class="h1-mock">
+            3 Days. 90 Minutes.<br>
+            <span class="shimmer-gold">Close the AI Skills Gap.</span>
+          </div>
+        </div>
+        <div class="card-name-label">Option 2 — "The Applied AI Summit"</div>
+      </div>
+
+      <!-- C3 -->
+      <div>
+        <div class="hero-card">
+          <div class="event-masthead">The AI Mastery Summit</div>
+          <div class="badge">⚡ Free · Limited Seats</div>
+          <span class="event-tagline">AI Is the Equalizer. Psychology Is the Edge.</span>
+          <div class="h1-mock">
+            3 Days. 90 Minutes.<br>
+            <span class="shimmer-gold">Close the AI Skills Gap.</span>
+          </div>
+        </div>
+        <div class="card-name-label">Option 3 — "The AI Mastery Summit"</div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>

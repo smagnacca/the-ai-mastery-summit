@@ -1,0 +1,1844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your VIP Pass — Executive AI Advantage Summit</title>
+  <meta name="description" content="You're registered — now elevate your experience. Add the VIP Pass and get an autographed copy of Storyselling in the Age of AI plus the post-event Implementation Workshop." />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700&family=Crimson+Text:wght@400;600;700&display=swap" rel="stylesheet" />
+  <script src="https://js.stripe.com/v3/"></script>
+  <style>
+    :root {
+      --green-deep: #006644;
+      --green-mid: #00875A;
+      --green-courtyard: #597C31;
+      --green-sherwood: #9EB28F;
+      --green-pale: #E8F0E4;
+      --gold-bright: #DDD055;
+      --gold-mango: #EEAF00;
+      --gold-ocre: #AD9001;
+      --gold-cream: #FFF8E1;
+      --gold-pale: #FFFDF5;
+      --blue-alfresco: #567B8A;
+      --dark-forest: #0A1A10;
+      --dark-card: rgba(19, 42, 27, 0.7);
+      --dark-border: rgba(255, 255, 255, 0.08);
+      --dark-surface: #0F2518;
+      --glass-bg: rgba(255, 255, 255, 0.03);
+      --glass-border: rgba(255, 255, 255, 0.1);
+      --light-bg: #F8FAF7;
+      --light-card: #FFFFFF;
+      --light-border: #E2E8DE;
+      --white: #F9FAFB;
+      --muted: #6B7280;
+      --text-dark: #1A2E1A;
+      --text-secondary: #4B5563;
+      --gradient-hero: radial-gradient(ellipse at 28% 30%, #004D30 0%, #0C2518 45%, #071510 80%, #030D08 100%);
+      --gradient-warm: linear-gradient(90deg, #EEAF00 0%, #DDD055 50%, #EEAF00 100%);
+      --gradient-green: linear-gradient(135deg, #006644 0%, #00875A 100%);
+      --gradient-cream: linear-gradient(180deg, #FFFDF5 0%, #F8FAF7 100%);
+      --gradient-deep: linear-gradient(180deg, #0C1F14 0%, #132A1B 50%, #0C1F14 100%);
+      --max-width: 1100px;
+      --section-padding: 100px 0;
+      --font-body: 'Inter', system-ui, sans-serif;
+      --font-accent: 'Playfair Display', Georgia, serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); overflow-x: hidden; line-height: 1.6; color: var(--text-dark); background: var(--dark-forest); -webkit-font-smoothing: antialiased; }
+    h1, h2, h3, h4 { letter-spacing: -0.04em; line-height: 1.05; }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+    .container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
+    .grad-text { background: linear-gradient(135deg, var(--green-deep), var(--gold-mango)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .serif-accent { font-family: var(--font-accent); font-weight: 800; font-style: italic; }
+
+    /* === CTA BUTTON === */
+    .cta-btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--gradient-green); border: none; border-radius: 14px;
+      padding: 22px 50px; font-weight: 700; font-size: 1.18rem; color: var(--white);
+      cursor: pointer; transition: all 0.3s ease;
+      box-shadow: 0 8px 32px rgba(0,102,68,0.45), 0 0 40px rgba(238,175,0,0.15);
+      position: relative; overflow: hidden; font-family: var(--font-body);
+    }
+    .cta-btn::before { content:''; position:absolute; top:0; left:-100%; width:200%; height:100%; background:linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent); transition:left 0.5s ease; }
+    .cta-btn:hover { transform: translateY(-3px); box-shadow: 0 12px 48px rgba(0,102,68,0.6), 0 0 60px rgba(238,175,0,0.25); }
+    .cta-btn:hover::before { left: 100%; }
+    .cta-btn-gold { background: var(--gradient-warm); color: var(--dark-forest); box-shadow: 0 8px 32px rgba(238,175,0,0.35); }
+    .cta-btn-gold:hover { box-shadow: 0 12px 40px rgba(238,175,0,0.55); }
+    .cta-btn:disabled { opacity: 0.7; cursor: not-allowed; transform: none; }
+
+    /* === ANIMATIONS === */
+    @keyframes marquee { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+    @keyframes pulse-glow { 0%,100%{box-shadow:0 8px 32px rgba(0,102,68,0.45),0 0 40px rgba(238,175,0,0.15)} 50%{box-shadow:0 8px 48px rgba(0,102,68,0.7),0 0 80px rgba(0,102,68,0.2),0 0 60px rgba(238,175,0,0.3)} }
+    .pulse-cta { animation: pulse-glow 3.0s ease-in-out infinite; }
+    @keyframes gold-text-glow { 0%,100%{text-shadow:0 0 8px rgba(238,175,0,0.4),0 0 16px rgba(238,175,0,0.2)} 50%{text-shadow:0 0 16px rgba(238,175,0,0.8),0 0 32px rgba(238,175,0,0.4),0 0 48px rgba(238,175,0,0.2)} }
+    .gold-glow-text { animation: gold-text-glow 3.0s ease-in-out infinite; color: var(--gold-mango); font-weight: 800; }
+    @keyframes blink-dot { 0%,100%{opacity:1} 50%{opacity:0.2} }
+    @keyframes metallic-shimmer { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
+    .shimmer-gold { background:linear-gradient(90deg,#EEAF00,#DDD055,#FDE68A,#DDD055,#EEAF00); background-size:300% 100%; -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; animation:metallic-shimmer 3.0s ease-in-out infinite; }
+    @keyframes float-badge { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+    @keyframes hero-breathe { 0%,100%{opacity:0.15} 50%{opacity:0.3} }
+    @keyframes book-float { 0%,100%{transform:translateY(0) rotate(-2deg)} 50%{transform:translateY(-10px) rotate(0deg)} }
+    @keyframes book-gold-glow { 0%,100%{box-shadow:0 20px 60px rgba(0,0,0,0.5),0 0 0 1px rgba(238,175,0,0.25),0 0 12px rgba(238,175,0,0.15)} 50%{box-shadow:0 20px 60px rgba(0,0,0,0.5),0 0 0 2px rgba(238,175,0,0.85),0 0 40px rgba(238,175,0,0.55),0 0 80px rgba(238,175,0,0.18)} }
+    @keyframes pulse-gold-border { 0%,100%{box-shadow:0 8px 32px rgba(0,102,68,0.45),0 0 0 2px rgba(238,175,0,0.4),0 0 18px rgba(238,175,0,0.3)} 50%{box-shadow:0 8px 48px rgba(0,102,68,0.65),0 0 0 4px rgba(238,175,0,1.0),0 0 70px rgba(238,175,0,0.9),0 0 130px rgba(238,175,0,0.35),0 0 200px rgba(238,175,0,0.12)} }
+    .pulse-gold-border { animation:pulse-gold-border 2.4s ease-in-out infinite!important; }
+    @keyframes hero-bg-drift { 0%{transform:scale(1.06) translate(0,0)} 33%{transform:scale(1.09) translate(-1.5%,0.8%)} 66%{transform:scale(1.07) translate(1.2%,-0.6%)} 100%{transform:scale(1.06) translate(0,0)} }
+    @keyframes hero-glow-shift { 0%,100%{background:radial-gradient(ellipse at 35% 35%,rgba(0,102,68,0.42) 0%,transparent 55%)} 33%{background:radial-gradient(ellipse at 52% 22%,rgba(0,128,80,0.48) 0%,transparent 60%)} 66%{background:radial-gradient(ellipse at 22% 55%,rgba(0,77,48,0.38) 0%,transparent 52%)} }
+    @keyframes mesh-move-1{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(60px,-40px) scale(1.08)}66%{transform:translate(-30px,50px) scale(0.94)}}
+    @keyframes mesh-move-2{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(-70px,30px) scale(1.1)}66%{transform:translate(40px,-25px) scale(0.9)}}
+    @keyframes mesh-move-3{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(25px,55px) scale(1.05)}66%{transform:translate(-45px,-35px) scale(0.96)}}
+    .mesh-blob{position:absolute;border-radius:50%;filter:blur(100px);pointer-events:none;}
+    .mesh-blob-1{width:500px;height:500px;background:radial-gradient(circle,rgba(0,134,90,0.25),transparent 70%);top:-100px;left:-50px;animation:mesh-move-1 14.4s ease-in-out infinite;}
+    .mesh-blob-2{width:600px;height:600px;background:radial-gradient(circle,rgba(238,175,0,0.12),transparent 70%);top:20%;right:-100px;animation:mesh-move-2 14.4s ease-in-out infinite;animation-delay:-4.8s;}
+    .mesh-blob-3{width:400px;height:400px;background:radial-gradient(circle,rgba(0,61,40,0.3),transparent 70%);bottom:-50px;left:30%;animation:mesh-move-3 14.4s ease-in-out infinite;animation-delay:-9.6s;}
+    @keyframes fade-in-masthead { from{opacity:0;transform:translateY(-6px)} to{opacity:1;transform:translateY(0)} }
+    @keyframes masthead-pulse {
+      0%,100% { color:#ffffff; text-shadow:0 0 20px rgba(255,255,255,0.7),0 0 40px rgba(255,255,255,0.35); }
+      50%      { color:var(--gold-mango); text-shadow:0 0 24px rgba(238,175,0,1),0 0 50px rgba(238,175,0,0.55),0 0 80px rgba(238,175,0,0.2); }
+    }
+    @keyframes tagline-wave { 0%{background-position:140% 0} 38%{background-position:-20% 0} 100%{background-position:-20% 0} }
+    @keyframes register-box-glow {
+      0%, 45% { box-shadow:0 24px 64px rgba(0,0,0,0.5),0 0 0 1px rgba(238,175,0,0.25),0 0 12px rgba(238,175,0,0.12); border-color:rgba(238,175,0,0.25); }
+      72%      { box-shadow:0 24px 64px rgba(0,0,0,0.5),0 0 0 2px rgba(238,175,0,0.95),0 0 55px rgba(238,175,0,0.65),0 0 110px rgba(238,175,0,0.22); border-color:rgba(238,175,0,0.92); }
+      100%     { box-shadow:0 24px 64px rgba(0,0,0,0.5),0 0 0 1px rgba(238,175,0,0.25),0 0 12px rgba(238,175,0,0.12); border-color:rgba(238,175,0,0.25); }
+    }
+    @keyframes value-num-flash { 0%{opacity:0;transform:scale(0.8)} 60%{opacity:1;transform:scale(1.08);filter:brightness(1.4)} 100%{opacity:1;transform:scale(1);filter:brightness(1)} }
+    @keyframes green-diffuse-glow {
+      0%,100% { box-shadow:0 8px 32px rgba(238,175,0,0.3),0 0 0 2px rgba(0,160,85,0.45),0 0 28px rgba(0,160,85,0.3); }
+      50%     { box-shadow:0 8px 32px rgba(238,175,0,0.3),0 0 0 4px rgba(0,210,115,0.9),0 0 60px rgba(0,210,115,0.55),0 0 110px rgba(0,210,115,0.2); }
+    }
+    .cta-green-glow { animation:green-diffuse-glow 2.6s ease-in-out infinite !important; }
+    .fade-in { opacity:0; transform:translateY(30px); transition:opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1); }
+    .fade-in.visible { opacity:1; transform:translateY(0); }
+    .slide-up { opacity:0; transform:translateY(24px); transition:opacity 0.9s cubic-bezier(0.16,1,0.3,1), transform 0.9s cubic-bezier(0.16,1,0.3,1); }
+    .slide-up.visible { opacity:1; transform:translateY(0); }
+
+    /* === NOISE OVERLAY === */
+    .noise-overlay { position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"); background-size: 180px 180px; opacity: 0.04; pointer-events: none; z-index: 9999; mix-blend-mode: overlay; }
+
+    /* === URGENCY BAR === */
+    .urgency-bar { background:var(--gradient-warm); color:var(--dark-forest); text-align:center; padding:13px 20px; font-size:14px; font-weight:800; position:relative; z-index:100; }
+    .urgency-bar .inner { display:flex; align-items:center; justify-content:center; gap:12px; flex-wrap:wrap; }
+    .urgency-bar .dot { width:8px; height:8px; background:#A6192E; border-radius:50%; animation:blink-dot 1.4s ease-in-out infinite; flex-shrink:0; }
+    .urgency-bar .spots { background:rgba(0,0,0,0.12); border-radius:6px; padding:3px 10px; font-size:13px; }
+
+    /* === HERO === */
+    .hero { position:relative; background:var(--gradient-hero); min-height:100vh; display:flex; align-items:center; overflow:hidden; padding:80px 0 80px; color:var(--white); }
+    .hero::before { content:''; position:absolute; inset:-5%; background:url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=80') center/cover no-repeat; opacity:0.06; mix-blend-mode:luminosity; animation:hero-bg-drift 50s ease-in-out infinite; }
+    .hero::after { content:''; position:absolute; inset:0; pointer-events:none; z-index:1; animation:hero-glow-shift 18s ease-in-out infinite; }
+    .hero-content { position:relative; z-index:2; max-width:860px; margin:0 auto; text-align:center; }
+    .hero-masthead { display:block; font-size:14px; font-weight:900; letter-spacing:0.18em; text-transform:uppercase; color:rgba(255,255,255,0.5); margin-bottom:20px; animation:fade-in-masthead 0.8s ease 0.3s both; }
+    .hero-eyebrow { display:inline-flex; align-items:center; gap:10px; background:rgba(238,175,0,0.1); border:2px solid rgba(238,175,0,0.35); border-radius:40px; padding:12px 28px; font-size:13px; font-weight:700; color:var(--gold-mango); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:28px; animation:float-badge 3.6s ease-in-out infinite; }
+    .hero-eyebrow .live-dot { width:8px; height:8px; background:#22c55e; border-radius:50%; animation:blink-dot 1.8s infinite; }
+    .hero h1 { font-size:clamp(38px,6vw,68px); font-weight:900; line-height:1.06; margin-bottom:28px; }
+    .hero h1 .line-sub { display:block; font-size:clamp(20px,3vw,32px); font-weight:500; color:rgba(255,255,255,0.7); margin-top:10px; font-family:var(--font-accent); font-style:italic; letter-spacing:0.01em; background:linear-gradient(90deg,rgba(255,248,225,0.65) 0%,rgba(255,248,225,0.65) 35%,#ffffff 50%,rgba(255,248,225,0.65) 65%,rgba(255,248,225,0.65) 100%); background-size:250% 100%; -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; animation:tagline-wave 5s ease-in-out infinite; }
+    .hero-name-tag { display:inline-block; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); border-radius:8px; padding:6px 18px; font-size:15px; font-weight:600; color:rgba(255,255,255,0.8); margin-bottom:32px; }
+    .hero-name-tag .first-name { color:var(--gold-mango); font-weight:800; }
+    .cd-row { display:flex; gap:8px; align-items:center; justify-content:center; margin-bottom:36px; }
+    .cd-unit { text-align:center; }
+    .cd-num { font-size:52px; font-weight:900; color:var(--white); min-width:70px; display:block; font-variant-numeric:tabular-nums; }
+    .cd-label { font-size:10px; text-transform:uppercase; letter-spacing:2px; color:rgba(255,255,255,0.45); font-weight:600; }
+    .cd-sep { font-size:40px; font-weight:300; color:rgba(255,255,255,0.2); padding-bottom:20px; }
+    .cd-label-row { text-align:center; font-size:12px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:rgba(255,255,255,0.35); margin-bottom:36px; }
+    .hero-perks { display:flex; gap:20px; justify-content:center; flex-wrap:wrap; margin-bottom:40px; }
+    .hero-perk { display:flex; align-items:center; gap:8px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); border-radius:10px; padding:10px 16px; font-size:14px; font-weight:600; color:rgba(255,255,255,0.8); }
+    .hero-perk .check { color:var(--gold-mango); font-size:16px; }
+    .hero-cta-group { display:flex; flex-direction:column; align-items:center; gap:12px; }
+    .hero-cta-note { font-size:13px; color:rgba(255,255,255,0.4); }
+    .scroll-indicator { margin-top:40px; display:flex; flex-direction:column; align-items:center; gap:6px; color:rgba(255,255,255,0.3); font-size:12px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; }
+    .scroll-arrow { width:20px; height:20px; border-right:2px solid rgba(255,255,255,0.2); border-bottom:2px solid rgba(255,255,255,0.2); transform:rotate(45deg); animation:scroll-bounce 2s ease-in-out infinite; }
+    @keyframes scroll-bounce { 0%,100%{transform:rotate(45deg) translate(0,0);opacity:0.3} 50%{transform:rotate(45deg) translate(4px,4px);opacity:0.7} }
+
+    /* === VIDEO SECTION === */
+    .video-section { padding:var(--section-padding); background:linear-gradient(135deg,#003D28 0%,#006644 40%,#1A4D2E 100%); text-align:center; color:var(--white); position:relative; overflow:hidden; }
+    .video-section::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 60% 40%, rgba(238,175,0,0.06), transparent 60%); pointer-events:none; }
+    .video-section .container { position:relative; z-index:1; }
+    .video-eyebrow { display:inline-flex; align-items:center; gap:8px; background:rgba(238,175,0,0.1); border:1px solid rgba(238,175,0,0.25); border-radius:30px; padding:8px 20px; font-size:12px; font-weight:700; color:var(--gold-mango); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:20px; }
+    .video-section h2 { font-size:clamp(28px,4vw,44px); font-weight:900; margin-bottom:14px; }
+    .video-section .subtitle { font-size:18px; color:rgba(255,255,255,0.7); max-width:580px; margin:0 auto 44px; line-height:1.6; }
+    .video-wrapper { max-width:760px; margin:0 auto; border-radius:20px; overflow:hidden; border:3px solid rgba(238,175,0,0.35); box-shadow:0 40px 100px rgba(0,0,0,0.6),0 0 60px rgba(238,175,0,0.2); aspect-ratio:16/9; position:relative; }
+    .video-wrapper iframe { width:100%; height:100%; border:none; }
+
+    /* === BENEFIT CARDS === */
+    .benefits-section { padding:var(--section-padding); background:linear-gradient(180deg,#071510 0%,#0C2015 50%,#071510 100%); position:relative; overflow:hidden; }
+    .benefits-section::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 20% 50%, rgba(0,102,68,0.12), transparent 60%); }
+    .benefits-section::after { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 80% 50%, rgba(238,175,0,0.05), transparent 60%); }
+    .benefits-section .container { position:relative; z-index:1; }
+    .section-eyebrow { display:inline-flex; align-items:center; gap:8px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.12); border-radius:30px; padding:8px 20px; font-size:12px; font-weight:700; color:rgba(255,255,255,0.5); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:20px; }
+    .benefits-section h2 { font-size:clamp(28px,4vw,44px); font-weight:900; color:var(--white); text-align:center; margin-bottom:12px; }
+    .benefits-section .sub { font-size:18px; color:rgba(255,255,255,0.55); text-align:center; max-width:600px; margin:0 auto 60px; line-height:1.6; }
+    .benefit-cards { display:grid; grid-template-columns:1fr 1fr; gap:32px; max-width:900px; margin:0 auto; }
+    .benefit-card { background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:24px; padding:40px 36px; position:relative; overflow:hidden; backdrop-filter:blur(20px); transition:transform 0.35s cubic-bezier(0.16,1,0.3,1), box-shadow 0.35s ease; }
+    .benefit-card::before { content:''; position:absolute; inset:0; border-radius:24px; background:linear-gradient(135deg,rgba(255,255,255,0.06) 0%,transparent 50%); pointer-events:none; }
+    .benefit-card:hover { transform:translateY(-8px); box-shadow:0 24px 64px rgba(0,0,0,0.4),0 0 0 1px rgba(238,175,0,0.25); }
+    .benefit-card.gold-card { border-color:rgba(238,175,0,0.25); background:rgba(238,175,0,0.03); animation:register-box-glow 9s ease-in-out infinite; }
+    .benefit-card.gold-card::before { background:linear-gradient(135deg,rgba(238,175,0,0.08) 0%,transparent 50%); }
+    .benefit-tag { display:inline-flex; align-items:center; gap:6px; background:rgba(238,175,0,0.1); border:1px solid rgba(238,175,0,0.25); border-radius:20px; padding:5px 14px; font-size:11px; font-weight:700; color:var(--gold-mango); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:24px; }
+    .benefit-tag.green-tag { background:rgba(0,102,68,0.15); border-color:rgba(0,102,68,0.3); color:var(--green-sherwood); }
+    .benefit-card h3 { font-size:22px; font-weight:800; color:var(--white); margin-bottom:14px; line-height:1.2; }
+    .benefit-card p { font-size:15px; color:rgba(255,255,255,0.65); line-height:1.7; margin-bottom:24px; }
+    .benefit-book-img { width:130px; margin:0 auto 28px; animation:book-float 5s ease-in-out infinite; }
+    .benefit-book-img img { border-radius:6px; animation:book-gold-glow 10s ease-in-out infinite; }
+    .benefit-list { list-style:none; display:flex; flex-direction:column; gap:10px; margin-bottom:28px; }
+    .benefit-list li { font-size:14px; color:rgba(255,255,255,0.75); padding-left:26px; position:relative; line-height:1.5; }
+    .benefit-list li::before { content:'✓'; position:absolute; left:0; color:var(--gold-mango); font-weight:800; font-size:13px; }
+    .benefit-value { display:flex; align-items:center; gap:10px; margin-top:auto; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); }
+    .benefit-value .retail { font-size:13px; color:rgba(255,255,255,0.35); text-decoration:line-through; }
+    .benefit-value .included { font-size:15px; font-weight:800; color:var(--gold-mango); }
+    .benefit-icon-wrap { width:52px; height:52px; background:rgba(238,175,0,0.08); border:1px solid rgba(238,175,0,0.2); border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:24px; margin-bottom:24px; }
+
+    /* === VALUE STACK SECTION === */
+    .value-stack-section { padding:var(--section-padding); background:linear-gradient(180deg,rgba(255,253,245,0.95) 0%,rgba(248,250,247,0.95) 100%); position:relative; }
+    .value-stack-section .container { max-width:700px; }
+    .value-stack-section h2 { font-size:clamp(28px,4vw,42px); font-weight:900; color:var(--text-dark); text-align:center; margin-bottom:12px; }
+    .value-stack-section .sub { font-size:17px; color:var(--text-secondary); text-align:center; margin-bottom:52px; line-height:1.6; }
+    .value-stack-box { background:var(--light-card); border:1px solid var(--light-border); border-radius:24px; padding:40px 36px; box-shadow:0 12px 40px rgba(0,0,0,0.06); }
+    .stack-line { display:flex; justify-content:space-between; align-items:center; padding:16px 0; border-bottom:1px solid var(--light-border); }
+    .stack-line:last-of-type { border-bottom:none; }
+    .stack-line .item { font-size:16px; font-weight:600; color:var(--text-dark); display:flex; align-items:center; gap:10px; }
+    .stack-line .item-icon { font-size:20px; }
+    .stack-line .price { font-size:16px; font-weight:700; color:var(--muted); }
+    .stack-total { display:flex; justify-content:space-between; align-items:center; margin-top:28px; padding:24px 28px; background:rgba(0,102,68,0.04); border:1px solid rgba(0,102,68,0.12); border-radius:16px; }
+    .stack-total .label { font-size:14px; font-weight:600; color:var(--muted); text-transform:uppercase; letter-spacing:0.06em; }
+    .stack-total .retail-total { font-size:26px; font-weight:900; color:var(--muted); text-decoration:line-through; }
+    .stack-savings { margin-top:20px; text-align:center; }
+    .stack-savings .your-price-label { font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--muted); margin-bottom:8px; }
+    .stack-savings .your-price { font-size:64px; font-weight:900; color:var(--green-deep); line-height:1; }
+    .stack-savings .your-price sup { font-size:28px; vertical-align:top; margin-top:10px; }
+    .stack-savings .savings-tag { display:inline-block; background:rgba(0,102,68,0.08); border:1px solid rgba(0,102,68,0.2); border-radius:8px; padding:6px 16px; font-size:13px; font-weight:700; color:var(--green-deep); margin-top:10px; }
+
+    /* === TESTIMONIALS / SOCIAL PROOF === */
+    .proof-section { padding:var(--section-padding); background:var(--gradient-deep); color:var(--white); position:relative; overflow:hidden; }
+    .proof-section::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 50% 0%, rgba(238,175,0,0.06), transparent 55%); }
+    .proof-section .container { position:relative; z-index:1; }
+    .proof-section h2 { font-size:clamp(26px,3.5vw,40px); font-weight:900; text-align:center; margin-bottom:48px; }
+    .proof-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; max-width:960px; margin:0 auto 56px; }
+    .proof-card { background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); border-radius:20px; padding:28px 24px; backdrop-filter:blur(12px); transition:transform 0.3s; }
+    .proof-card:hover { transform:translateY(-4px); }
+    .proof-stars { color:var(--gold-mango); font-size:16px; letter-spacing:2px; margin-bottom:14px; }
+    .proof-card blockquote { font-size:14px; line-height:1.7; color:rgba(255,255,255,0.7); font-style:italic; margin-bottom:18px; }
+    .proof-author { font-size:12px; font-weight:700; color:var(--green-sherwood); letter-spacing:0.04em; text-transform:uppercase; }
+    .proof-track-record { display:flex; justify-content:center; gap:32px; flex-wrap:wrap; align-items:center; padding-top:40px; border-top:1px solid rgba(255,255,255,0.08); }
+    .proof-track-item { text-align:center; }
+    .proof-track-num { font-size:32px; font-weight:900; color:var(--white); display:block; }
+    .proof-track-label { font-size:11px; text-transform:uppercase; letter-spacing:0.08em; color:var(--gold-mango); font-weight:700; }
+
+    /* === PROOF TRACK SEQUENTIAL REVEAL === */
+    .proof-seq { opacity:0; transform:translateY(18px); transition:opacity 0.7s cubic-bezier(0.16,1,0.3,1), transform 0.7s cubic-bezier(0.16,1,0.3,1); }
+    .proof-seq.visible { opacity:1; transform:translateY(0); }
+
+    /* Harvard: crimson ↔ white + gold glow pulse */
+    @keyframes harvard-color {
+      0%,100% { color:#A51C30; text-shadow:0 0 18px rgba(238,175,0,0.18),0 0 40px rgba(238,175,0,0.08); }
+      50%      { color:#ffffff; text-shadow:0 0 24px rgba(238,175,0,0.28),0 0 55px rgba(238,175,0,0.12); }
+    }
+    .proof-harvard.animated { animation:harvard-color 3.6s ease-in-out infinite; }
+
+    /* Fidelity: white ↔ Fidelity green + gold glow pulse */
+    @keyframes fidelity-color {
+      0%,100% { color:#ffffff; text-shadow:0 0 18px rgba(238,175,0,0.18),0 0 40px rgba(238,175,0,0.08); }
+      50%      { color:#00A651; text-shadow:0 0 24px rgba(238,175,0,0.28),0 0 55px rgba(238,175,0,0.12); }
+    }
+    .proof-fidelity.animated { animation:fidelity-color 3.6s ease-in-out infinite; }
+
+    /* === HERO PERKS + CTA STAGGER === */
+    @keyframes perk-in { to { opacity:1; transform:translateY(0); } }
+    .hero-perk { opacity:0; transform:translateY(14px); animation:perk-in 0.9s cubic-bezier(0.16,1,0.3,1) forwards; }
+    .hero-perk:nth-child(1) { animation-delay:1.4s; }
+    .hero-perk:nth-child(2) { animation-delay:1.9s; }
+    .hero-perk:nth-child(3) { animation-delay:2.4s; }
+    .hero-cta-group { opacity:0; transform:translateY(10px); animation:perk-in 1.0s cubic-bezier(0.16,1,0.3,1) 3.0s forwards; }
+
+    /* === VIP PASS CORNERS STAMP === */
+    @keyframes corner-stamp { to { opacity:1; transform:scale(1); } }
+    .vip-corner { opacity:0; transform:scale(0); }
+    .vip-corner.stamp { animation:corner-stamp 0.55s cubic-bezier(0.34,1.56,0.64,1) forwards; }
+    /* VIP type-pill spring */
+    .vip-card-type-pill { opacity:0; transform:scale(0.5); transition:opacity 0.5s 0.1s, transform 0.5s 0.1s cubic-bezier(0.34,1.56,0.64,1); }
+    .vip-card-type-pill.spring-in { opacity:1; transform:scale(1); }
+
+    /* === SCOTT BIO PHOTO BLUR DISSOLVE === */
+    .scott-bio-photo img { filter:blur(10px); opacity:0.5; transition:filter 1.4s ease, opacity 1.4s ease; }
+    .scott-blur-active .scott-bio-photo img { filter:blur(0); opacity:1; }
+
+    /* === SCOTT CREDENTIAL BADGES STAGGER === */
+    .scott-cred { opacity:0; transform:translateY(8px); transition:opacity 0.65s, transform 0.65s cubic-bezier(0.16,1,0.3,1); }
+    .scott-cred.visible { opacity:1; transform:translateY(0); }
+
+    /* === TESTIMONIAL STARS ONE-BY-ONE === */
+    .proof-star { display:inline-block; opacity:0; transform:scale(0.4); transition:opacity 0.45s, transform 0.45s cubic-bezier(0.34,1.56,0.64,1); color:var(--gold-mango); }
+    .proof-star.visible { opacity:1; transform:scale(1); }
+
+    /* === BENEFIT LIST ITEMS SEQUENTIAL === */
+    .benefit-list li { opacity:0; transform:translateX(-8px); transition:opacity 0.65s, transform 0.65s cubic-bezier(0.16,1,0.3,1); }
+    .benefit-list li.visible { opacity:1; transform:translateX(0); }
+
+    /* === VALUE STACK SEQUENTIAL === */
+    .stack-seq { opacity:0; transform:translateX(-14px); transition:opacity 0.8s, transform 0.8s cubic-bezier(0.16,1,0.3,1); }
+    .stack-seq.visible { opacity:1; transform:translateX(0); }
+    .stack-total { opacity:0; transform:translateY(10px); transition:opacity 0.95s, transform 0.95s cubic-bezier(0.16,1,0.3,1); }
+    .stack-total.visible { opacity:1; transform:translateY(0); }
+    .stack-savings { opacity:0; transform:scale(0.92); transition:opacity 1.1s, transform 1.1s cubic-bezier(0.34,1.56,0.64,1); }
+    .stack-savings.visible { opacity:1; transform:scale(1); }
+
+    /* === FAQ ITEMS STAGGER === */
+    .faq-item { opacity:0; transform:translateY(12px); transition:opacity 0.7s, transform 0.7s cubic-bezier(0.16,1,0.3,1); }
+    .faq-item.visible { opacity:1; transform:translateY(0); }
+
+    /* === PAYMENT BOX SPRING ENTRANCE === */
+    .payment-box { opacity:0; transform:translateY(28px); transition:opacity 1.1s cubic-bezier(0.16,1,0.3,1), transform 1.1s cubic-bezier(0.16,1,0.3,1); }
+    .payment-box.visible { opacity:1; transform:translateY(0); }
+
+    /* === PAY BUTTON SINGLE INTRO PULSE === */
+    @keyframes pay-intro-pulse { 0%{box-shadow:0 0 0 0 rgba(0,210,115,0)} 50%{box-shadow:0 0 0 14px rgba(0,210,115,0.28)} 100%{box-shadow:0 0 0 0 rgba(0,210,115,0)} }
+    .pay-btn-intro { animation:pay-intro-pulse 1.4s ease-out 0.6s 1 !important; }
+
+    /* === PAYMENT SECTION === */
+    .payment-section { padding:100px 0 80px; background:linear-gradient(135deg,#003D28 0%,#006644 40%,#1A4D2E 100%); position:relative; color:var(--white); }
+    .payment-section::before { content:''; position:absolute; inset:0; background:url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1920&q=80') center/cover no-repeat; opacity:0.04; }
+    .payment-section .container { position:relative; z-index:1; }
+    .payment-section h2 { font-size:clamp(26px,4vw,42px); font-weight:900; text-align:center; margin-bottom:10px; }
+    .payment-section .sub { font-size:17px; color:rgba(255,255,255,0.65); text-align:center; margin-bottom:44px; max-width:560px; margin-left:auto; margin-right:auto; }
+    .payment-box { max-width:540px; margin:0 auto; background:rgba(12,31,20,0.9); border:1px solid rgba(238,175,0,0.25); border-radius:28px; padding:48px 40px; backdrop-filter:blur(16px); animation:register-box-glow 11s ease-in-out infinite; }
+    .payment-summary { background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); border-radius:16px; padding:20px 24px; margin-bottom:28px; display:flex; justify-content:space-between; align-items:center; }
+    .payment-summary .desc { font-size:15px; font-weight:600; color:rgba(255,255,255,0.85); }
+    .payment-summary .desc span { display:block; font-size:12px; font-weight:500; color:rgba(255,255,255,0.45); margin-top:2px; }
+    .payment-summary .amount { text-align:right; }
+    .payment-summary .retail-strike { font-size:13px; color:rgba(255,255,255,0.35); text-decoration:line-through; }
+    .payment-summary .amount-big { font-size:28px; font-weight:900; color:var(--gold-mango); display:block; }
+    .payment-summary .savings-pill { display:inline-block; background:rgba(0,134,90,0.2); border-radius:20px; padding:3px 10px; font-size:11px; font-weight:700; color:#22c55e; margin-top:2px; }
+    .form-group { margin-bottom:16px; text-align:left; }
+    .form-group label { display:block; font-size:12px; font-weight:700; color:rgba(255,255,255,0.4); margin-bottom:6px; text-transform:uppercase; letter-spacing:0.06em; }
+    .form-input { width:100%; padding:16px 20px; border-radius:12px; border:1px solid rgba(255,255,255,0.1); background:rgba(0,0,0,0.3); color:var(--white); font-family:var(--font-body); font-size:16px; transition:border-color 0.2s; outline:none; }
+    .form-input:focus { border-color:var(--gold-mango); box-shadow:0 0 0 3px rgba(238,175,0,0.15); }
+    .form-input::placeholder { color:#444; }
+    .form-row { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+    .card-element-wrap { background:rgba(0,0,0,0.3); border:1px solid rgba(255,255,255,0.1); border-radius:12px; padding:18px 20px; margin-bottom:6px; transition:border-color 0.2s; }
+    .card-element-wrap:focus-within { border-color:var(--gold-mango); box-shadow:0 0 0 3px rgba(238,175,0,0.15); }
+    .card-errors { font-size:13px; color:#f87171; min-height:20px; margin-bottom:8px; }
+    .pay-btn { width:100%; margin-top:4px; font-size:1.1rem; padding:20px; justify-content:center; }
+    .payment-guarantee { display:flex; align-items:center; justify-content:center; gap:8px; margin-top:16px; font-size:13px; color:rgba(255,255,255,0.4); }
+    .payment-guarantee strong { color:rgba(255,255,255,0.65); }
+    .payment-success { display:none; text-align:center; padding:20px; }
+    .payment-success .success-icon { font-size:56px; margin-bottom:16px; }
+    .payment-success h3 { font-size:26px; font-weight:900; color:var(--gold-mango); margin-bottom:10px; }
+    .payment-success p { font-size:15px; color:rgba(255,255,255,0.7); line-height:1.6; }
+
+    /* === FAQ === */
+    .faq-section { padding:var(--section-padding); background:var(--light-bg); }
+    .faq-section h2 { font-size:clamp(24px,3.5vw,36px); font-weight:900; text-align:center; color:var(--text-dark); margin-bottom:48px; }
+    .faq-list { max-width:680px; margin:0 auto; display:flex; flex-direction:column; gap:0; }
+    .faq-item { border-bottom:1px solid var(--light-border); }
+    .faq-q { display:flex; justify-content:space-between; align-items:center; padding:20px 0; cursor:pointer; font-size:15px; font-weight:700; color:var(--text-dark); gap:16px; }
+    .faq-q .chevron { font-size:18px; color:var(--green-deep); transition:transform 0.3s; flex-shrink:0; }
+    .faq-item.open .faq-q .chevron { transform:rotate(180deg); }
+    .faq-a { max-height:0; overflow:hidden; transition:max-height 0.4s ease; }
+    .faq-a-inner { font-size:14px; color:var(--text-secondary); line-height:1.7; padding-bottom:20px; }
+    .faq-item.open .faq-a { max-height:300px; }
+
+    /* === FOOTER === */
+    .footer { background:var(--dark-forest); border-top:1px solid rgba(255,255,255,0.06); padding:40px 0 28px; text-align:center; }
+    .footer .copyright { font-size:13px; color:rgba(255,255,255,0.65); margin-bottom:10px; font-weight:600; }
+    .footer .disclaimer { max-width:600px; margin:0 auto; font-size:12px; color:rgba(255,255,255,0.4); line-height:1.7; }
+    .footer-back { display:inline-flex; align-items:center; gap:6px; font-size:13px; font-weight:600; color:var(--green-sherwood); margin-bottom:20px; transition:color 0.2s; }
+    .footer-back:hover { color:var(--white); }
+
+    /* === VIRTUAL VIP PASS CARD === */
+    .vip-pass-section { padding:80px 0 60px; background:linear-gradient(180deg,#071510 0%,#0A1D12 100%); position:relative; overflow:hidden; text-align:center; }
+    .vip-pass-section::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 50% 60%, rgba(238,175,0,0.07), transparent 65%); pointer-events:none; }
+    .vip-pass-section .container { position:relative; z-index:1; }
+    .vip-pass-intro { font-size:12px; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:rgba(255,255,255,0.35); margin-bottom:14px; }
+    .vip-pass-section h2 { font-size:clamp(26px,3.5vw,38px); font-weight:900; color:var(--white); margin-bottom:8px; }
+    .vip-pass-section .sub { font-size:16px; color:rgba(255,255,255,0.5); margin-bottom:52px; }
+
+    /* The card itself */
+    .vip-pass-card { position:relative; width:100%; max-width:640px; aspect-ratio:1.76/1; margin:0 auto; border-radius:20px; overflow:hidden;
+      background:linear-gradient(135deg,#032E1A 0%,#063B22 30%,#0A2A18 60%,#021910 100%);
+      border:2px solid rgba(238,175,0,0.45);
+      box-shadow:0 32px 80px rgba(0,0,0,0.7),0 0 0 1px rgba(238,175,0,0.2),0 0 60px rgba(238,175,0,0.2),0 0 120px rgba(238,175,0,0.08);
+      animation:vip-card-float 4.8s ease-in-out infinite, vip-card-glow 3.2s ease-in-out infinite;
+    }
+    @keyframes vip-card-float { 0%,100%{transform:translateY(0) rotate(-0.5deg)} 50%{transform:translateY(-12px) rotate(0.5deg)} }
+    @keyframes vip-card-glow {
+      0%,100% { box-shadow:0 32px 80px rgba(0,0,0,0.7),0 0 0 2px rgba(238,175,0,0.35),0 0 40px rgba(238,175,0,0.15),0 0 80px rgba(238,175,0,0.06); }
+      50%      { box-shadow:0 32px 80px rgba(0,0,0,0.7),0 0 0 3px rgba(238,175,0,0.9),0 0 70px rgba(238,175,0,0.55),0 0 140px rgba(238,175,0,0.2); }
+    }
+
+    /* Holographic shimmer overlay */
+    .vip-card-holo { position:absolute; inset:0; pointer-events:none; z-index:2;
+      background:linear-gradient(105deg,transparent 20%,rgba(238,175,0,0.04) 30%,rgba(255,255,255,0.08) 40%,rgba(0,134,90,0.05) 50%,transparent 60%);
+      animation:holo-sweep 4s ease-in-out infinite;
+    }
+    @keyframes holo-sweep { 0%{background-position:200% center} 100%{background-position:-200% center} }
+    .vip-card-holo { background-size:200% 100%; }
+
+    /* Scan line sweep (like book-section-sweep) */
+    .vip-card-sweep { position:absolute; top:0; left:-35%; width:28%; height:100%; pointer-events:none; z-index:3;
+      background:linear-gradient(90deg,transparent 0%,rgba(255,255,255,0.03) 35%,rgba(255,255,255,0.07) 50%,rgba(255,255,255,0.03) 65%,transparent 100%);
+      transform:skewX(-8deg);
+      animation:card-sweep 5s linear infinite;
+    }
+    @keyframes card-sweep { 0%{left:-35%} 100%{left:120%} }
+
+    /* Card inner layout */
+    .vip-card-inner { position:relative; z-index:4; height:100%; display:flex; flex-direction:column; padding:22px 28px 20px; }
+    .vip-card-top { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:auto; }
+    .vip-card-brand { display:flex; flex-direction:column; gap:2px; }
+    .vip-card-summit-name { font-size:9px; font-weight:900; letter-spacing:0.2em; text-transform:uppercase; color:rgba(255,255,255,0.45); }
+    .vip-card-label { font-family:var(--font-accent); font-size:clamp(26px,5vw,42px); font-weight:900; font-style:italic; line-height:1;
+      background:linear-gradient(90deg,#EEAF00,#DDD055,#FDE68A,#DDD055,#EEAF00); background-size:300% 100%;
+      -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+      animation:metallic-shimmer 3s ease-in-out infinite;
+    }
+    .vip-card-subtitle { font-size:9px; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:rgba(255,255,255,0.35); margin-top:3px; }
+    .vip-card-book { width:52px; border-radius:4px; border:1px solid rgba(238,175,0,0.4); box-shadow:0 4px 16px rgba(0,0,0,0.5),0 0 8px rgba(238,175,0,0.3); flex-shrink:0; }
+    .vip-card-divider { height:1px; background:linear-gradient(90deg,transparent,rgba(238,175,0,0.5),transparent); margin:8px 0; }
+    .vip-card-bottom { display:flex; align-items:center; justify-content:space-between; gap:16px; }
+    .vip-card-attendee { display:flex; align-items:center; gap:12px; }
+    .vip-card-photo { width:52px; height:52px; border-radius:50%; border:2px solid rgba(238,175,0,0.6); overflow:hidden; flex-shrink:0; animation:vip-photo-glow 3.5s ease-in-out infinite; }
+    .vip-card-photo img { width:100%; height:100%; object-fit:cover; object-position:top; }
+    @keyframes vip-photo-glow { 0%,100%{box-shadow:0 0 8px rgba(238,175,0,0.3)} 50%{box-shadow:0 0 20px rgba(238,175,0,0.8),0 0 40px rgba(238,175,0,0.3)} }
+    .vip-card-attendee-info { display:flex; flex-direction:column; gap:1px; }
+    .vip-card-attendee-label { font-size:8px; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:rgba(255,255,255,0.35); }
+    .vip-card-attendee-name { font-size:clamp(13px,2vw,17px); font-weight:800; color:var(--white); letter-spacing:-0.02em; }
+    .vip-card-attendee-name.generic { font-size:13px; color:rgba(255,255,255,0.55); font-weight:500; font-style:italic; }
+    .vip-card-right { display:flex; flex-direction:column; align-items:flex-end; gap:4px; }
+    .vip-card-date { font-size:11px; font-weight:700; color:var(--gold-mango); letter-spacing:0.04em; }
+    .vip-card-type-pill { background:rgba(238,175,0,0.12); border:1px solid rgba(238,175,0,0.35); border-radius:20px; padding:4px 10px; font-size:9px; font-weight:800; color:var(--gold-mango); letter-spacing:0.1em; text-transform:uppercase; }
+    .vip-card-id { font-size:8px; font-weight:600; color:rgba(255,255,255,0.2); letter-spacing:0.08em; margin-top:4px; font-family:monospace; }
+    /* Corner accent marks */
+    .vip-corner { position:absolute; width:18px; height:18px; z-index:5; }
+    .vip-corner-tl { top:10px; left:10px; border-top:2px solid rgba(238,175,0,0.6); border-left:2px solid rgba(238,175,0,0.6); border-radius:2px 0 0 0; }
+    .vip-corner-tr { top:10px; right:10px; border-top:2px solid rgba(238,175,0,0.6); border-right:2px solid rgba(238,175,0,0.6); border-radius:0 2px 0 0; }
+    .vip-corner-bl { bottom:10px; left:10px; border-bottom:2px solid rgba(238,175,0,0.6); border-left:2px solid rgba(238,175,0,0.6); border-radius:0 0 0 2px; }
+    .vip-corner-br { bottom:10px; right:10px; border-bottom:2px solid rgba(238,175,0,0.6); border-right:2px solid rgba(238,175,0,0.6); border-radius:0 0 2px 0; }
+
+    /* === IMAGINE SECTION === */
+    .imagine-section { padding:var(--section-padding); background:linear-gradient(135deg,#003D28 0%,#006644 40%,#1A4D2E 100%); color:var(--white); position:relative; overflow:hidden; }
+    .imagine-section::before { content:''; position:absolute; inset:0; background:url('https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1920&q=80') center/cover no-repeat; opacity:0.04; }
+    .imagine-section .container { position:relative; z-index:1; max-width:820px; }
+    .imagine-section h2 { font-size:clamp(28px,4vw,44px); font-weight:900; text-align:center; margin-bottom:12px; }
+    .imagine-section .sub { font-size:17px; color:rgba(255,255,255,0.6); text-align:center; margin-bottom:56px; }
+    .imagine-cards { display:flex; flex-direction:column; gap:32px; }
+    .imagine-card { display:flex; flex-direction:column; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); border-radius:20px; overflow:hidden; backdrop-filter:blur(12px); transition:transform 0.3s,border-color 0.3s; }
+    .imagine-card:hover { transform:translateX(6px); border-color:rgba(238,175,0,0.25); }
+    .imagine-photo { width:100%; height:210px; position:relative; overflow:hidden; flex-shrink:0; }
+    .imagine-photo img { width:100%; height:100%; object-fit:cover; object-position:center; display:block; transition:transform 0.5s ease; }
+    .imagine-card:hover .imagine-photo img { transform:scale(1.04); }
+    .imagine-photo-overlay { position:absolute; inset:0; background:linear-gradient(to bottom, transparent 40%, rgba(6,18,10,0.82) 100%); }
+    .imagine-card-body { display:grid; grid-template-columns:auto 1fr; gap:24px; align-items:start; padding:28px 28px; }
+    .imagine-num { font-family:var(--font-accent); font-size:72px; font-weight:900; font-style:italic; line-height:0.85;
+      background:linear-gradient(90deg,#EEAF00,#DDD055,#FDE68A,#DDD055,#EEAF00); background-size:300% 100%;
+      -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+      animation:metallic-shimmer 3s ease-in-out infinite; flex-shrink:0; width:56px; text-align:center;
+    }
+    .imagine-card:nth-child(2) .imagine-num { animation-delay:-1s; }
+    .imagine-card:nth-child(3) .imagine-num { animation-delay:-2s; }
+    .imagine-body { display:flex; flex-direction:column; gap:6px; }
+    .imagine-label { font-size:11px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--gold-mango); }
+    .imagine-text { font-family:var(--font-accent); font-size:clamp(18px,2.5vw,24px); font-weight:700; font-style:italic; color:var(--white); line-height:1.35; }
+    .imagine-sub { font-size:14px; color:rgba(255,255,255,0.55); line-height:1.6; margin-top:4px; }
+
+    /* === SCOTT BIO CARD === */
+    .scott-bio-section { padding:80px 0; background:linear-gradient(180deg,#071510 0%,#0C2015 100%); color:var(--white); position:relative; overflow:hidden; }
+    .scott-bio-section::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 30% 50%,rgba(0,102,68,0.15),transparent 65%); }
+    .scott-bio-section .container { position:relative; z-index:1; }
+    .scott-bio-card { display:grid; grid-template-columns:280px 1fr; gap:56px; align-items:center; max-width:880px; margin:0 auto; background:rgba(255,255,255,0.03); border:1px solid rgba(238,175,0,0.18); border-radius:28px; padding:48px 44px; backdrop-filter:blur(16px); }
+    .scott-bio-photo { position:relative; }
+    .scott-bio-photo img { width:100%; border-radius:16px; border:2px solid rgba(238,175,0,0.3); box-shadow:0 24px 64px rgba(0,0,0,0.5),0 0 40px rgba(238,175,0,0.15); animation:hero-photo-pulse 3.2s ease-in-out infinite; }
+    @keyframes hero-photo-pulse {
+      0%,100% { box-shadow:0 24px 64px rgba(0,0,0,0.4),0 0 0 2px rgba(238,175,0,0.3),0 0 30px rgba(238,175,0,0.2); }
+      50%      { box-shadow:0 24px 64px rgba(0,0,0,0.4),0 0 0 3px rgba(238,175,0,0.85),0 0 70px rgba(238,175,0,0.5),0 0 130px rgba(238,175,0,0.15); }
+    }
+    .scott-bio-text { display:flex; flex-direction:column; gap:0; }
+    .scott-bio-eyebrow { font-size:11px; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:var(--gold-mango); margin-bottom:12px; }
+    .scott-bio-text h2 { font-size:clamp(22px,3vw,34px); font-weight:900; margin-bottom:20px; line-height:1.1; }
+    .scott-bio-text p { font-size:15px; line-height:1.75; color:rgba(255,255,255,0.72); margin-bottom:14px; }
+    .scott-bio-text p strong { color:var(--white); }
+    .scott-creds { display:flex; gap:10px; flex-wrap:wrap; margin-top:20px; }
+    .scott-cred { background:rgba(238,175,0,0.07); border:1px solid rgba(238,175,0,0.2); border-radius:8px; padding:7px 14px; font-size:12px; font-weight:700; color:var(--gold-mango); }
+    @media(max-width:900px) {
+      .scott-bio-card { grid-template-columns:1fr; max-width:480px; text-align:center; }
+      .scott-creds { justify-content:center; }
+      .imagine-card-body { grid-template-columns:1fr; }
+      .imagine-num { font-size:48px; width:auto; }
+      .imagine-photo { height:170px; }
+    }
+
+    /* === TESTIMONIAL PHOTOS === */
+    @keyframes leader-glow { 0%,100%{box-shadow:0 0 8px rgba(0,135,90,0.3),0 0 16px rgba(0,135,90,0.15);} 50%{box-shadow:0 0 22px rgba(0,135,90,0.85),0 0 44px rgba(0,135,90,0.45),0 0 70px rgba(0,135,90,0.2);} }
+    .proof-card-photo { width:72px; height:72px; border-radius:50%; object-fit:cover; object-position:top; border:2px solid rgba(238,175,0,0.55); margin:0 auto 16px; display:block; animation:leader-glow 3.5s ease-in-out infinite; }
+    .proof-card { text-align:center; }
+    .proof-card blockquote { text-align:left; }
+    .proof-author-wrap { display:flex; align-items:center; gap:10px; margin-top:14px; }
+    .proof-author-wrap img { width:40px; height:40px; border-radius:50%; object-fit:cover; object-position:top; border:2px solid rgba(238,175,0,0.4); flex-shrink:0; }
+    .proof-author-text { text-align:left; }
+    .proof-author-name { font-size:13px; font-weight:700; color:var(--white); }
+    .proof-author-role { font-size:11px; color:var(--green-sherwood); margin-top:1px; }
+
+    /* === RESPONSIVE === */
+    @media(max-width:900px) {
+      .benefit-cards { grid-template-columns:1fr; max-width:500px; }
+      .proof-grid { grid-template-columns:1fr; max-width:420px; }
+      .form-row { grid-template-columns:1fr; }
+    }
+    @media(max-width:640px) {
+      .hero { padding:60px 0 60px; }
+      .hero h1 { font-size:34px; }
+      .cd-num { font-size:38px; }
+      .cd-sep { font-size:28px; }
+      .hero-perks { flex-direction:column; align-items:center; }
+      .value-stack-box { padding:28px 20px; }
+      .payment-box { padding:32px 22px; }
+      .payment-summary { flex-direction:column; gap:12px; text-align:center; }
+      .payment-summary .amount { text-align:center; }
+      .benefit-card { padding:28px 24px; }
+      .proof-track-record { gap:20px; }
+    }
+
+    /* ============================================================
+       VIP ENTRY EXPERIENCE — LOADING OVERLAY
+    ============================================================ */
+    #vip-loading-overlay {
+      position: fixed; inset: 0; z-index: 99999;
+      background: rgba(3,13,8,0.97);
+      display: flex; align-items: center; justify-content: center;
+      opacity: 1; transition: opacity 0.5s ease;
+    }
+    #vip-loading-overlay.fade-out { opacity: 0; pointer-events: none; }
+    #vlo-inner {
+      text-align: center; max-width: 340px; padding: 0 24px;
+    }
+    #vlo-icon {
+      font-size: 52px; margin-bottom: 20px;
+      animation: vlo-trophy-float 1.8s ease-in-out infinite;
+      filter: drop-shadow(0 0 18px rgba(238,175,0,0.55));
+    }
+    @keyframes vlo-trophy-float {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+    #vlo-title {
+      font-family: var(--font-accent); font-size: 22px; font-weight: 900;
+      color: #fff; line-height: 1.25; margin-bottom: 28px;
+      letter-spacing: -0.01em;
+    }
+    #vlo-bar-wrap {
+      width: 100%; height: 5px; background: rgba(238,175,0,0.15);
+      border-radius: 10px; overflow: hidden; margin-bottom: 16px;
+    }
+    #vlo-bar {
+      height: 100%; width: 0;
+      background: linear-gradient(90deg, #AD9001, #EEAF00, #FFF8E1, #EEAF00);
+      background-size: 200% 100%;
+      border-radius: 10px;
+      animation: vlo-fill 2.3s cubic-bezier(0.4,0,0.2,1) forwards,
+                 vlo-shimmer 1.4s linear infinite;
+    }
+    @keyframes vlo-fill { from { width: 0; } to { width: 100%; } }
+    @keyframes vlo-shimmer {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+    #vlo-sub {
+      font-size: 12px; color: rgba(255,255,255,0.38);
+      letter-spacing: 0.05em; text-transform: uppercase;
+    }
+
+    /* ============================================================
+       VIP ENTRY EXPERIENCE — HEADLINE WORD REVEAL
+    ============================================================ */
+    .shimmer-gold-entry { opacity: 0; transform: translateY(12px); transition: none; }
+    .shimmer-gold-entry.revealed {
+      opacity: 1; transform: translateY(0);
+      transition: opacity 0.55s ease, transform 0.55s cubic-bezier(0.16,1,0.3,1);
+    }
+    .word-reveal {
+      display: inline-block;
+      opacity: 0; transform: translateY(22px);
+      transition: none;
+    }
+    .word-reveal.revealed {
+      opacity: 1; transform: translateY(0);
+      transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.16,1,0.3,1);
+    }
+    @keyframes headline-pulse-once {
+      0%   { transform: scale(1);    text-shadow: 0 0 0px rgba(238,175,0,0); }
+      30%  { transform: scale(1.035); text-shadow: 0 0 28px rgba(238,175,0,0.75), 0 0 60px rgba(238,175,0,0.35); }
+      65%  { transform: scale(1.018); text-shadow: 0 0 14px rgba(238,175,0,0.5); }
+      100% { transform: scale(1);    text-shadow: 0 0 0px rgba(238,175,0,0); }
+    }
+    .line-sub.pulse-once { animation: headline-pulse-once 1s cubic-bezier(0.4,0,0.2,1) forwards; }
+
+    /* ============================================================
+       VIP ENTRY EXPERIENCE — FIREWORKS CANVAS
+    ============================================================ */
+    #fireworks-canvas {
+      position: fixed; inset: 0; z-index: 9000;
+      pointer-events: none; opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    #fireworks-canvas.active { opacity: 1; }
+
+    /* ============================================================
+       BENEFIT #2 — SMALL HEADSHOT AVATAR
+    ============================================================ */
+    .b2-avatar-wrap {
+      position: absolute; top: 18px; right: 18px;
+      width: 58px; height: 58px; border-radius: 50%;
+      overflow: hidden;
+      border: 2.5px solid rgba(238,175,0,0.55);
+      box-shadow: 0 0 0 4px rgba(238,175,0,0.1), 0 4px 16px rgba(0,0,0,0.5);
+      flex-shrink: 0;
+    }
+    .b2-avatar-wrap img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; }
+  </style>
+</head>
+<body>
+  <div class="noise-overlay"></div>
+
+  <!-- URGENCY BAR -->
+  <div class="urgency-bar">
+    <div class="inner">
+      <span class="dot"></span>
+      <strong>This VIP offer only exists this week — it will never be offered again at this price.</strong>
+      <span class="spots">🔥 Only 47 Spots Left</span>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="mesh-blob mesh-blob-1"></div>
+    <div class="mesh-blob mesh-blob-2"></div>
+    <div class="mesh-blob mesh-blob-3"></div>
+
+    <div class="container">
+      <div class="hero-content">
+        <span class="hero-masthead">Executive AI Advantage Summit — June 18–20, 2026</span>
+
+        <div class="hero-eyebrow">
+          <span class="live-dot"></span>
+          You're registered — One final upgrade available
+        </div>
+
+        <h1>
+          <span class="shimmer-gold shimmer-gold-entry">You're In.</span>
+          <span class="line-sub" id="elevateTagline">Now Elevate Your Experience.</span>
+        </h1>
+
+        <div class="hero-name-tag" id="heroNameTag" style="display:none;">
+          Welcome back, <span class="first-name" id="heroFirstName"></span> — your spot is confirmed.
+        </div>
+
+        <div class="cd-row">
+          <div class="cd-unit">
+            <span class="cd-num" id="cd-days">--</span>
+            <span class="cd-label">Days</span>
+          </div>
+          <span class="cd-sep">:</span>
+          <div class="cd-unit">
+            <span class="cd-num" id="cd-hours">--</span>
+            <span class="cd-label">Hours</span>
+          </div>
+          <span class="cd-sep">:</span>
+          <div class="cd-unit">
+            <span class="cd-num" id="cd-min">--</span>
+            <span class="cd-label">Min</span>
+          </div>
+          <span class="cd-sep">:</span>
+          <div class="cd-unit">
+            <span class="cd-num" id="cd-sec">--</span>
+            <span class="cd-label">Sec</span>
+          </div>
+        </div>
+        <div class="cd-label-row">Until Summit Begins — VIP Offer Closes at Kickoff</div>
+
+        <div class="hero-perks">
+          <div class="hero-perk"><span class="check">✦</span> Autographed Book — $49 Value</div>
+          <div class="hero-perk"><span class="check">✦</span> Implementation Workshop — $99 Value</div>
+          <div class="hero-perk"><span class="check">✦</span> Today Only — $49</div>
+        </div>
+
+        <div class="hero-cta-group">
+          <a href="#payment" class="cta-btn cta-btn-gold pulse-gold-border" style="font-size:1.1rem;padding:20px 48px;">
+            🏆 Add VIP Pass — $49
+          </a>
+          <span class="hero-cta-note">🔒 Secured by Stripe · 256-bit SSL · Instant confirmation</span>
+        </div>
+
+        <div class="scroll-indicator">
+          <span>See what's included</span>
+          <div class="scroll-arrow"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIRTUAL VIP PASS / CERTIFICATION BADGE -->
+  <section class="vip-pass-section">
+    <div class="container">
+      <div class="vip-pass-intro fade-in">🏆 Your Digital Credential</div>
+      <h2 class="fade-in">Your <span class="shimmer-gold">VIP Pass</span> — Personalized &amp; Official</h2>
+      <p class="sub fade-in">This is what you unlock today. A verified VIP credential, tied to your name.</p>
+
+      <div class="vip-pass-card fade-in">
+        <!-- Corner accent marks -->
+        <div class="vip-corner vip-corner-tl"></div>
+        <div class="vip-corner vip-corner-tr"></div>
+        <div class="vip-corner vip-corner-bl"></div>
+        <div class="vip-corner vip-corner-br"></div>
+
+        <!-- Holographic / sweep overlays -->
+        <div class="vip-card-holo"></div>
+        <div class="vip-card-sweep"></div>
+
+        <div class="vip-card-inner">
+          <!-- TOP ROW -->
+          <div class="vip-card-top">
+            <div class="vip-card-brand">
+              <span class="vip-card-summit-name">Executive AI Advantage Summit · June 18–20, 2026</span>
+              <span class="vip-card-label">VIP PASS</span>
+              <span class="vip-card-subtitle">Virtual · Official Attendee Credential</span>
+            </div>
+            <img src="book-cover.png" alt="Storyselling in the Age of AI" class="vip-card-book" />
+          </div>
+
+          <div class="vip-card-divider"></div>
+
+          <!-- BOTTOM ROW -->
+          <div class="vip-card-bottom">
+            <div class="vip-card-attendee">
+              <div class="vip-card-photo">
+                <img src="headshot-formal.png" alt="Scott Magnacca" />
+              </div>
+              <div class="vip-card-attendee-info">
+                <span class="vip-card-attendee-label">Presented by</span>
+                <span class="vip-card-attendee-name">Scott Magnacca</span>
+                <span style="font-size:9px;color:rgba(255,255,255,0.3);margin-top:2px;letter-spacing:0.06em;">Author · Speaker · AI Strategist</span>
+              </div>
+            </div>
+            <div style="width:1px;height:44px;background:rgba(238,175,0,0.15);"></div>
+            <div class="vip-card-attendee" style="flex-direction:column;align-items:flex-start;gap:2px;">
+              <span class="vip-card-attendee-label">VIP Member</span>
+              <span class="vip-card-attendee-name" id="passHolderName"><span class="vip-card-attendee-name generic">Your Name Here</span></span>
+            </div>
+            <div class="vip-card-right">
+              <span class="vip-card-type-pill">VIP · Full Access</span>
+              <span class="vip-card-date">June 18–20, 2026</span>
+              <span class="vip-card-id" id="passId">PASS-2026-VIP-XXXXXX</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="fade-in" style="margin-top:28px;font-size:13px;color:rgba(255,255,255,0.3);letter-spacing:0.04em;">Your personalized pass is generated after purchase and emailed instantly.</p>
+    </div>
+  </section>
+
+  <!-- VIDEO SECTION -->
+  <section class="video-section">
+    <div class="container">
+      <div class="video-eyebrow fade-in">🎥 A Personal Message From Scott</div>
+      <h2 class="fade-in">Why This VIP Pass <span class="shimmer-gold">Changes Everything</span></h2>
+      <p class="subtitle fade-in">Scott recorded this specifically for registrants — watch before the offer closes.</p>
+      <div class="video-wrapper fade-in">
+        <iframe
+          src="https://www.youtube.com/embed/-inyT2amH7w?rel=0&modestbranding=1"
+          title="A Personal Message From Scott Magnacca"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFIT CARDS -->
+  <section class="benefits-section" id="benefits">
+    <div class="container">
+      <div style="text-align:center;">
+        <div class="section-eyebrow fade-in">📦 What's Inside Your VIP Pass</div>
+      </div>
+      <h2 class="fade-in">Two Exclusive Additions.<br><span class="shimmer-gold">Zero Fluff.</span></h2>
+      <p class="sub fade-in">Both are built to move you from inspiration to implementation — fast.</p>
+
+      <div class="benefit-cards">
+
+        <!-- CARD 1: Autographed Book -->
+        <div class="benefit-card gold-card slide-up">
+          <div class="benefit-tag">📖 Benefit #1</div>
+          <div class="benefit-book-img">
+            <img src="book-cover.png" alt="Storyselling in the Age of AI — book cover" />
+          </div>
+          <h3>Autographed Copy of<br><em>Storyselling in the Age of AI</em></h3>
+          <p>A personally signed limited edition sent directly to you. This isn't a PDF — it's a physical artifact from the summit, signed by Scott and shipped to your door.</p>
+          <ul class="benefit-list">
+            <li>The exact framework 4,127+ advisors use to close clients with AI-powered storytelling</li>
+            <li>Chapters on ROI-first positioning, decision intelligence, and hybrid advisor identity</li>
+            <li>Harvard Business Review-referenced research on what clients actually respond to in 2026</li>
+            <li>Personally inscribed — a signed copy you'll return to again and again</li>
+          </ul>
+          <div class="benefit-value">
+            <span class="retail">Retail: $49</span>
+            <span style="color:rgba(255,255,255,0.3);">→</span>
+            <span class="included">Included in VIP Pass</span>
+          </div>
+        </div>
+
+        <!-- CARD 2: Implementation Workshop -->
+        <div class="benefit-card slide-up" style="transition-delay:0.15s;position:relative;">
+          <div class="benefit-tag green-tag">⚡ Benefit #2</div>
+          <div class="b2-avatar-wrap">
+            <img src="scott-bio.png" alt="Scott Magnacca" />
+          </div>
+          <h3>Post-Summit Implementation Workshop</h3>
+          <p>A dedicated live session the week after the summit — designed to turn what you learned into an actual 30-day action plan with accountability built in.</p>
+          <ul class="benefit-list">
+            <li>Live Zoom with Scott and a small group of VIP attendees only — no general audience</li>
+            <li>Walk away with a personalized 30-day AI integration roadmap for your practice</li>
+            <li>Peer cohort of advisors and executives at your exact level — not beginners</li>
+            <li>Q&amp;A deep-dive: bring your hardest AI implementation challenges</li>
+            <li>Recording included if you can't attend live</li>
+          </ul>
+          <div class="benefit-value">
+            <span class="retail">Retail: $99</span>
+            <span style="color:rgba(255,255,255,0.3);">→</span>
+            <span class="included">Included in VIP Pass</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SCOTT BIO CARD -->
+  <section class="scott-bio-section">
+    <div class="container">
+      <div class="scott-bio-card fade-in">
+        <div class="scott-bio-photo">
+          <img src="scott-bio.png" alt="Scott Magnacca" />
+        </div>
+        <div class="scott-bio-text">
+          <div class="scott-bio-eyebrow">Your Guide — Scott Magnacca</div>
+          <h2>20 Years Distilled Into 3 Days.<br><span class="shimmer-gold">You Get the Shortcut.</span></h2>
+          <p>Scott has trained <strong>4,127+ financial advisors and executives</strong> across Fidelity Investments, major wirehouses, and independent practices — teaching them to close more business by telling better stories. Now he's applied that same framework to AI.</p>
+          <p>His book <em>Storyselling in the Age of AI</em> is referenced in <strong>Harvard Business Review's 2026 research</strong> on what clients actually respond to. This isn't theory. It's a battle-tested system, refined across hundreds of stages and thousands of client conversations.</p>
+          <p><strong>AI won't replace financial advisors. But an advisor who uses AI effectively will replace those who don't.</strong> The VIP Pass is how you make sure you're on the right side of that line.</p>
+          <div class="scott-creds">
+            <span class="scott-cred">4 Books Published</span>
+            <span class="scott-cred">Fidelity Investments</span>
+            <span class="scott-cred">Harvard Business Review</span>
+            <span class="scott-cred">4,127+ Advisors Trained</span>
+            <span class="scott-cred">20+ Years Speaking</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IMAGINE SECTION -->
+  <section class="imagine-section">
+    <div class="container">
+      <div class="fade-in" style="text-align:center;margin-bottom:0;">
+        <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(238,175,0,0.1);border:1px solid rgba(238,175,0,0.25);border-radius:30px;padding:8px 20px;font-size:12px;font-weight:700;color:var(--gold-mango);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:20px;">✦ Picture This</div>
+      </div>
+      <h2 class="fade-in">Imagine <span class="shimmer-gold">What's Possible</span></h2>
+      <p class="sub fade-in">Three things that happen when you go VIP.</p>
+
+      <div class="imagine-cards">
+        <div class="imagine-card slide-up">
+          <div class="imagine-photo">
+            <img src="imagine-delivery.jpg" alt="Delivery person handing a package to a woman at her door" />
+            <div class="imagine-photo-overlay"></div>
+          </div>
+          <div class="imagine-card-body">
+            <div class="imagine-num">1</div>
+            <div class="imagine-body">
+              <span class="imagine-label">The Book Arrives</span>
+              <div class="imagine-text">"Imagine opening your mailbox to find a limited edition copy signed personally by Scott — your name inscribed inside the front cover."</div>
+              <div class="imagine-sub">A physical artifact from this summit, in your hands. Not a PDF. Not a download link. A book that sits on your desk and reminds every client who visits that you take your craft seriously.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="imagine-card slide-up" style="transition-delay:0.15s;">
+          <div class="imagine-photo">
+            <img src="imagine-zoom.jpg" alt="Professional on a video call with a small group of colleagues" />
+            <div class="imagine-photo-overlay"></div>
+          </div>
+          <div class="imagine-card-body">
+            <div class="imagine-num">2</div>
+            <div class="imagine-body">
+              <span class="imagine-label">The Workshop Week</span>
+              <div class="imagine-text">"Imagine sitting in a private Zoom with 12 other advisors at your exact level — and walking out with a 30-day AI roadmap built specifically for your practice."</div>
+              <div class="imagine-sub">No beginners. No theory. Scott stays on until every person in the room has a concrete next step. This is the accountability layer the summit alone can't give you.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="imagine-card slide-up" style="transition-delay:0.30s;">
+          <div class="imagine-photo">
+            <img src="imagine-advisor.jpg" alt="Financial advisor in a confident client consultation meeting" />
+            <div class="imagine-photo-overlay"></div>
+          </div>
+          <div class="imagine-card-body">
+            <div class="imagine-num">3</div>
+            <div class="imagine-body">
+              <span class="imagine-label">The First Client Meeting After</span>
+              <div class="imagine-text">"Imagine walking into your next client conversation with an AI-powered storyselling system, a 30-day implementation plan, and the confidence that comes from having done the work."</div>
+              <div class="imagine-sub">While other advisors are still figuring out ChatGPT, you've already deployed it. That's the compounding advantage of going VIP — and it starts this week, for $49.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align:center;margin-top:52px;" class="fade-in">
+        <a href="#payment" class="cta-btn cta-btn-gold pulse-gold-border" style="font-size:1.1rem;padding:20px 52px;">
+          🏆 I'm Ready — Add VIP Pass for $49
+        </a>
+        <p style="margin-top:14px;font-size:13px;color:rgba(255,255,255,0.35);">This offer closes when the summit begins. It will not be available again at this price.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUE STACK RECAP -->
+  <section class="value-stack-section">
+    <div class="container">
+      <div style="text-align:center;">
+        <div class="eyebrow-light fade-in" style="display:inline-flex;align-items:center;gap:8px;background:rgba(0,102,68,0.08);border:1px solid rgba(0,102,68,0.2);border-radius:30px;padding:8px 20px;font-size:12px;font-weight:700;color:var(--green-deep);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:20px;">💎 The Value Breakdown</div>
+      </div>
+      <h2 class="fade-in">$148 of Value.<br><span class="grad-text">For $49.</span></h2>
+      <p class="sub fade-in" style="color:var(--text-secondary);">This is a one-time offer, available only because you just registered. It closes when the summit begins.</p>
+
+      <div class="value-stack-box fade-in" id="valueStackBox">
+        <div class="stack-line stack-seq">
+          <div class="item"><span class="item-icon">📖</span> Autographed limited edition: <em>Storyselling in the Age of AI</em></div>
+          <div class="price">$49</div>
+        </div>
+        <div class="stack-line stack-seq">
+          <div class="item"><span class="item-icon">🛠️</span> Post-Summit VIP Implementation Workshop (live)</div>
+          <div class="price">$99</div>
+        </div>
+        <div class="stack-line stack-seq">
+          <div class="item"><span class="item-icon">✉️</span> Personal inscription from Scott + shipping</div>
+          <div class="price">Included</div>
+        </div>
+        <div class="stack-total">
+          <div>
+            <div class="label">Total Retail Value</div>
+            <div class="retail-total">$148</div>
+          </div>
+          <div style="width:1px;height:48px;background:var(--light-border);"></div>
+          <div style="text-align:right;">
+            <div class="label">Your Investment Today</div>
+            <div style="font-size:28px;font-weight:900;color:var(--green-deep);">$49</div>
+          </div>
+        </div>
+        <div class="stack-savings">
+          <div class="your-price-label">You Pay</div>
+          <div class="your-price"><sup>$</sup>49</div>
+          <div class="savings-tag">You save $99 — 67% off retail value</div>
+        </div>
+        <div style="text-align:center;margin-top:28px;">
+          <a href="#payment" class="cta-btn cta-green-glow" style="font-size:1rem;padding:18px 44px;">
+            🏆 Claim Your VIP Pass — $49
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOCIAL PROOF -->
+  <section class="proof-section">
+    <div class="container">
+      <h2 class="fade-in">What <span class="shimmer-gold">Past Attendees</span> Say</h2>
+
+      <div class="proof-grid">
+        <div class="proof-card slide-up">
+          <img src="testimonial-new-woman.jpg" alt="Karen L." class="proof-card-photo" />
+          <div class="proof-stars"><span class="proof-star">★</span><span class="proof-star">★</span><span class="proof-star">★</span><span class="proof-star">★</span><span class="proof-star">★</span></div>
+          <blockquote>"Scott's framework completely changed how I talk to clients about AI. I closed three new engagements in the month after his program using the Storyselling approach. The ROI was immediate."</blockquote>
+          <div class="proof-author-wrap">
+            <div class="proof-author-text">
+              <div class="proof-author-name">Karen L.</div>
+              <div class="proof-author-role">Senior Wealth Advisor · Boston</div>
+            </div>
+          </div>
+        </div>
+        <div class="proof-card slide-up" style="transition-delay:0.12s;">
+          <img src="testimonial-new-man1.jpg" alt="Marcus T." class="proof-card-photo" />
+          <div class="proof-stars"><span class="proof-star">★</span><span class="proof-star">★</span><span class="proof-star">★</span><span class="proof-star">★</span><span class="proof-star">★</span></div>
+          <blockquote>"I've been to dozens of sales and AI conferences. This is the first one that actually connected the two. The implementation workshop afterward was the piece that made everything click."</blockquote>
+          <div class="proof-author-wrap">
+            <div class="proof-author-text">
+              <div class="proof-author-name">Marcus T.</div>
+              <div class="proof-author-role">Wealth Manager · Atlanta</div>
+            </div>
+          </div>
+        </div>
+        <div class="proof-card slide-up" style="transition-delay:0.24s;">
+          <img src="testimonial-new-man2.jpg" alt="Daniel C." class="proof-card-photo" />
+          <div class="proof-stars"><span class="proof-star">★</span><span class="proof-star">★</span><span class="proof-star">★</span><span class="proof-star">★</span><span class="proof-star">★</span></div>
+          <blockquote>"The signed book alone is worth the VIP pass. But honestly the workshop is where the real value is — Scott spends real time with you on YOUR practice. Invaluable."</blockquote>
+          <div class="proof-author-wrap">
+            <div class="proof-author-text">
+              <div class="proof-author-name">Daniel C.</div>
+              <div class="proof-author-role">Portfolio Manager · San Francisco</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="proof-track-record" id="proofTrack">
+        <div class="proof-track-item proof-seq" data-seq="0">
+          <span class="proof-track-num" id="countUpNum">0+</span>
+          <span class="proof-track-label">Advisors Trained</span>
+        </div>
+        <div class="proof-track-divider proof-seq" data-seq="1" style="width:1px;height:40px;background:rgba(255,255,255,0.08);"></div>
+        <div class="proof-track-item proof-seq" data-seq="2">
+          <span class="proof-track-num">4 Books</span>
+          <span class="proof-track-label">In Print</span>
+        </div>
+        <div class="proof-track-divider proof-seq" data-seq="3" style="width:1px;height:40px;background:rgba(255,255,255,0.08);"></div>
+        <div class="proof-track-item proof-seq" data-seq="4">
+          <span class="proof-track-num proof-harvard" id="harvardWord">Harvard</span>
+          <span class="proof-track-label">University Trained</span>
+        </div>
+        <div class="proof-track-divider proof-seq" data-seq="5" style="width:1px;height:40px;background:rgba(255,255,255,0.08);"></div>
+        <div class="proof-track-item proof-seq" data-seq="6">
+          <span class="proof-track-num proof-fidelity" id="fidelityWord">Fidelity</span>
+          <span class="proof-track-label">Investments</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAYMENT SECTION -->
+  <section class="payment-section" id="payment">
+    <div class="container">
+      <h2 class="fade-in">Secure Your <span class="shimmer-gold">VIP Pass</span></h2>
+      <p class="sub fade-in">One-time payment. No subscription. No recurring charges. This offer closes when the summit begins — it will not be offered again at this price.</p>
+
+      <div class="payment-box">
+        <div class="payment-summary">
+          <div class="desc">
+            Executive AI Advantage Summit — VIP Pass
+            <span>Autographed Book + Implementation Workshop</span>
+          </div>
+          <div class="amount">
+            <span class="retail-strike">$148 value</span>
+            <span class="amount-big">$49</span>
+            <span class="savings-pill">Save $99</span>
+          </div>
+        </div>
+
+        <div id="paymentForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="pay-fname">First Name</label>
+              <input type="text" id="pay-fname" class="form-input" placeholder="First name" autocomplete="given-name" />
+            </div>
+            <div class="form-group">
+              <label for="pay-lname">Last Name</label>
+              <input type="text" id="pay-lname" class="form-input" placeholder="Last name" autocomplete="family-name" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="pay-email">Email Address</label>
+            <input type="email" id="pay-email" class="form-input" placeholder="you@example.com" autocomplete="email" />
+          </div>
+          <div class="form-group">
+            <label>Card Details</label>
+            <div class="card-element-wrap">
+              <div id="card-element"></div>
+            </div>
+            <div class="card-errors" id="card-errors"></div>
+          </div>
+          <button class="cta-btn cta-btn-gold pay-btn pulse-cta" id="payBtn">
+            🔐 Complete VIP Purchase — $49
+          </button>
+          <div class="payment-guarantee">
+            🔒 <strong>256-bit SSL encryption</strong> · Powered by Stripe · Receipt emailed instantly
+          </div>
+        </div>
+
+        <div class="payment-success" id="paymentSuccess">
+          <div class="success-icon">🎉</div>
+          <h3>Welcome to VIP!</h3>
+          <p>Your VIP Pass is confirmed. Check your email for your receipt and next steps — the book and workshop details are on their way.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section">
+    <div class="container">
+      <h2 class="fade-in">Questions? <span class="grad-text">Answered.</span></h2>
+
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-q">
+            When will I receive the autographed book?
+            <span class="chevron">▾</span>
+          </div>
+          <div class="faq-a">
+            <div class="faq-a-inner">Your book will ship within 5–7 business days after the summit. You'll receive a shipping confirmation email with tracking. We ship anywhere in the US and Canada; international shipping may take 2–3 weeks.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">
+            When is the Implementation Workshop?
+            <span class="chevron">▾</span>
+          </div>
+          <div class="faq-a">
+            <div class="faq-a-inner">The workshop is held the week following the summit — typically 7–10 days after. You'll receive a calendar invite with the Zoom link immediately after purchase. A recording is included if you can't attend live.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">
+            Is this a recurring charge?
+            <span class="chevron">▾</span>
+          </div>
+          <div class="faq-a">
+            <div class="faq-a-inner">No. This is a single one-time payment of $49. There are no subscriptions, no auto-renewals, and no hidden fees. You'll be charged once and receive everything included in the VIP Pass.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">
+            What if I already purchased the $9.99 Fast-Track upgrade?
+            <span class="chevron">▾</span>
+          </div>
+          <div class="faq-a">
+            <div class="faq-a-inner">The VIP Pass is a separate, additional offer. The Fast-Track upgrade gave you digital access and priority Q&amp;A. The VIP Pass adds the physical autographed book and the live post-summit implementation workshop — two things you can't get anywhere else.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">
+            What is your refund policy?
+            <span class="chevron">▾</span>
+          </div>
+          <div class="faq-a">
+            <div class="faq-a-inner">Because the workshop is a live event and the book is a physical product, all VIP Pass sales are final. If you have any concerns after purchase, please reach out to our team directly and we'll make it right.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">
+            How do I know this is secure?
+            <span class="chevron">▾</span>
+          </div>
+          <div class="faq-a">
+            <div class="faq-a-inner">Payment is processed by Stripe — the same platform trusted by Amazon, Google, and millions of businesses worldwide. We never see or store your card details. Your transaction is protected by 256-bit SSL encryption.</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align:center;margin-top:48px;" class="fade-in">
+        <a href="#payment" class="cta-btn cta-btn-gold" style="font-size:1rem;padding:18px 44px;">
+          🏆 Get Your VIP Pass — $49
+        </a>
+        <p style="margin-top:14px;font-size:13px;color:var(--muted);">Questions? Email <a href="mailto:scott@scottmagnacca.com" style="color:var(--green-deep);font-weight:600;">scott@scottmagnacca.com</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <a href="index.html" class="footer-back">← Back to Summit Home</a>
+      <div class="copyright">© 2026 Scott Magnacca · Executive AI Advantage Summit</div>
+      <div class="disclaimer">This VIP Pass is available exclusively to registered attendees. Physical book ships to US and Canada addresses. Implementation Workshop date confirmed via email post-purchase. All sales final.</div>
+    </div>
+  </footer>
+
+  <!-- VIP ENTRY: Fireworks canvas -->
+  <canvas id="fireworks-canvas"></canvas>
+
+  <!-- VIP ENTRY: Loading overlay -->
+  <div id="vip-loading-overlay">
+    <div id="vlo-inner">
+      <div id="vlo-icon">🏆</div>
+      <div id="vlo-title">Building Your Custom<br>VIP Experience</div>
+      <div id="vlo-bar-wrap"><div id="vlo-bar"></div></div>
+      <div id="vlo-sub">Preparing your exclusive access…</div>
+    </div>
+  </div>
+
+  <script>
+    // === STRIPE SETUP ===
+    const STRIPE_PK = 'pk_live_51TDtE2GdhGesPfdVUX07cjQWoBSKh8W0b2S1hmWaUalguV2Hmm35eLKkVEoXyNYlk49MqAIiS0lw9t9vsaP7gWSy003kQcspIX';
+    let stripe, cardElement;
+
+    function initStripe() {
+      if (stripe) return;
+      stripe = window.Stripe(STRIPE_PK);
+      const elements = stripe.elements({
+        appearance: {
+          theme: 'night',
+          variables: {
+            colorPrimary: '#EEAF00',
+            colorBackground: '#0C1F14',
+            colorText: '#F9FAFB',
+            borderRadius: '8px',
+            fontFamily: 'Inter, system-ui, sans-serif'
+          }
+        }
+      });
+      cardElement = elements.create('card', { hidePostalCode: true });
+      cardElement.mount('#card-element');
+      cardElement.on('change', function(event) {
+        const el = document.getElementById('card-errors');
+        if (el) el.textContent = event.error ? event.error.message : '';
+      });
+    }
+
+    // Init Stripe as soon as page loads (payment form is inline, not modal)
+    window.addEventListener('load', function() {
+      setTimeout(initStripe, 300);
+    });
+
+    // === URL PARAM PRE-FILL ===
+    (function() {
+      const params = new URLSearchParams(window.location.search);
+      const firstName = params.get('firstName') || '';
+      const email = params.get('email') || '';
+
+      if (firstName) {
+        const nameTag = document.getElementById('heroNameTag');
+        const nameSpan = document.getElementById('heroFirstName');
+        if (nameTag && nameSpan) {
+          nameSpan.textContent = firstName;
+          nameTag.style.display = 'inline-block';
+        }
+        const fnInput = document.getElementById('pay-fname');
+        if (fnInput) fnInput.value = firstName;
+
+        // Personalize the VIP pass card
+        const passName = document.getElementById('passHolderName');
+        if (passName) {
+          const lastName = params.get('lastName') || '';
+          const fullName = [firstName, lastName].filter(Boolean).join(' ');
+          passName.innerHTML = '<span style="font-size:clamp(13px,2vw,17px);font-weight:800;color:#F9FAFB;letter-spacing:-0.02em;">' + fullName + '</span>';
+        }
+      }
+
+      // Generate unique pass ID
+      const passId = document.getElementById('passId');
+      if (passId) {
+        const uid = 'PASS-2026-VIP-' + Math.random().toString(36).substring(2,8).toUpperCase();
+        passId.textContent = uid;
+      }
+
+      if (email) {
+        const emailInput = document.getElementById('pay-email');
+        if (emailInput) emailInput.value = email;
+      }
+    })();
+
+    // === COUNTDOWN ===
+    function updateCountdown() {
+      const target = new Date('2026-06-18T11:00:00-07:00');
+      const now = new Date();
+      const diff = target - now;
+      if (diff <= 0) {
+        ['cd-days','cd-hours','cd-min','cd-sec'].forEach(id => {
+          const el = document.getElementById(id);
+          if (el) el.textContent = '00';
+        });
+        return;
+      }
+      const days  = Math.floor(diff / 864e5);
+      const hours = Math.floor(diff % 864e5 / 36e5);
+      const min   = Math.floor(diff % 36e5 / 6e4);
+      const sec   = Math.floor(diff % 6e4 / 1e3);
+      const fmt = n => String(n).padStart(2, '0');
+      document.getElementById('cd-days').textContent  = fmt(days);
+      document.getElementById('cd-hours').textContent = fmt(hours);
+      document.getElementById('cd-min').textContent   = fmt(min);
+      document.getElementById('cd-sec').textContent   = fmt(sec);
+    }
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    // === SCROLL REVEAL ===
+    const revealObs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          revealObs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in, .slide-up').forEach(el => revealObs.observe(el));
+
+    // === PROOF TRACK SEQUENTIAL REVEAL ===
+    (function() {
+      const track = document.getElementById('proofTrack');
+      if (!track) return;
+      const items = Array.from(track.querySelectorAll('.proof-seq')).sort((a,b) => +a.dataset.seq - +b.dataset.seq);
+      let triggered = false;
+
+      function countUp(el, target, duration) {
+        const start = performance.now();
+        function step(now) {
+          const t = Math.min((now - start) / duration, 1);
+          const ease = 1 - Math.pow(1 - t, 3);
+          el.textContent = Math.round(ease * target).toLocaleString() + '+';
+          if (t < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      }
+
+      function revealSequential() {
+        if (triggered) return;
+        triggered = true;
+        items.forEach((el, i) => {
+          setTimeout(() => {
+            el.classList.add('visible');
+            // count-up on the advisors number
+            if (el.id === 'countUpNum' || el.querySelector('#countUpNum')) {
+              const numEl = document.getElementById('countUpNum');
+              setTimeout(() => countUp(numEl, 4127, 1400), 100);
+            }
+            // start color animations after Harvard/Fidelity appear
+            const harvard = el.querySelector('.proof-harvard') || (el.classList.contains('proof-harvard') ? el : null);
+            const fidelity = el.querySelector('.proof-fidelity') || (el.classList.contains('proof-fidelity') ? el : null);
+            if (harvard) setTimeout(() => harvard.classList.add('animated'), 600);
+            if (fidelity) setTimeout(() => fidelity.classList.add('animated'), 600);
+          }, i * 1500);
+        });
+      }
+
+      const seqObs = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) { revealSequential(); seqObs.disconnect(); } });
+      }, { threshold: 0.15 });
+      seqObs.observe(track);
+    })();
+
+    // === VIP PASS CARD: CORNER STAMP + TYPE-PILL SPRING ===
+    (function() {
+      const card = document.querySelector('.vip-pass-card');
+      if (!card) return;
+      let done = false;
+      const obs = new IntersectionObserver(entries => {
+        if (entries[0].isIntersecting && !done) {
+          done = true;
+          obs.disconnect();
+          const corners = card.querySelectorAll('.vip-corner');
+          corners.forEach((c, i) => setTimeout(() => c.classList.add('stamp'), i * 280 + 500));
+          const pill = card.querySelector('.vip-card-type-pill');
+          if (pill) setTimeout(() => pill.classList.add('spring-in'), 1700);
+        }
+      }, { threshold: 0.3 });
+      obs.observe(card);
+    })();
+
+    // === BENEFIT LIST ITEMS SEQUENTIAL ===
+    (function() {
+      document.querySelectorAll('.benefit-card').forEach(card => {
+        let done = false;
+        const obs = new IntersectionObserver(entries => {
+          if (entries[0].isIntersecting && !done) {
+            done = true;
+            obs.disconnect();
+            const items = card.querySelectorAll('.benefit-list li');
+            items.forEach((li, i) => setTimeout(() => li.classList.add('visible'), i * 200 + 400));
+          }
+        }, { threshold: 0.2 });
+        obs.observe(card);
+      });
+    })();
+
+    // === SCOTT BIO: PHOTO BLUR + CREDENTIAL BADGES STAGGER ===
+    (function() {
+      const bioCard = document.querySelector('.scott-bio-card');
+      if (!bioCard) return;
+      let done = false;
+      const obs = new IntersectionObserver(entries => {
+        if (entries[0].isIntersecting && !done) {
+          done = true;
+          obs.disconnect();
+          bioCard.classList.add('scott-blur-active');
+          const creds = bioCard.querySelectorAll('.scott-cred');
+          creds.forEach((c, i) => setTimeout(() => c.classList.add('visible'), i * 250 + 600));
+        }
+      }, { threshold: 0.2 });
+      obs.observe(bioCard);
+    })();
+
+    // === TESTIMONIAL STARS ONE-BY-ONE ===
+    (function() {
+      document.querySelectorAll('.proof-card').forEach(card => {
+        let done = false;
+        const obs = new IntersectionObserver(entries => {
+          if (entries[0].isIntersecting && !done) {
+            done = true;
+            obs.disconnect();
+            const stars = card.querySelectorAll('.proof-star');
+            stars.forEach((s, i) => setTimeout(() => s.classList.add('visible'), i * 180 + 300));
+          }
+        }, { threshold: 0.3 });
+        obs.observe(card);
+      });
+    })();
+
+    // === VALUE STACK SEQUENTIAL + COUNT-UP $148 ===
+    (function() {
+      const box = document.getElementById('valueStackBox');
+      if (!box) return;
+      let done = false;
+
+      function countUpVal(el, target, prefix, duration) {
+        const start = performance.now();
+        function step(now) {
+          const t = Math.min((now - start) / duration, 1);
+          const ease = 1 - Math.pow(1 - t, 3);
+          el.textContent = prefix + Math.round(ease * target);
+          if (t < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      }
+
+      const obs = new IntersectionObserver(entries => {
+        if (entries[0].isIntersecting && !done) {
+          done = true;
+          obs.disconnect();
+          const lines = box.querySelectorAll('.stack-seq');
+          lines.forEach((l, i) => setTimeout(() => l.classList.add('visible'), i * 360));
+          const total = box.querySelector('.stack-total');
+          if (total) setTimeout(() => {
+            total.classList.add('visible');
+            const retailEl = total.querySelector('.retail-total');
+            if (retailEl) countUpVal(retailEl, 148, '$', 1400);
+          }, lines.length * 360 + 250);
+          const savings = box.querySelector('.stack-savings');
+          if (savings) setTimeout(() => savings.classList.add('visible'), lines.length * 360 + 950);
+        }
+      }, { threshold: 0.2 });
+      obs.observe(box);
+    })();
+
+    // === FAQ ITEMS STAGGER ===
+    (function() {
+      const faqList = document.querySelector('.faq-list');
+      if (!faqList) return;
+      let done = false;
+      const obs = new IntersectionObserver(entries => {
+        if (entries[0].isIntersecting && !done) {
+          done = true;
+          obs.disconnect();
+          faqList.querySelectorAll('.faq-item').forEach((item, i) =>
+            setTimeout(() => item.classList.add('visible'), i * 180)
+          );
+        }
+      }, { threshold: 0.1 });
+      obs.observe(faqList);
+    })();
+
+    // === PAYMENT BOX SPRING + BUTTON INTRO PULSE ===
+    (function() {
+      const box = document.querySelector('.payment-box');
+      if (!box) return;
+      let done = false;
+      const obs = new IntersectionObserver(entries => {
+        if (entries[0].isIntersecting && !done) {
+          done = true;
+          obs.disconnect();
+          box.classList.add('visible');
+          const btn = box.querySelector('#payBtn');
+          if (btn) setTimeout(() => btn.classList.add('pay-btn-intro'), 700);
+        }
+      }, { threshold: 0.15 });
+      obs.observe(box);
+    })();
+
+    // === FAQ ACCORDION ===
+    document.querySelectorAll('.faq-q').forEach(q => {
+      q.addEventListener('click', function() {
+        const item = this.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+
+    // === PAYMENT FORM ===
+    document.getElementById('payBtn').addEventListener('click', async function() {
+      const btn = this;
+      const errEl = document.getElementById('card-errors');
+      const firstName = document.getElementById('pay-fname').value.trim();
+      const lastName  = document.getElementById('pay-lname').value.trim();
+      const email     = document.getElementById('pay-email').value.trim();
+
+      // Validate
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        errEl.textContent = 'Please enter a valid email address.';
+        return;
+      }
+      if (!cardElement) {
+        errEl.textContent = 'Card form not loaded. Please refresh and try again.';
+        return;
+      }
+
+      btn.textContent = '⏳ Processing...';
+      btn.disabled = true;
+      errEl.textContent = '';
+
+      try {
+        const resp = await fetch('/.netlify/functions/create-vip-pass-payment', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, firstName })
+        });
+
+        if (!resp.ok) throw new Error('Server error — please try again.');
+        const { clientSecret, error: serverErr } = await resp.json();
+        if (serverErr) throw new Error(serverErr);
+
+        const result = await stripe.confirmCardPayment(clientSecret, {
+          payment_method: {
+            card: cardElement,
+            billing_details: {
+              email,
+              name: [firstName, lastName].filter(Boolean).join(' ')
+            }
+          }
+        });
+
+        if (result.error) {
+          errEl.textContent = result.error.message;
+          btn.textContent = '🔐 Complete VIP Purchase — $49';
+          btn.disabled = false;
+        } else {
+          // Success — also register VIP buyer in Google Sheets (non-blocking)
+          try {
+            await fetch('/.netlify/functions/submit-registration', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ firstName, lastName, email })
+            });
+          } catch(_) { /* payment already confirmed — sheet write is best-effort */ }
+          document.getElementById('paymentForm').style.display = 'none';
+          const successEl = document.getElementById('paymentSuccess');
+          successEl.style.display = 'block';
+          successEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      } catch (err) {
+        errEl.textContent = err.message || 'Payment failed. Please try again.';
+        btn.textContent = '🔐 Complete VIP Purchase — $49';
+        btn.disabled = false;
+      }
+    });
+    // ============================================================
+    // VIP ENTRY EXPERIENCE — ORCHESTRATION + FIREWORKS
+    // ============================================================
+    (function() {
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      // --- AudioContext: create EARLY while navigation gesture privilege is still active ---
+      // Creating it here (~0ms after page load) vs inside playFireworkSound (~4-5s later)
+      // is the difference between Chrome allowing it and silently blocking it.
+      let sharedAC = null;
+      if (!reducedMotion) {
+        try {
+          const AudioCtx = window.AudioContext || window.webkitAudioContext;
+          if (AudioCtx) {
+            sharedAC = new AudioCtx();
+            // Backup: resume on first user interaction in case context suspended anyway
+            const warmUp = () => { if (sharedAC && sharedAC.state === 'suspended') sharedAC.resume(); };
+            ['click','touchstart','keydown','scroll'].forEach(e =>
+              document.addEventListener(e, warmUp, { once: true, passive: true })
+            );
+          }
+        } catch(e) {}
+      }
+
+      // --- Canvas setup ---
+      const canvas = document.getElementById('fireworks-canvas');
+      const ctx    = canvas ? canvas.getContext('2d') : null;
+      let   rafId  = null;
+      let   particles = [];
+
+      function resizeCanvas() {
+        if (!canvas) return;
+        canvas.width  = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
+      resizeCanvas();
+      window.addEventListener('resize', resizeCanvas);
+
+      // --- Particle class ---
+      function Particle(x, y, color, velocityScale) {
+        const angle = Math.random() * Math.PI * 2;
+        const speed = (2.8 + Math.random() * 4.2) * (velocityScale || 1);
+        this.x  = x;
+        this.y  = y;
+        this.vx = Math.cos(angle) * speed;
+        this.vy = Math.sin(angle) * speed - (1.5 + Math.random() * 1.5); // initial upward bias
+        this.alpha   = 1;
+        this.decay   = 0.012 + Math.random() * 0.014;
+        this.gravity = 0.16;
+        this.radius  = 2.2 + Math.random() * 2.8;
+        this.color   = color;
+        this.trail   = [];
+      }
+      Particle.prototype.update = function() {
+        this.trail.push({ x: this.x, y: this.y });
+        if (this.trail.length > 5) this.trail.shift();
+        this.vy += this.gravity;
+        this.x  += this.vx;
+        this.y  += this.vy;
+        this.vx *= 0.985;
+        this.alpha -= this.decay;
+      };
+      Particle.prototype.draw = function(ctx) {
+        // Draw trail
+        for (let i = 0; i < this.trail.length; i++) {
+          const a = (i / this.trail.length) * this.alpha * 0.4;
+          ctx.beginPath();
+          ctx.arc(this.trail[i].x, this.trail[i].y, this.radius * 0.5, 0, Math.PI * 2);
+          ctx.fillStyle = this.color.replace(')', `,${a})`).replace('rgb(', 'rgba(');
+          ctx.fill();
+        }
+        // Draw particle
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        const colorWithAlpha = this.color.replace(')', `,${this.alpha})`).replace('rgb(', 'rgba(');
+        ctx.fillStyle = colorWithAlpha;
+        ctx.shadowBlur  = 8;
+        ctx.shadowColor = this.color;
+        ctx.fill();
+        ctx.shadowBlur  = 0;
+      };
+
+      const COLORS = [
+        'rgb(238,175,0)',  // gold-mango
+        'rgb(221,208,85)', // gold-bright
+        'rgb(255,248,225)',// gold-cream warm white
+        'rgb(255,253,245)',// pale
+        'rgb(238,175,0)',  // gold again (weight)
+        'rgb(0,135,90)',   // brand green accent
+        'rgb(255,215,100)',// light gold
+      ];
+
+      function burst(x, y, count, velScale) {
+        for (let i = 0; i < count; i++) {
+          const color = COLORS[Math.floor(Math.random() * COLORS.length)];
+          particles.push(new Particle(x, y, color, velScale));
+        }
+      }
+
+      function animateFireworks() {
+        if (!ctx) return;
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        particles = particles.filter(p => p.alpha > 0.02);
+        particles.forEach(p => { p.update(); p.draw(ctx); });
+        if (particles.length > 0) {
+          rafId = requestAnimationFrame(animateFireworks);
+        } else {
+          canvas.classList.remove('active');
+          canvas.style.opacity = '0';
+        }
+      }
+
+      // --- Fireworks sound (Web Audio API — no external files) ---
+      function playFireworkSound() {
+        if (reducedMotion || !sharedAC) return;
+        try {
+          const ac = sharedAC;
+
+          function scheduleBooms() {
+            try {
+              const masterGain = ac.createGain();
+              masterGain.gain.setValueAtTime(0.28, ac.currentTime);
+              masterGain.connect(ac.destination);
+
+              function boom(delayMs, pitchHz, duration) {
+                const t = ac.currentTime + delayMs / 1000;
+                // White noise burst
+                const bufLen = ac.sampleRate * duration;
+                const buf    = ac.createBuffer(1, bufLen, ac.sampleRate);
+                const data   = buf.getChannelData(0);
+                for (let i = 0; i < bufLen; i++) data[i] = Math.random() * 2 - 1;
+                const noise  = ac.createBufferSource();
+                noise.buffer = buf;
+
+                // Bandpass to give it an "explosion" character
+                const bp = ac.createBiquadFilter();
+                bp.type = 'bandpass';
+                bp.frequency.setValueAtTime(pitchHz, t);
+                bp.Q.setValueAtTime(0.4, t);
+
+                // Envelope: sharp attack, fast decay
+                const env = ac.createGain();
+                env.gain.setValueAtTime(0, t);
+                env.gain.linearRampToValueAtTime(1, t + 0.018);
+                env.gain.exponentialRampToValueAtTime(0.001, t + duration);
+
+                noise.connect(bp);
+                bp.connect(env);
+                env.connect(masterGain);
+                noise.start(t);
+                noise.stop(t + duration);
+
+                // Tonal "pop" layer
+                const osc = ac.createOscillator();
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(pitchHz * 1.6, t);
+                osc.frequency.exponentialRampToValueAtTime(pitchHz * 0.4, t + 0.12);
+                const oscEnv = ac.createGain();
+                oscEnv.gain.setValueAtTime(0.35, t);
+                oscEnv.gain.exponentialRampToValueAtTime(0.001, t + 0.18);
+                osc.connect(oscEnv);
+                oscEnv.connect(masterGain);
+                osc.start(t);
+                osc.stop(t + 0.2);
+              }
+
+              // Volley 1 — opening boom
+              boom(0,    180, 1.0);
+              boom(30,   210, 0.85);
+              // Volley 2 — echo
+              boom(500,  160, 0.80);
+              boom(530,  195, 0.70);
+              // Volley 3 — mid crescendo
+              boom(1100, 175, 0.75);
+              boom(1130, 220, 0.65);
+              // Volley 4 — trailing sparkle
+              boom(1800, 155, 0.60);
+              boom(1830, 200, 0.50);
+              // Volley 5 — final fade
+              boom(2500, 240, 0.40);
+              boom(2540, 270, 0.32);
+
+              // Close context after all sounds finish
+              setTimeout(() => { try { ac.close(); sharedAC = null; } catch(_){} }, 3400);
+            } catch(e) {}
+          }
+
+          // Must await resume() before scheduling — it's async
+          if (ac.state === 'running') {
+            scheduleBooms();
+          } else {
+            ac.resume().then(scheduleBooms).catch(() => {});
+          }
+        } catch(e) { /* audio not available — silent fallback */ }
+      }
+
+      function launchFireworks() {
+        if (!canvas || !ctx || reducedMotion) return;
+        canvas.classList.add('active');
+        resizeCanvas();
+
+        const lx = window.innerWidth  * 0.11;
+        const rx = window.innerWidth  * 0.89;
+        const fy = window.innerHeight * 0.34;
+
+        // Volley 1 — big opening burst
+        burst(lx, fy, 55, 1);
+        burst(rx, fy, 55, 1);
+
+        // Volley 2 — echo, offset slightly
+        setTimeout(() => {
+          burst(lx - 20, fy - 20, 35, 0.80);
+          burst(rx + 20, fy - 20, 35, 0.80);
+        }, 500);
+
+        // Volley 3 — mid crescendo, higher up
+        setTimeout(() => {
+          burst(lx + 10, fy - 50, 45, 0.90);
+          burst(rx - 10, fy - 50, 45, 0.90);
+        }, 1100);
+
+        // Volley 4 — trailing sparkle, inward
+        setTimeout(() => {
+          burst(lx + 40, fy - 30, 28, 0.65);
+          burst(rx - 40, fy - 30, 28, 0.65);
+        }, 1800);
+
+        // Volley 5 — final fade sparkle
+        setTimeout(() => {
+          burst(lx + 20, fy - 60, 20, 0.50);
+          burst(rx - 20, fy - 60, 20, 0.50);
+        }, 2500);
+
+        if (rafId) cancelAnimationFrame(rafId);
+        animateFireworks();
+      }
+
+      // --- Headline animation ---
+      function revealHeadline() {
+        // 1. Reveal "You're In."
+        const youreIn = document.querySelector('.shimmer-gold-entry');
+        if (youreIn) {
+          setTimeout(() => youreIn.classList.add('revealed'), 80);
+        }
+
+        // 2. Split "Now Elevate Your Experience." into word spans
+        const tagline = document.getElementById('elevateTagline');
+        if (!tagline) return;
+        const words = tagline.textContent.trim().split(' ');
+        tagline.innerHTML = words.map(w =>
+          `<span class="word-reveal">${w}</span>`
+        ).join(' ');
+
+        const wordSpans = tagline.querySelectorAll('.word-reveal');
+        const stagger   = 130; // ms per word
+        const startAt   = 300; // delay after "You're In." starts
+
+        wordSpans.forEach((span, i) => {
+          setTimeout(() => span.classList.add('revealed'), startAt + i * stagger);
+        });
+
+        // 3. After last word lands: pulse + fireworks
+        const lastWordDelay = startAt + (words.length - 1) * stagger + 180;
+        setTimeout(() => {
+          tagline.classList.add('pulse-once');
+          launchFireworks();
+          playFireworkSound();
+        }, lastWordDelay);
+      }
+
+      // --- Overlay dismissal ---
+      function dismissOverlay() {
+        const overlay = document.getElementById('vip-loading-overlay');
+        if (!overlay) { revealHeadline(); return; }
+        overlay.classList.add('fade-out');
+        setTimeout(() => {
+          overlay.style.display = 'none';
+          revealHeadline();
+        }, 520);
+      }
+
+      // --- Boot sequence ---
+      if (reducedMotion) {
+        // Instant reveal — no overlay, no effects
+        const overlay = document.getElementById('vip-loading-overlay');
+        if (overlay) overlay.style.display = 'none';
+        const youreIn = document.querySelector('.shimmer-gold-entry');
+        if (youreIn) youreIn.classList.add('revealed');
+        const tagline = document.getElementById('elevateTagline');
+        if (tagline) {
+          const words = tagline.textContent.trim().split(' ');
+          tagline.innerHTML = words.map(w =>
+            `<span class="word-reveal revealed">${w}</span>`
+          ).join(' ');
+        }
+      } else {
+        // Normal flow: overlay → dismiss after 2.4s → reveal headline
+        setTimeout(dismissOverlay, 2400);
+      }
+
+    })();
+  </script>
+</body>
+</html>

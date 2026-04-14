@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "summit-preview",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["-m", "http.server", "8750", "--directory", "src"],
+      "port": 8750
+    },
+    {
+      "name": "mockup-names",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["-m", "http.server", "8746", "--directory", "."],
+      "port": 8746
+    }
+  ]
+}

@@ -1,0 +1,1873 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Executive AI Advantage Summit — 3 Days to Close the AI Skills Gap</title>
+  <meta name="description" content="Join Scott Magnacca for 3 days of intensive, practical AI training. 90 minutes a day. 100% virtual. Master ROI-first thinking, decision intelligence, and advanced prompting." />
+  <meta property="og:title" content="Executive AI Advantage Summit 2026" />
+  <meta property="og:description" content="3 Days. 90 Minutes a Day. Close the AI Skills Gap and Become a Hybrid Advisor." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://executive-ai-advantage-summit.netlify.app/" />
+  <meta property="og:image" content="https://executive-ai-advantage-summit.netlify.app/og-image.png" />
+  <meta property="og:site_name" content="Executive AI Advantage Summit" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Executive AI Advantage Summit — 3 Days to Close the AI Skills Gap" />
+  <meta name="twitter:description" content="Join Scott Magnacca for 3 days of intensive, practical AI training. 90 minutes a day. 100% virtual. Master ROI-first thinking, decision intelligence, and advanced prompting." />
+  <meta name="twitter:image" content="https://executive-ai-advantage-summit.netlify.app/og-image.png" />
+  <link rel="canonical" href="https://executive-ai-advantage-summit.netlify.app/" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "name": "Executive AI Advantage Summit",
+    "description": "3-day virtual event to close the AI skills gap. Master ROI-first AI thinking, decision intelligence, and advanced prompting with Scott Magnacca.",
+    "startDate": "2026-06-18",
+    "endDate": "2026-06-20",
+    "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "url": "https://executive-ai-advantage-summit.netlify.app/",
+    "isAccessibleForFree": true,
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock"
+    },
+    "organizer": {
+      "@type": "Person",
+      "name": "Scott Magnacca",
+      "url": "https://salesforlife.ai"
+    },
+    "location": {
+      "@type": "VirtualLocation",
+      "url": "https://executive-ai-advantage-summit.netlify.app/"
+    }
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700&family=Crimson+Text:wght@400;600;700&display=swap" rel="stylesheet" />
+  <script src="https://js.stripe.com/v3/"></script>
+  <style>
+    :root {
+      --green-deep: #006644;
+      --green-mid: #00875A;
+      --green-courtyard: #597C31;
+      --green-sherwood: #9EB28F;
+      --green-pale: #E8F0E4;
+      --gold-bright: #DDD055;
+      --gold-mango: #EEAF00;
+      --gold-ocre: #AD9001;
+      --gold-cream: #FFF8E1;
+      --gold-pale: #FFFDF5;
+      --blue-alfresco: #567B8A;
+      --dark-forest: #0C1F14;
+      --dark-card: #132A1B;
+      --dark-border: #1E3A26;
+      --dark-surface: #0F2518;
+      --light-bg: #F8FAF7;
+      --light-card: #FFFFFF;
+      --light-border: #E2E8DE;
+      --white: #F9FAFB;
+      --muted: #6B7280;
+      --text-dark: #1A2E1A;
+      --text-secondary: #4B5563;
+      --gradient-hero: linear-gradient(135deg, #0C1F14 0%, #003D28 40%, #1A3A1A 70%, #2A1F00 100%);
+      --gradient-warm: linear-gradient(90deg, #EEAF00 0%, #DDD055 50%, #EEAF00 100%);
+      --gradient-green: linear-gradient(135deg, #006644 0%, #00875A 100%);
+      --gradient-cream: linear-gradient(180deg, #FFFDF5 0%, #F8FAF7 100%);
+      --gradient-deep: linear-gradient(180deg, #0C1F14 0%, #132A1B 50%, #0C1F14 100%);
+      --max-width: 1100px;
+      --section-padding: 100px 0;
+      --font-body: 'Inter', system-ui, sans-serif;
+      --font-accent: 'Playfair Display', Georgia, serif;
+      --dark-forest: #0A1A10;
+      --dark-card: rgba(19, 42, 27, 0.7);
+      --dark-border: rgba(255, 255, 255, 0.08);
+      --glass-bg: rgba(255, 255, 255, 0.03);
+      --glass-border: rgba(255, 255, 255, 0.1);
+      --gradient-hero: radial-gradient(ellipse at 28% 30%, #004D30 0%, #0C2518 45%, #071510 80%, #030D08 100%);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); overflow-x: hidden; line-height: 1.6; color: var(--text-dark); background: var(--light-bg); -webkit-font-smoothing: antialiased; }
+    h1, h2, h3, h4 { letter-spacing: -0.04em; line-height: 1.05; }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+    .container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
+    .grad-text { background: linear-gradient(135deg, var(--green-deep), var(--gold-mango)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .serif-accent { font-family: var(--font-accent); font-weight: 800; font-style: italic; }
+
+    .cta-btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--gradient-green); border: none; border-radius: 14px;
+      padding: 22px 50px; font-weight: 700; font-size: 1.18rem; color: var(--white);
+      cursor: pointer; transition: all 0.3s ease;
+      box-shadow: 0 8px 32px rgba(0,102,68,0.45), 0 0 40px rgba(238,175,0,0.15);
+      position: relative; overflow: hidden; font-family: var(--font-body);
+    }
+    .cta-btn::before { content:''; position:absolute; top:0; left:-100%; width:200%; height:100%; background:linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent); transition:left 0.5s ease; }
+    .cta-btn:hover { transform: translateY(-3px); box-shadow: 0 12px 48px rgba(0,102,68,0.6), 0 0 60px rgba(238,175,0,0.25); }
+    .cta-btn:hover::before { left: 100%; }
+    .cta-btn-gold { background: var(--gradient-warm); color: var(--dark-forest); box-shadow: 0 8px 32px rgba(238,175,0,0.3); }
+    .cta-btn-gold:hover { box-shadow: 0 12px 40px rgba(238,175,0,0.45); }
+
+    .eyebrow { display:inline-flex; align-items:center; gap:8px; background:rgba(0,102,68,0.08); border:1px solid rgba(0,102,68,0.2); border-radius:30px; padding:8px 20px; font-size:12px; font-weight:700; color:var(--green-deep); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:20px; }
+    .eyebrow-light { background:rgba(255,255,255,0.12); border-color:rgba(255,255,255,0.2); color:var(--gold-cream); }
+
+    /* === ANIMATIONS === */
+    @keyframes marquee { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+    @keyframes pulse-glow { 0%,100%{box-shadow:0 8px 32px rgba(0,102,68,0.45),0 0 40px rgba(238,175,0,0.15)} 50%{box-shadow:0 8px 48px rgba(0,102,68,0.7),0 0 80px rgba(0,102,68,0.2),0 0 60px rgba(238,175,0,0.3)} }
+    .pulse-cta { animation: pulse-glow 3.0s ease-in-out infinite; }
+    @keyframes gold-text-glow { 0%,100%{text-shadow:0 0 8px rgba(238,175,0,0.4),0 0 16px rgba(238,175,0,0.2)} 50%{text-shadow:0 0 16px rgba(238,175,0,0.8),0 0 32px rgba(238,175,0,0.4),0 0 48px rgba(238,175,0,0.2)} }
+    .gold-glow-text { animation: gold-text-glow 3.0s ease-in-out infinite; color: var(--gold-mango); font-weight: 800; }
+    @keyframes blink-dot { 0%,100%{opacity:1} 50%{opacity:0.2} }
+    @keyframes metallic-shimmer { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
+    .shimmer-gold { background:linear-gradient(90deg,#EEAF00,#DDD055,#FDE68A,#DDD055,#EEAF00); background-size:300% 100%; -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; animation:metallic-shimmer 3.0s ease-in-out infinite; }
+    @keyframes float-badge { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+    @keyframes hero-breathe { 0%,100%{opacity:0.15} 50%{opacity:0.3} }
+    @keyframes book-float { 0%,100%{transform:translateY(0) rotate(-3deg)} 50%{transform:translateY(-12px) rotate(-1deg)} }
+    @keyframes book-shine { 0%{left:-150%} 100%{left:150%} }
+    @keyframes book-section-sweep { 0%{left:-30%} 100%{left:115%} }
+    @keyframes value-bg-drift { 0%{background-position:center,50% 50%} 33%{background-position:center,54% 46%} 66%{background-position:center,46% 54%} 100%{background-position:center,50% 50%} }
+    @keyframes agenda-bg-drift { 0%{background-position:center,50% 50%} 33%{background-position:center,46% 53%} 66%{background-position:center,54% 47%} 100%{background-position:center,50% 50%} }
+    @keyframes book-gold-glow { 0%,100%{box-shadow:0 20px 60px rgba(0,0,0,0.5),0 0 0 1px rgba(238,175,0,0.25),0 0 12px rgba(238,175,0,0.15)} 50%{box-shadow:0 20px 60px rgba(0,0,0,0.5),0 0 0 2px rgba(238,175,0,0.85),0 0 40px rgba(238,175,0,0.55),0 0 80px rgba(238,175,0,0.18)} }
+    @keyframes tilt-3d { 0%,100%{transform:perspective(600px) rotateY(-4deg)} 50%{transform:perspective(600px) rotateY(4deg)} }
+    @keyframes stat-flash { 0%{filter:brightness(1);transform:scale(1)} 30%{filter:brightness(1.6) drop-shadow(0 0 14px rgba(0,102,68,0.8));transform:scale(1.12)} 100%{filter:brightness(1);transform:scale(1)} }
+    @keyframes slide-in-popup { from{transform:translateX(-120%);opacity:0} to{transform:translateX(0);opacity:1} }
+    @keyframes slide-out-popup { from{transform:translateX(0);opacity:1} to{transform:translateX(-120%);opacity:0} }
+    @keyframes hero-bg-drift { 0%{transform:scale(1.06) translate(0,0)} 33%{transform:scale(1.09) translate(-1.5%,0.8%)} 66%{transform:scale(1.07) translate(1.2%,-0.6%)} 100%{transform:scale(1.06) translate(0,0)} }
+    @keyframes hero-glow-shift { 0%,100%{background:radial-gradient(ellipse at 35% 35%,rgba(0,102,68,0.42) 0%,transparent 55%)} 33%{background:radial-gradient(ellipse at 52% 22%,rgba(0,128,80,0.48) 0%,transparent 60%)} 66%{background:radial-gradient(ellipse at 22% 55%,rgba(0,77,48,0.38) 0%,transparent 52%)} }
+    /* "3 Days." — 17s cycle: flash white → hold red 3.5s → white (fires 1s after load) */
+    @keyframes days-color-cycle {
+      0%   { color:#fff; text-shadow:none; }
+      4%   { color:#fff; text-shadow:0 0 40px rgba(255,255,255,1),0 0 80px rgba(255,255,255,0.5); }
+      8%   { color:#C41E3A; text-shadow:0 0 28px rgba(196,30,58,0.9); }
+      24%  { color:#C41E3A; text-shadow:0 0 18px rgba(196,30,58,0.5); }
+      30%  { color:#fff; text-shadow:none; }
+      100% { color:#fff; text-shadow:none; }
+    }
+    /* "90 Min." — same 17s cycle, 4s delay: sequential after Days */
+    @keyframes minutes-color-cycle {
+      0%   { color:#fff; text-shadow:none; }
+      3%   { color:#fff; text-shadow:0 0 40px rgba(255,255,255,1),0 0 80px rgba(255,255,255,0.5); }
+      12%  { color:#DC143C; text-shadow:0 0 22px rgba(220,20,60,0.8); }
+      23.5%{ color:#DC143C; text-shadow:0 0 18px rgba(220,20,60,0.5); }
+      26%  { color:#fff; text-shadow:none; }
+      100% { color:#fff; text-shadow:none; }
+    }
+    .days-text { animation:days-color-cycle 17s ease-in-out infinite; animation-delay:1s; display:inline; }
+    .minutes-text { animation:minutes-color-cycle 17s ease-in-out infinite; animation-delay:4s; display:inline; }
+    @keyframes pulse-gold-border { 0%,100%{box-shadow:0 8px 32px rgba(0,102,68,0.45),0 0 0 2px rgba(238,175,0,0.4),0 0 18px rgba(238,175,0,0.3)} 50%{box-shadow:0 8px 48px rgba(0,102,68,0.65),0 0 0 4px rgba(238,175,0,1.0),0 0 70px rgba(238,175,0,0.9),0 0 130px rgba(238,175,0,0.35),0 0 200px rgba(238,175,0,0.12)} }
+    .pulse-gold-border { animation:pulse-gold-border 2.4s ease-in-out infinite!important; }
+    .fade-in { opacity:0; transform:translateY(30px); transition:opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1); }
+    .fade-in.visible { opacity:1; transform:translateY(0); }
+    .stagger-children .fade-in:nth-child(2){transition-delay:0.12s} .stagger-children .fade-in:nth-child(3){transition-delay:0.24s} .stagger-children .fade-in:nth-child(4){transition-delay:0.36s} .stagger-children .fade-in:nth-child(5){transition-delay:0.48s}
+
+    .noise-overlay { position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"); background-size: 180px 180px; opacity: 0.05; pointer-events: none; z-index: 9999; mix-blend-mode: overlay; }
+
+    /* === ANNOUNCE BAR === */
+    .announce-bar { background:var(--gradient-warm); color:var(--dark-forest); text-align:center; padding:12px 20px; font-size:14px; font-weight:700; }
+
+    /* === STICKY NAV === */
+    .sticky-nav { position:fixed; top:0; left:0; right:0; background:rgba(12,31,20,0.95); backdrop-filter:blur(16px); border-bottom:1px solid var(--dark-border); z-index:1000; padding:14px 0; transform:translateY(-100%); transition:transform 0.35s ease; }
+    .sticky-nav.show { transform:translateY(0); }
+    .sticky-nav .nav-inner { max-width:var(--max-width); margin:0 auto; padding:0 24px; display:flex; justify-content:space-between; align-items:center; }
+    .nav-logo { font-size:16px; font-weight:800; color:var(--white); display:flex; align-items:center; gap:8px; }
+    .nav-logo .accent { color:var(--gold-mango); }
+    .nav-links { display:flex; gap:28px; align-items:center; }
+    .nav-links a { font-size:13px; font-weight:600; color:var(--green-sherwood); transition:color 0.2s; }
+    .nav-links a:hover { color:var(--white); }
+    .nav-cta { background:var(--gradient-green); color:var(--white); padding:10px 24px; border-radius:10px; font-weight:700; font-size:13px; transition:all 0.2s; }
+    .nav-cta:hover { transform:scale(1.05); }
+
+    /* === HERO === */
+    .hero { position:relative; background:var(--gradient-hero); min-height:100vh; display:flex; align-items:center; overflow:hidden; padding:80px 0 60px; color:var(--white); }
+    .hero::before { content:''; position:absolute; inset:-5%; background:url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=80') center/cover no-repeat; opacity:0.07; mix-blend-mode:luminosity; animation:hero-bg-drift 50s ease-in-out infinite; }
+    .hero::after { content:''; position:absolute; inset:0; pointer-events:none; z-index:1; animation:hero-glow-shift 18s ease-in-out infinite; }
+    .hero-glow { position:absolute; border-radius:50%; filter:blur(120px); pointer-events:none; animation:hero-breathe 7.2s ease-in-out infinite; }
+    .hero-content { position:relative; z-index:2; display:grid; grid-template-columns:1.1fr 0.9fr; gap:60px; align-items:center; }
+    .masthead-group { display:flex; flex-direction:column; align-items:center; width:100%; margin-bottom:32px; }
+    .event-masthead { display:block; font-size:25px; font-weight:900; letter-spacing:0.15em; text-transform:uppercase; margin-bottom:12px; animation:fade-in-masthead 0.8s ease 0.3s both, masthead-pulse 3s ease-in-out 1.1s infinite; }
+    @keyframes fade-in-masthead { from{opacity:0;transform:translateY(-6px)} to{opacity:1;transform:translateY(0)} }
+    @keyframes masthead-pulse {
+      0%,100% { color:#ffffff; text-shadow:0 0 20px rgba(255,255,255,0.7),0 0 40px rgba(255,255,255,0.35); }
+      50%      { color:var(--gold-mango); text-shadow:0 0 24px rgba(238,175,0,1),0 0 50px rgba(238,175,0,0.55),0 0 80px rgba(238,175,0,0.2); }
+    }
+    .event-tagline { display:block; width:100%; font-family:var(--font-accent); font-style:italic; font-size:clamp(24px, 4.5vw, 33px); line-height:1.2; margin-bottom:32px; margin-top:0; letter-spacing:0.01em; white-space:nowrap; background:linear-gradient(90deg,rgba(255,248,225,0.65) 0%,rgba(255,248,225,0.65) 35%,#ffffff 50%,rgba(255,248,225,0.65) 65%,rgba(255,248,225,0.65) 100%); background-size:250% 100%; -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; animation:tagline-wave 5s ease-in-out infinite; }
+    @keyframes tagline-wave { 0%{background-position:140% 0} 38%{background-position:-20% 0} 100%{background-position:-20% 0} }
+    .hero-eyebrow { display:inline-flex; align-items:center; gap:10px; background:rgba(238,175,0,0.1); border:2px solid rgba(238,175,0,0.3); border-radius:40px; padding:12px 24px; font-size:13px; font-weight:700; color:var(--gold-mango); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:8px; animation:float-badge 3.6s ease-in-out infinite; }
+    .hero h1 { font-size:54px; font-weight:900; line-height:1.08; margin-bottom:24px; }
+    .hero-subtitle { font-size:18px; line-height:1.65; color:rgba(255,255,255,0.8); margin-bottom:32px; max-width:520px; }
+    .hero-subtitle strong { color:var(--white); }
+    .countdown-row { display:flex; gap:6px; align-items:center; margin-bottom:20px; }
+    .cd-unit { text-align:center; }
+    .cd-num { font-size:48px; font-weight:900; color:var(--white); min-width:64px; display:block; font-variant-numeric:tabular-nums; }
+    .cd-label { font-size:10px; text-transform:uppercase; letter-spacing:2px; color:rgba(255,255,255,0.5); font-weight:600; }
+    .cd-sep { font-size:36px; font-weight:300; color:rgba(255,255,255,0.2); padding-bottom:18px; }
+    .meta-row { display:flex; gap:12px; flex-wrap:wrap; margin-bottom:32px; }
+    .meta-pill { background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); color:var(--white); padding:10px 20px; border-radius:10px; font-size:14px; font-weight:600; display:inline-flex; align-items:center; gap:8px; }
+    .demand-badge { display:flex; align-items:center; gap:10px; margin-top:16px; font-size:21px; color:rgba(255,255,255,0.92); }
+    .demand-dot { width:15px; height:15px; background:#22c55e; border-radius:50%; animation:blink-dot 1.8s infinite; }
+    @keyframes demand-gold-pulse { 0%,100%{color:rgba(255,255,255,0.92);text-shadow:none} 50%{color:#EEAF00;text-shadow:0 0 18px rgba(238,175,0,0.55),0 0 40px rgba(238,175,0,0.2)} }
+    .demand-badge-text { animation:demand-gold-pulse 3.0s ease-in-out infinite; }
+
+    /* Hero visual with photo */
+    .hero-visual { position:relative; }
+    .hero-photo-wrap { position:relative; border-radius:24px; overflow:hidden; border:2px solid rgba(238,175,0,0.6); animation:hero-photo-pulse 2.8s ease-in-out infinite; }
+    .hero-photo-wrap img { width:100%; height:auto; }
+    .hero-photo-overlay { position:absolute; bottom:0; left:0; right:0; background:linear-gradient(to top,rgba(12,31,20,0.95),transparent); padding:32px 24px 24px; }
+    .hero-photo-overlay h3 { font-size:20px; font-weight:800; color:var(--white); margin-bottom:4px; }
+    .hero-photo-overlay p { font-size:13px; color:var(--green-sherwood); }
+    .hero-float-stat { position:absolute; background:rgba(12,31,20,0.9); border:1px solid rgba(238,175,0,0.3); backdrop-filter:blur(12px); border-radius:14px; padding:14px 18px; text-align:center; animation:float-badge 3.6s ease-in-out infinite; }
+    .hero-float-stat .num { font-size:28px; font-weight:900; display:block; }
+    .hero-float-stat .label { font-size:10px; text-transform:uppercase; letter-spacing:0.08em; color:var(--gold-mango); font-weight:700; margin-top:2px; }
+
+    /* === MARQUEE === */
+    .marquee-bar { background:var(--dark-forest); border-top:1px solid var(--dark-border); border-bottom:1px solid var(--dark-border); padding:16px 0; overflow:hidden; }
+    .marquee-track { display:flex; animation:marquee 36s linear infinite; width:max-content; }
+    .marquee-item { white-space:nowrap; padding:0 40px; font-size:14px; font-weight:600; color:var(--green-sherwood); display:flex; align-items:center; gap:12px; }
+    .marquee-item .dot { width:6px; height:6px; background:var(--gold-mango); border-radius:50%; }
+
+    /* === VALUE SECTION (CREAM BG) === */
+    .value-section { padding:var(--section-padding); background:linear-gradient(180deg,rgba(255,253,245,0.87) 0%,rgba(248,250,247,0.87) 100%),url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1920&q=80') center/120% auto no-repeat; text-align:center; position:relative; z-index:1; animation:value-bg-drift 50s ease-in-out infinite; }
+    .value-section h2 { font-size:44px; font-weight:900; margin-bottom:20px; color:var(--text-dark); }
+    .value-section .subtitle { font-size:19px; color:var(--text-secondary); max-width:680px; margin:0 auto 40px; line-height:1.6; }
+    .detail-chips { display:flex; justify-content:center; gap:24px; flex-wrap:wrap; margin-bottom:40px; }
+    .detail-chip { display:flex; align-items:center; gap:10px; font-size:21px; font-weight:700; color:var(--text-secondary); padding:10px 20px; border-radius:12px; animation:chip-gold-pulse 42s ease-in-out infinite; }
+    .detail-chip:nth-child(1) { animation-delay:0s; }
+    .detail-chip:nth-child(2) { animation-delay:3s; }
+    .detail-chip:nth-child(3) { animation-delay:6s; }
+    .detail-chip:nth-child(4) { animation-delay:9s; }
+    @keyframes chip-gold-pulse {
+      0%    { box-shadow:none; color:var(--text-secondary); }
+      1%    { box-shadow:0 0 18px rgba(238,175,0,0.6),0 0 40px rgba(238,175,0,0.25),0 0 70px rgba(238,175,0,0.1); color:var(--text-dark); }
+      2.5%  { box-shadow:0 0 18px rgba(238,175,0,0.6),0 0 40px rgba(238,175,0,0.25),0 0 70px rgba(238,175,0,0.1); color:var(--text-dark); }
+      3.6%  { box-shadow:none; color:var(--text-secondary); }
+      100%  { box-shadow:none; color:var(--text-secondary); }
+    }
+    .value-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-bottom:50px; }
+    .value-card { background:var(--light-card); border:1px solid var(--light-border); border-radius:20px; padding:36px 28px; text-align:left; transition:transform 0.3s,box-shadow 0.3s,border-color 0.3s; position:relative; overflow:hidden; backdrop-filter:blur(12px); border-top:1px solid rgba(255,255,255,0.15); border-left:1px solid rgba(255,255,255,0.15); }
+    .value-card:hover { transform:translateY(-6px); box-shadow:0 16px 48px rgba(0,102,68,0.1); border-color:rgba(0,102,68,0.3); }
+    .value-card-img { width:100%; height:160px; object-fit:cover; border-radius:12px; margin-bottom:20px; }
+    .value-icon { width:56px; height:56px; background:rgba(0,102,68,0.08); border:1px solid rgba(0,102,68,0.15); border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:24px; margin-bottom:20px; }
+    .value-leader { display:flex; flex-direction:column; align-items:center; margin-bottom:20px; text-align:center; }
+    .value-leader-img { width:72px; height:72px; border-radius:50%; object-fit:cover; object-position:top; border:2px solid rgba(238,175,0,0.55); margin-bottom:10px; animation:leader-glow 3.5s ease-in-out infinite; }
+    @keyframes leader-glow { 0%,100%{box-shadow:0 0 8px rgba(0,135,90,0.3),0 0 16px rgba(0,135,90,0.15);} 50%{box-shadow:0 0 22px rgba(0,135,90,0.85),0 0 44px rgba(0,135,90,0.45),0 0 70px rgba(0,135,90,0.2);} }
+    .value-leader-quote { font-family:var(--font-accent); font-style:italic; font-size:13px; color:var(--text-dark); line-height:1.45; margin-bottom:4px; }
+    .value-leader-name { font-size:11px; font-weight:700; color:var(--green-deep); letter-spacing:0.04em; }
+    .value-card h3 { font-size:18px; font-weight:700; margin-bottom:10px; color:var(--text-dark); }
+    .value-card p { font-size:14px; color:var(--text-secondary); line-height:1.6; }
+
+    /* === BOOK SHOWCASE SECTION (DARK GREEN) === */
+    .book-section { padding:var(--section-padding); background:var(--gradient-deep); color:var(--white); position:relative; z-index:1; overflow:hidden; }
+    .book-section::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 30% 50%, rgba(0,102,68,0.15), transparent 70%); }
+    .book-section::after { content:''; position:absolute; top:0; left:-30%; width:28%; height:100%; background:linear-gradient(90deg,transparent 0%,rgba(255,255,255,0.04) 35%,rgba(255,255,255,0.07) 50%,rgba(255,255,255,0.04) 65%,transparent 100%); transform:skewX(-10deg); pointer-events:none; z-index:0; animation:book-section-sweep 9s linear infinite; }
+    .book-layout { display:grid; grid-template-columns:0.4fr 1fr; gap:60px; align-items:center; max-width:900px; margin:0 auto; position:relative; z-index:1; }
+    .book-visual { position:relative; display:flex; flex-direction:column; align-items:center; gap:24px; }
+    .book-cover-wrap { position:relative; animation:book-float 4.8s ease-in-out infinite; }
+    .book-cover-wrap img { width:220px; border-radius:8px; border:1px solid rgba(238,175,0,0.55); box-shadow:0 20px 60px rgba(0,0,0,0.5),0 0 0 1px rgba(238,175,0,0.25),0 0 12px rgba(238,175,0,0.15); animation:book-gold-glow 10s ease-in-out infinite; }
+    .book-cover-wrap::after { display:none; }
+    .book-badges { display:flex; gap:12px; }
+    .book-badges img { width:64px; height:64px; border-radius:12px; border:1px solid var(--dark-border); transition:transform 0.3s; }
+    .book-badges img:hover { transform:scale(1.15); }
+    .book-info h2 { font-size:36px; font-weight:900; margin-bottom:16px; line-height:1.15; }
+    .book-info p { font-size:16px; line-height:1.7; color:rgba(255,255,255,0.75); margin-bottom:16px; }
+    .book-info strong { color:var(--white); }
+    .book-stats { display:flex; gap:24px; margin-top:24px; }
+    .book-stat { text-align:center; }
+    .book-stat .num { font-size:32px; font-weight:900; display:block; }
+    .book-stat .label { font-size:11px; text-transform:uppercase; letter-spacing:0.08em; color:var(--gold-mango); font-weight:700; }
+    /* Second book */
+    .book-second { display:flex; gap:20px; align-items:center; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:16px; padding:20px; margin-top:28px; }
+    .book-second img { width:60px; border-radius:6px; flex-shrink:0; }
+    .book-second-text { font-size:14px; color:rgba(255,255,255,0.7); }
+    .book-second-text strong { color:var(--gold-mango); }
+
+    /* === VIDEO SECTION === */
+    .video-section { padding:var(--section-padding); background:linear-gradient(135deg,#003D28 0%,#006644 40%,#1A4D2E 100%); text-align:center; color:var(--white); position:relative; overflow:hidden; }
+    .video-section .container { position:relative; z-index:1; }
+    .video-section h2 { font-size:40px; font-weight:900; margin-bottom:16px; }
+    .video-section .subtitle { font-size:18px; color:rgba(255,255,255,0.7); max-width:600px; margin:0 auto 40px; }
+    .video-wrapper { max-width:800px; margin:0 auto; border-radius:20px; overflow:hidden; border:4px solid rgba(255,255,255,0.1); box-shadow:0 40px 100px rgba(0,0,0,0.6); aspect-ratio:16/9; position:relative; }
+    .video-wrapper::before { content:''; position:absolute; inset:0; box-shadow:inset 0 0 100px rgba(0,0,0,0.4); pointer-events:none; z-index:1; }
+    .video-wrapper iframe { width:100%; height:100%; border:none; }
+    .video-3up { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+    @media(max-width:900px){ .video-3up { grid-template-columns:1fr; } }
+
+    /* === AGENDA (LIGHT BG) === */
+    .agenda-section { padding:var(--section-padding); background:linear-gradient(180deg,rgba(248,250,247,0.88) 0%,rgba(248,250,247,0.88) 100%),url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=1920&q=80') center/120% auto no-repeat; position:relative; z-index:1; animation:agenda-bg-drift 55s ease-in-out infinite; }
+    .agenda-section h2 { text-align:center; font-size:44px; font-weight:900; margin-bottom:16px; color:var(--text-dark); }
+    .agenda-section .section-sub { text-align:center; font-size:18px; color:var(--text-secondary); margin-bottom:60px; }
+    .agenda-timeline { max-width:800px; margin:0 auto; display:flex; flex-direction:column; gap:32px; }
+    .agenda-day { background:var(--light-card); border:1px solid var(--light-border); border-radius:24px; padding:40px; display:grid; grid-template-columns:auto 1fr; gap:32px; align-items:start; transition:transform 0.3s,box-shadow 0.3s,border-color 0.3s; backdrop-filter:blur(12px); border-top:1px solid rgba(255,255,255,0.15); border-left:1px solid rgba(255,255,255,0.15); }
+    .agenda-day:hover { transform:translateY(-4px); box-shadow:0 12px 40px rgba(0,102,68,0.08); border-color:rgba(0,102,68,0.3); }
+    .day-marker { width:80px; height:80px; background:linear-gradient(135deg,rgba(0,102,68,0.08),rgba(238,175,0,0.08)); border:2px solid rgba(0,102,68,0.2); border-radius:20px; display:flex; flex-direction:column; align-items:center; justify-content:center; font-weight:900; flex-shrink:0; }
+    .day-marker .label { font-size:10px; text-transform:uppercase; letter-spacing:0.1em; color:var(--muted); }
+    .day-marker .num { font-size:32px; color:var(--green-deep); }
+    .agenda-day h3 { font-size:22px; font-weight:800; margin-bottom:8px; color:var(--text-dark); }
+    .agenda-day .day-desc { font-size:15px; color:var(--text-secondary); line-height:1.6; margin-bottom:16px; }
+    .agenda-bullets { list-style:none; display:flex; flex-direction:column; gap:8px; }
+    .agenda-bullets li { font-size:14px; color:var(--text-secondary); padding-left:28px; position:relative; }
+    .agenda-bullets li::before { content:'✓'; position:absolute; left:0; color:var(--green-deep); font-weight:800; }
+    .day-tag { display:inline-block; background:rgba(0,102,68,0.06); border:1px solid rgba(0,102,68,0.15); border-radius:6px; padding:4px 14px; font-size:11px; font-weight:700; color:var(--green-deep); text-transform:uppercase; letter-spacing:0.06em; margin-bottom:12px; }
+
+    /* === GUIDE / BIO (DARK GREEN GRADIENT) === */
+    .guide-section { padding:var(--section-padding); background:linear-gradient(135deg,#0C1F14 0%,#003D28 50%,#1A3000 100%); color:var(--white); position:relative; z-index:1; overflow:hidden; }
+    .guide-section::before { content:''; position:absolute; inset:0; background:url('https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1920&q=80') center/cover no-repeat; opacity:0.04; }
+    .guide-content { display:grid; grid-template-columns:0.45fr 1fr; gap:60px; align-items:center; max-width:950px; margin:0 auto; position:relative; z-index:1; }
+    .guide-photo { border-radius:24px; overflow:hidden; border:2px solid rgba(238,175,0,0.2); box-shadow:0 24px 64px rgba(0,0,0,0.4); }
+    .guide-photo img { width:100%; height:auto; }
+    .guide-bio h2 { font-size:36px; font-weight:900; margin-bottom:24px; line-height:1.15; }
+    .guide-bio p { font-size:16px; line-height:1.7; color:rgba(255,255,255,0.8); margin-bottom:16px; }
+    .guide-bio strong { color:var(--white); }
+    .guide-credentials { display:flex; gap:12px; flex-wrap:wrap; margin-top:24px; }
+    .credential { background:rgba(238,175,0,0.08); border:1px solid rgba(238,175,0,0.2); border-radius:10px; padding:10px 16px; font-size:13px; font-weight:600; color:var(--gold-mango); display:flex; align-items:center; gap:8px; }
+    .credential img { width:24px; height:24px; border-radius:4px; }
+
+    /* === TESTIMONIALS (CREAM BG) === */
+    .testimonial-section { padding:var(--section-padding); background:var(--gradient-cream); position:relative; z-index:1; }
+    .testimonial-section h2 { text-align:center; font-size:40px; font-weight:900; margin-bottom:50px; color:var(--text-dark); }
+    .testimonial-grid { display:grid; grid-template-columns:1fr 1fr; gap:28px; max-width:800px; margin:0 auto; }
+    .testimonial-card { background:var(--light-card); border:1px solid var(--light-border); border-radius:20px; padding:32px; transition:transform 0.3s,box-shadow 0.3s; backdrop-filter:blur(12px); border-top:1px solid rgba(255,255,255,0.15); border-left:1px solid rgba(255,255,255,0.15); }
+    .testimonial-card:hover { transform:translateY(-4px); box-shadow:0 12px 36px rgba(0,102,68,0.08); }
+    .testimonial-stars { color:var(--gold-mango); font-size:18px; margin-bottom:16px; letter-spacing:2px; }
+    .testimonial-card blockquote { font-size:15px; line-height:1.7; color:var(--text-secondary); font-style:italic; margin-bottom:20px; }
+    .testimonial-author { display:flex; align-items:center; gap:14px; }
+    .testimonial-author img { width:48px; height:48px; border-radius:50%; object-fit:cover; border:2px solid var(--light-border); }
+    .testimonial-author .name { font-weight:700; font-size:14px; color:var(--text-dark); }
+    .testimonial-author .role { font-size:12px; color:var(--muted); }
+
+    /* === AUDIO TESTIMONIALS === */
+    .audio-testimonial-section { padding:var(--section-padding); background:var(--gradient-deep); position:relative; z-index:1; }
+    .audio-testimonial-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:24px; max-width:860px; margin:0 auto; }
+    .audio-card { display:flex; flex-direction:column; align-items:center; gap:14px; padding:24px 16px 20px; }
+    .audio-photo-wrap { width:100px; height:100px; border-radius:50%; overflow:hidden; border:2px solid rgba(255,255,255,0.15); flex-shrink:0; }
+    .audio-photo { width:100%; height:100%; object-fit:cover; object-position:top; }
+    .audio-name { font-size:14px; font-weight:700; color:rgba(255,255,255,0.6); letter-spacing:0.1em; text-transform:uppercase; }
+    .audio-player { width:100%; height:32px; border-radius:20px; outline:none; opacity:0.85; }
+    /* stagger delays for the 4 cards */
+    .audio-card:nth-child(1) { transition-delay:0s; }
+    .audio-card:nth-child(2) { transition-delay:0.35s; }
+    .audio-card:nth-child(3) { transition-delay:0.7s; }
+    .audio-card:nth-child(4) { transition-delay:1.05s; }
+    @media(max-width:640px){ .audio-testimonial-grid{grid-template-columns:repeat(2,1fr); gap:16px;} .audio-photo-wrap{width:80px;height:80px;} }
+
+    /* === QUALIFY (WHITE BG) === */
+    .qualify-section { padding:var(--section-padding); background:var(--light-bg); position:relative; z-index:1; }
+    .qualify-section h2 { text-align:center; font-size:40px; font-weight:900; margin-bottom:50px; color:var(--text-dark); }
+    .qualify-list { max-width:750px; margin:0 auto; list-style:none; display:flex; flex-direction:column; gap:16px; }
+    .qualify-item { background:var(--light-card); border:1px solid var(--light-border); border-radius:16px; padding:24px 28px 24px 64px; position:relative; font-size:16px; line-height:1.6; color:var(--text-secondary); transition:border-color 0.3s,transform 0.2s; }
+    .qualify-item:hover { border-color:rgba(0,102,68,0.3); transform:translateX(4px); }
+    .qualify-item::before { content:'✓'; position:absolute; left:24px; top:24px; width:28px; height:28px; background:rgba(0,102,68,0.08); border:1px solid rgba(0,102,68,0.15); border-radius:8px; display:flex; align-items:center; justify-content:center; color:var(--green-deep); font-weight:800; font-size:14px; }
+
+    /* === REGISTRATION (GREEN GRADIENT) === */
+    .register-section { padding:100px 0 80px; background:linear-gradient(135deg,#003D28 0%,#006644 40%,#1A4D2E 100%); position:relative; z-index:1; text-align:center; color:var(--white); }
+    .register-section::before { content:''; position:absolute; inset:0; background:url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1920&q=80') center/cover no-repeat; opacity:0.05; }
+    @keyframes register-box-glow {
+      0%, 45.45% { box-shadow:0 24px 64px rgba(0,0,0,0.5),0 0 0 1px rgba(238,175,0,0.25),0 0 12px rgba(238,175,0,0.12); border-color:rgba(238,175,0,0.25); }
+      72.73%     { box-shadow:0 24px 64px rgba(0,0,0,0.5),0 0 0 2px rgba(238,175,0,0.95),0 0 55px rgba(238,175,0,0.65),0 0 110px rgba(238,175,0,0.22); border-color:rgba(238,175,0,0.92); }
+      100%       { box-shadow:0 24px 64px rgba(0,0,0,0.5),0 0 0 1px rgba(238,175,0,0.25),0 0 12px rgba(238,175,0,0.12); border-color:rgba(238,175,0,0.25); }
+    }
+    .register-box { max-width:560px; margin:0 auto; background:rgba(12,31,20,0.85); border:1px solid rgba(238,175,0,0.25); border-radius:28px; padding:48px 40px; box-shadow:0 24px 64px rgba(0,0,0,0.5),0 0 0 1px rgba(238,175,0,0.25),0 0 12px rgba(238,175,0,0.12); backdrop-filter:blur(16px); position:relative; z-index:1; animation:register-box-glow 11s ease-in-out infinite; }
+    .register-box h2 { font-size:32px; font-weight:900; margin-bottom:12px; }
+    .register-box .sub { font-size:16px; color:rgba(255,255,255,0.6); margin-bottom:32px; }
+    .form-group { margin-bottom:16px; text-align:left; }
+    .form-group label { display:block; font-size:13px; font-weight:600; color:rgba(255,255,255,0.5); margin-bottom:6px; text-transform:uppercase; letter-spacing:0.05em; }
+    .form-input { width:100%; padding:16px 20px; border-radius:12px; border:1px solid var(--dark-border); background:rgba(0,0,0,0.3); color:var(--white); font-family:var(--font-body); font-size:16px; transition:border-color 0.2s; outline:none; }
+    .form-input:focus { border-color:var(--gold-mango); box-shadow:0 0 0 3px rgba(238,175,0,0.15); }
+    .form-input::placeholder { color:#555; }
+    .form-submit { width:100%; margin-top:8px; }
+    .form-note { font-size:11px; color:rgba(255,255,255,0.35); margin-top:16px; line-height:1.5; }
+    .enrolled-count { display:flex; align-items:center; justify-content:center; gap:8px; margin-top:20px; font-size:14px; font-weight:600; color:var(--green-sherwood); }
+
+    /* === FINAL CTA (WARM GOLD) === */
+    .final-cta-section { padding:80px 0; background:linear-gradient(135deg,var(--gold-cream),#FFF3D6,var(--gold-cream)); text-align:center; position:relative; z-index:1; }
+    .final-cta-section h2 { font-size:36px; font-weight:900; margin-bottom:16px; color:var(--text-dark); max-width:700px; margin-left:auto; margin-right:auto; line-height:1.2; }
+    .final-cta-section .sub { color:var(--muted); font-size:16px; text-transform:uppercase; letter-spacing:2px; font-weight:700; margin-bottom:32px; }
+
+    /* === FOOTER === */
+    .footer { background:var(--dark-forest); border-top:1px solid var(--dark-border); padding:48px 0 32px; text-align:center; position:relative; z-index:1; }
+    .footer-nav { display:flex; justify-content:center; gap:24px; flex-wrap:wrap; margin-bottom:20px; }
+    .footer-nav a { font-size:13px; font-weight:500; color:var(--green-sherwood); transition:color 0.2s; }
+    .footer-nav a:hover { color:var(--white); }
+    .footer .copyright { font-size:13px; color:rgba(255,255,255,0.7); margin-bottom:12px; font-weight:600; }
+    .footer .disclaimer { max-width:640px; margin:0 auto; font-size:12px; color:rgba(255,255,255,0.55); line-height:1.7; }
+    .footer .research-citation { max-width:640px; margin:16px auto 0; padding-top:16px; border-top:1px solid rgba(255,255,255,0.1); font-size:12px; color:rgba(255,255,255,0.65); line-height:1.8; }
+    .footer .research-citation a { color:var(--gold-mango); text-decoration:underline; text-underline-offset:3px; font-weight:600; }
+    .footer .research-citation a:hover { color:var(--gold-bright); }
+    .hbr-badge { display:inline-flex; align-items:center; gap:6px; border:1px solid rgba(255,255,255,0.15); border-radius:20px; padding:8px 21px; font-size:16px; font-weight:600; color:rgba(255,255,255,0.5); letter-spacing:0.06em; margin-top:10px; }
+    .hbr-subtag { display:block; font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:0.12em; color:#EEAF00; text-shadow:0 0 12px rgba(238,175,0,0.45); margin-top:4px; margin-bottom:8px; }
+    .hbr-logo-badge { display:inline-flex; flex-direction:column; align-items:center; justify-content:center; border:2px solid rgba(166,25,46,0.35); border-radius:6px; padding:6px 14px; font-size:15px; font-weight:900; color:rgba(166,25,46,0.75); letter-spacing:0.04em; line-height:1.3; }
+    .hbr-logo-badge span { font-size:10px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:rgba(166,25,46,0.6); }
+
+    /* === SOCIAL PROOF POPUP === */
+    .proof-popup { position:fixed; bottom:24px; left:24px; background:var(--light-card); border:1px solid var(--light-border); border-radius:14px; box-shadow:0 12px 40px rgba(0,0,0,0.15); padding:16px 20px; display:flex; align-items:center; gap:14px; z-index:999; max-width:340px; transform:translateX(-120%); opacity:0; }
+    .proof-popup.show { animation:slide-in-popup 0.5s ease forwards; }
+    .proof-popup.hide { animation:slide-out-popup 0.5s ease forwards; }
+    .proof-icon { width:40px; height:40px; background:rgba(0,102,68,0.1); border:1px solid rgba(0,102,68,0.2); border-radius:10px; display:flex; align-items:center; justify-content:center; color:var(--green-deep); font-size:18px; flex-shrink:0; }
+    .proof-text { font-size:13px; color:var(--text-secondary); line-height:1.4; }
+    .proof-text strong { color:var(--text-dark); }
+    .proof-time { font-size:11px; color:var(--muted); margin-top:2px; }
+
+    /* === RESPONSIVE === */
+    @media(max-width:900px){ .hero-content{grid-template-columns:1fr;gap:40px} .hero h1{font-size:40px} .value-grid{grid-template-columns:1fr} .guide-content{grid-template-columns:1fr;text-align:center} .guide-photo{max-width:300px;margin:0 auto} .book-layout{grid-template-columns:1fr;text-align:center} .book-visual{margin-bottom:20px} .testimonial-grid{grid-template-columns:1fr} .agenda-day{grid-template-columns:1fr} .day-marker{width:100%;flex-direction:row;gap:8px;height:auto;padding:12px 16px} }
+    @media(max-width:640px){ .hero h1{font-size:32px} .cd-num{font-size:36px} .value-section h2,.agenda-section h2,.qualify-section h2,.testimonial-section h2{font-size:28px} .register-box{padding:32px 24px} .nav-links a:not(.nav-cta){display:none} .announce-bar{font-size:12px} .hero-float-stat{display:none} .book-stats{flex-direction:column;gap:16px} }
+
+    /* === MESH GRADIENT BLOBS (Hero) === */
+    @keyframes mesh-move-1{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(60px,-40px) scale(1.08)}66%{transform:translate(-30px,50px) scale(0.94)}}
+    @keyframes mesh-move-2{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(-70px,30px) scale(1.1)}66%{transform:translate(40px,-25px) scale(0.9)}}
+    @keyframes mesh-move-3{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(25px,55px) scale(1.05)}66%{transform:translate(-45px,-35px) scale(0.96)}}
+    .mesh-blob{position:absolute;border-radius:50%;filter:blur(100px);pointer-events:none;}
+    .mesh-blob-1{width:500px;height:500px;background:radial-gradient(circle,rgba(0,134,90,0.25),transparent 70%);top:-100px;left:-50px;animation:mesh-move-1 14.4s ease-in-out infinite;}
+    .mesh-blob-2{width:600px;height:600px;background:radial-gradient(circle,rgba(238,175,0,0.12),transparent 70%);top:20%;right:-100px;animation:mesh-move-2 14.4s ease-in-out infinite;animation-delay:-4.8s;}
+    .mesh-blob-3{width:400px;height:400px;background:radial-gradient(circle,rgba(0,61,40,0.3),transparent 70%);bottom:-50px;left:30%;animation:mesh-move-3 14.4s ease-in-out infinite;animation-delay:-9.6s;}
+
+    /* === SLIDE IN FROM LEFT (Agenda) === */
+    .slide-left{opacity:0;transform:translateX(-40px);transition:opacity 0.84s ease,transform 0.84s ease;}
+    .slide-left.visible{opacity:1;transform:translateX(0);}
+
+    /* === TYPEWRITER AUTHOR FADE === */
+    .testimonial-author{transition:opacity 0.84s ease;}
+
+    /* === GLOWING EYEBROW BADGE === */
+    .eyebrow-glow { animation: pulse-glow 3.0s ease-in-out infinite; background:rgba(0,102,68,0.12); border:2px solid rgba(0,102,68,0.35); border-radius:30px; padding:10px 24px; font-size:13px; font-weight:800; color:var(--green-deep); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:20px; display:inline-flex; align-items:center; gap:8px; box-shadow:0 4px 20px rgba(0,102,68,0.2),0 0 30px rgba(238,175,0,0.1); }
+
+    /* === OLD MOBILE OPTIMIZATION (3+ years old) — Disable GPU/CPU intensive animations === */
+    .old-mobile .noise-overlay { display:none; }
+    .old-mobile .hero::before { animation:none; }
+    .old-mobile .hero::after { animation:none; }
+    .old-mobile .hero-glow { animation:none; }
+    .old-mobile .days-text { animation:none; color:var(--gold-mango); }
+    .old-mobile .minutes-text { animation:none; color:var(--gold-mango); }
+    .old-mobile .pulse-gold-border { animation:none; box-shadow:0 8px 32px rgba(0,102,68,0.45),0 0 0 2px rgba(238,175,0,0.5); }
+    .old-mobile .value-card, .old-mobile .agenda-day, .old-mobile .testimonial-card { backdrop-filter:none; border-top:none; border-left:none; }
+    .old-mobile .value-section { animation:none; }
+    .old-mobile .agenda-section { animation:none; }
+    .old-mobile .hero-eyebrow { animation:none; }
+    .old-mobile .hero-float-stat { animation:none; }
+    .old-mobile .book-cover-wrap { animation:none; }
+    .old-mobile .book-section::after { animation:none; }
+    .old-mobile .register-box { animation:none; box-shadow:0 0 0 3px rgba(238,175,0,0.35); }
+    .old-mobile { -webkit-font-smoothing:auto; }
+    /* New animation overrides for old-mobile */
+    .old-mobile .hero-photo-wrap { animation:none; box-shadow:0 24px 64px rgba(0,0,0,0.4),0 0 0 2px rgba(238,175,0,0.5); }
+    .old-mobile .value-headline { opacity:1; transform:none; animation:none; }
+    .old-mobile .value-card-seq { opacity:1; transform:none; transition:none; }
+    .old-mobile .cta-green-glow { animation:none !important; box-shadow:0 8px 32px rgba(238,175,0,0.3); }
+    .old-mobile .book-fade { opacity:1; transform:none; transition:none; }
+    .old-mobile .video-heading-fade { opacity:1; transform:none; transition:none; }
+    .old-mobile .video-wrapper.gold-captured { animation:none; border-color:rgba(238,175,0,0.55); }
+    .old-mobile .agenda-day-fade { opacity:1; transform:none; transition:none; }
+    .old-mobile .agenda-day-fade .day-marker { opacity:1; transform:none; transition:none; }
+    .old-mobile .agenda-day-fade .day-content { opacity:1; transform:none; transition:none; }
+    .old-mobile .testimonial-seq { opacity:1; transform:none; }
+    .old-mobile .testimonial-seq.t-revealed { transition:none; }
+    .old-mobile .qualify-fade { opacity:1; transform:none; transition:none; }
+
+    /* === ENHANCED HERO PHOTO PULSE (brighter glow) === */
+    @keyframes hero-photo-pulse {
+      0%,100% { box-shadow:0 24px 64px rgba(0,0,0,0.4),0 0 0 2px rgba(238,175,0,0.55),0 0 40px rgba(238,175,0,0.5),0 0 80px rgba(238,175,0,0.2); }
+      50%     { box-shadow:0 24px 64px rgba(0,0,0,0.4),0 0 0 4px rgba(238,175,0,1.0),0 0 90px rgba(238,175,0,0.95),0 0 180px rgba(238,175,0,0.45),0 0 260px rgba(238,175,0,0.15); }
+    }
+
+    /* === HEADLINE SCROLL PULSE (Master AI heading) === */
+    @keyframes headline-scroll-pulse {
+      0%   { opacity:0; transform:translateY(18px); }
+      25%  { opacity:1; transform:translateY(0); text-shadow:0 0 40px rgba(238,175,0,0.85),0 0 80px rgba(238,175,0,0.45),0 0 120px rgba(238,175,0,0.2); }
+      55%  { text-shadow:0 0 20px rgba(238,175,0,0.4),0 0 40px rgba(238,175,0,0.2); }
+      100% { text-shadow:none; opacity:1; transform:translateY(0); }
+    }
+    .value-headline { opacity:0; transform:translateY(18px); }
+    .value-headline.pulse-visible { animation:headline-scroll-pulse 2.2s cubic-bezier(0.16,1,0.3,1) forwards; }
+
+    /* === VALUE CARDS SEQUENTIAL REVEAL === */
+    .value-card-seq { opacity:0; transform:translateY(28px); transition:opacity 0.9s cubic-bezier(0.16,1,0.3,1), transform 0.9s cubic-bezier(0.16,1,0.3,1); }
+    .value-card-seq.revealed { opacity:1; transform:translateY(0); }
+
+    /* === VALUE SECTION CTA — GREEN DIFFUSE PULSING GLOW === */
+    @keyframes green-diffuse-glow {
+      0%,100% { box-shadow:0 8px 32px rgba(238,175,0,0.3),0 0 0 2px rgba(0,160,85,0.45),0 0 28px rgba(0,160,85,0.3); }
+      50%     { box-shadow:0 8px 32px rgba(238,175,0,0.3),0 0 0 4px rgba(0,210,115,0.9),0 0 60px rgba(0,210,115,0.55),0 0 110px rgba(0,210,115,0.2); }
+    }
+    .cta-green-glow { animation:green-diffuse-glow 2.6s ease-in-out infinite !important; }
+
+    /* === VIDEO SECTION — GOLD BORDER CAPTURE ON SCROLL === */
+    @keyframes video-gold-capture {
+      0%   { border-color:rgba(255,255,255,0.1); box-shadow:0 40px 100px rgba(0,0,0,0.6); }
+      45%  { border-color:rgba(238,175,0,1.0); box-shadow:0 40px 100px rgba(0,0,0,0.6),0 0 55px rgba(238,175,0,0.85),0 0 110px rgba(238,175,0,0.35); }
+      100% { border-color:rgba(238,175,0,0.6); box-shadow:0 40px 100px rgba(0,0,0,0.6),0 0 28px rgba(238,175,0,0.55),0 0 55px rgba(238,175,0,0.2); }
+    }
+    .video-wrapper.gold-captured { animation:video-gold-capture 1.5s ease forwards; }
+
+    /* === BOOK SECTION FADE-IN ELEMENTS === */
+    .book-fade { opacity:0; transform:translateY(18px); transition:opacity 0.7s ease, transform 0.7s ease; }
+    .book-fade.visible { opacity:1; transform:translateY(0); }
+
+    /* === VIDEO SECTION HEADING FADE === */
+    .video-heading-fade { opacity:0; transform:translateY(18px); transition:opacity 1s ease, transform 1s ease; }
+    .video-heading-fade.visible { opacity:1; transform:translateY(0); }
+
+    /* === TESTIMONIAL SEQUENTIAL REVEAL === */
+    .testimonial-seq { opacity:0; transform:translateY(22px); }
+    .testimonial-seq.t-revealed { opacity:1; transform:translateY(0); transition:opacity 1s ease, transform 1s ease; }
+
+    /* === QUALIFY ITEMS FADE IN === */
+    .qualify-fade { opacity:0; transform:translateX(-20px); transition:opacity 0.7s ease, transform 0.7s ease; }
+    .qualify-fade.visible { opacity:1; transform:translateX(0); }
+
+    /* === AGENDA DAYS — sequential stagger === */
+    .agenda-day-fade { opacity:0; transform:translateY(24px); transition:opacity 0.7s ease, transform 0.7s ease; }
+    .agenda-day-fade.visible { opacity:1; transform:translateY(0); }
+    .agenda-day-fade .day-marker { opacity:0; transform:scale(0.85); transition:opacity 0.5s ease, transform 0.5s ease; }
+    .agenda-day-fade.marker-visible .day-marker { opacity:1; transform:scale(1); }
+    .agenda-day-fade .day-content { opacity:0; transform:translateX(16px); transition:opacity 0.6s ease, transform 0.6s ease; }
+    .agenda-day-fade.content-visible .day-content { opacity:1; transform:translateX(0); }
+
+    /* === CREDENTIAL BAR === */
+    .credential-bar { display:flex; align-items:center; gap:0; background:rgba(255,255,255,0.04); border:1px solid rgba(238,175,0,0.2); border-radius:14px; padding:12px 20px; margin-bottom:24px; backdrop-filter:blur(8px); width:fit-content; }
+    .cred-bar-item { display:flex; flex-direction:column; align-items:center; padding:0 18px; }
+    .cred-bar-label { font-family:var(--font-accent); font-size:14px; font-weight:800; font-style:italic; background:linear-gradient(90deg,#EEAF00,#DDD055,#FDE68A,#DDD055,#EEAF00); background-size:300% 100%; -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; animation:metallic-shimmer 3.0s ease-in-out infinite; }
+    .cred-bar-num { font-size:20px; font-weight:900; }
+    .cred-bar-sub { font-size:10px; text-transform:uppercase; letter-spacing:0.08em; color:rgba(255,255,255,0.4); font-weight:600; margin-top:2px; }
+    .cred-bar-divider { width:1px; height:32px; background:rgba(238,175,0,0.2); flex-shrink:0; }
+    @media(max-width:640px){ .credential-bar{padding:8px 10px;} .cred-bar-item{padding:0 8px;} .cred-bar-label{font-size:11px;} .cred-bar-num{font-size:15px;} }
+
+    /* === BONUS HERO BADGE === */
+    .bonus-hero-badge { display:flex; align-items:center; gap:10px; margin-top:14px; padding:16px 24px; background:rgba(238,175,0,0.07); border:1px solid rgba(238,175,0,0.22); border-radius:12px; font-size:20px; color:rgba(255,255,255,0.72); max-width:600px; }
+    .bonus-hero-badge strong { color:var(--gold-mango); }
+    .bonus-hero-icon { font-size:27px; flex-shrink:0; }
+
+    /* === VIP HERO TEASER === */
+    .vip-hero-teaser { display:inline-flex; align-items:center; gap:10px; padding:14px 24px; border:2px solid rgba(238,175,0,0.6); border-radius:10px; background:rgba(238,175,0,0.92); color:#000; font-size:19px; text-decoration:none; transition:all 0.3s; line-height:1.4; box-shadow:0 0 22px rgba(34,197,94,0.35),0 0 55px rgba(34,197,94,0.15),0 4px 18px rgba(0,0,0,0.3); }
+    .vip-hero-teaser:hover { background:#EEAF00; box-shadow:0 0 32px rgba(34,197,94,0.55),0 0 80px rgba(34,197,94,0.25),0 6px 24px rgba(0,0,0,0.4); transform:translateY(-1px); }
+    .vip-hero-teaser strong { color:#000; }
+
+    /* === HOLOGRAPHIC CREDENTIAL BADGE HOVER === */
+    .credential { position:relative; overflow:hidden; transition:transform 0.2s; }
+    .credential::after { content:''; position:absolute; inset:0; background:linear-gradient(135deg,rgba(255,0,150,0) 0%,rgba(255,100,50,0) 25%,rgba(255,215,0,0.22) 50%,rgba(0,255,200,0.14) 75%,rgba(150,0,255,0) 100%); background-size:200% 200%; background-position:0% 0%; opacity:0; border-radius:inherit; transition:opacity 0.3s ease; pointer-events:none; }
+    .credential:hover { transform:translateY(-2px); }
+    .credential:hover::after { opacity:1; animation:holo-shine 1.4s ease-in-out; }
+    @keyframes holo-shine { 0%{background-position:0% 0%} 50%{background-position:100% 100%} 100%{background-position:200% 200%} }
+
+    /* === EXECUTIVE INVITATION VIDEO PLACEHOLDER === */
+    .invite-video-card { max-width:600px; margin:0 auto 48px; border-radius:20px; overflow:hidden; border:2px solid rgba(238,175,0,0.28); box-shadow:0 24px 60px rgba(0,0,0,0.5),0 0 40px rgba(238,175,0,0.08); position:relative; aspect-ratio:16/9; background:linear-gradient(135deg,rgba(0,40,25,0.95),rgba(0,60,35,0.9)); cursor:pointer; transition:border-color 0.3s; }
+    .invite-video-card:hover { border-color:rgba(238,175,0,0.7); }
+    .invite-video-bg { position:absolute; inset:0; background:radial-gradient(ellipse at 40% 50%,rgba(0,102,68,0.3),transparent 70%); }
+    .invite-play-btn { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:72px; height:72px; background:rgba(238,175,0,0.9); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:28px; color:var(--dark-forest); box-shadow:0 8px 32px rgba(238,175,0,0.5); transition:all 0.3s; }
+    .invite-video-card:hover .invite-play-btn { transform:translate(-50%,-50%) scale(1.1); background:var(--gold-mango); box-shadow:0 12px 48px rgba(238,175,0,0.7); }
+    .invite-video-label { position:absolute; bottom:0; left:0; right:0; background:linear-gradient(to top,rgba(12,31,20,0.96),transparent); padding:40px 28px 20px; }
+    .invite-video-label h3 { font-size:18px; font-weight:800; color:var(--white); margin-bottom:4px; }
+    .invite-video-label p { font-size:13px; color:var(--green-sherwood); }
+
+    /* === ROI CALCULATOR === */
+    .roi-section { padding:var(--section-padding); background:var(--gradient-deep); position:relative; z-index:1; overflow:hidden; }
+    .roi-section::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 60% 40%,rgba(238,175,0,0.05),transparent 65%); }
+    .roi-headline { font-size:40px; font-weight:900; margin-bottom:16px; color:var(--white); }
+    /* "Leaving on the Table" — fires once on scroll-in: white → crimson flash → settles to gold shimmer */
+    @keyframes leaving-flash {
+      0%   { -webkit-text-fill-color:#fff; color:#fff; }
+      15%  { -webkit-text-fill-color:#C41E3A; color:#C41E3A; filter:drop-shadow(0 0 12px rgba(196,30,58,0.8)); }
+      40%  { -webkit-text-fill-color:#C41E3A; color:#C41E3A; filter:drop-shadow(0 0 8px rgba(196,30,58,0.5)); }
+      70%  { -webkit-text-fill-color:transparent; color:transparent; filter:none; }
+      100% { -webkit-text-fill-color:transparent; color:transparent; filter:none; }
+    }
+    .leaving-flash { animation:leaving-flash 1.6s ease-out forwards; background:linear-gradient(90deg,#EEAF00,#DDD055,#FDE68A,#DDD055,#EEAF00); background-size:300% 100%; -webkit-background-clip:text; background-clip:text; animation:leaving-flash 1.6s ease-out forwards, metallic-shimmer 3s ease-in-out 1.6s infinite; }
+    @keyframes roi-card-glow { 0%,100%{box-shadow:0 24px 64px rgba(0,0,0,0.4),0 0 0 1px rgba(238,175,0,0.15),0 0 18px rgba(238,175,0,0.08)} 50%{box-shadow:0 24px 64px rgba(0,0,0,0.4),0 0 0 1px rgba(238,175,0,0.55),0 0 40px rgba(238,175,0,0.18),0 0 80px rgba(238,175,0,0.06)} }
+    .roi-card { max-width:640px; margin:0 auto; background:rgba(12,31,20,0.78); border:1px solid rgba(238,175,0,0.25); border-radius:24px; padding:40px; backdrop-filter:blur(16px); box-shadow:0 24px 64px rgba(0,0,0,0.4),0 0 0 1px rgba(238,175,0,0.1); position:relative; z-index:1; animation:roi-card-glow 4s ease-in-out infinite; }
+    .roi-label { font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:rgba(255,255,255,0.45); display:block; margin-bottom:8px; }
+    .roi-input-wrap { display:flex; align-items:center; background:rgba(0,0,0,0.3); border:1px solid rgba(255,255,255,0.1); border-radius:12px; overflow:hidden; transition:border-color 0.2s,box-shadow 0.2s; }
+    .roi-input-wrap:focus-within { border-color:var(--gold-mango); box-shadow:0 0 0 3px rgba(238,175,0,0.12); }
+    .roi-currency { padding:14px 16px; font-size:20px; font-weight:800; color:var(--gold-mango); border-right:1px solid rgba(255,255,255,0.08); background:rgba(238,175,0,0.04); }
+    .roi-input { flex:1; padding:14px 16px; font-size:20px; font-weight:700; color:var(--white); background:transparent; border:none; outline:none; font-family:var(--font-body); }
+    .roi-input::placeholder { color:rgba(255,255,255,0.2); }
+    .roi-divider { height:1px; background:rgba(255,255,255,0.06); margin:28px 0; }
+    .roi-toggle-row { display:flex; gap:8px; margin-bottom:24px; }
+    .roi-toggle-pill { flex:1; padding:9px 0; border-radius:10px; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.07em; cursor:pointer; border:1px solid rgba(255,255,255,0.1); background:rgba(255,255,255,0.04); color:rgba(255,255,255,0.4); transition:all 0.2s; text-align:center; user-select:none; }
+    .roi-toggle-pill.active { background:rgba(238,175,0,0.14); border-color:rgba(238,175,0,0.5); color:var(--gold-mango); }
+    .roi-results { display:flex; flex-direction:column; gap:14px; margin-bottom:28px; }
+    .roi-result-row { display:flex; justify-content:space-between; align-items:center; padding:14px 18px; border-radius:12px; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.06); }
+    .roi-result-row.roi-result-premium { border-color:rgba(238,175,0,0.15); background:rgba(238,175,0,0.04); }
+    .roi-result-row.roi-result-gap { border-color:rgba(0,200,100,0.2); background:rgba(0,200,100,0.04); }
+    .roi-result-label { font-size:13px; color:rgba(255,255,255,0.5); font-weight:600; }
+    .roi-result-val { font-size:20px; font-weight:900; color:var(--white); font-variant-numeric:tabular-nums; }
+    .roi-gap-num { color:#4ade80 !important; font-size:24px !important; }
+    .roi-cta-btn { width:100%; justify-content:center; font-size:1.05rem; }
+    @media(max-width:640px){ .roi-card{padding:28px 20px;} .roi-headline{font-size:28px;} .roi-result-val{font-size:16px;} .roi-gap-num{font-size:20px !important;} .roi-toggle-pill{font-size:11px;padding:8px 0;} }
+
+    /* === BONUS CHAPTER MODAL === */
+    .bonus-modal-overlay { position:fixed; inset:0; background:rgba(7,21,13,0.9); backdrop-filter:blur(6px); z-index:10000; display:flex; align-items:center; justify-content:center; padding:20px; opacity:0; pointer-events:none; transition:opacity 0.3s ease; }
+    .bonus-modal-overlay.active { opacity:1; pointer-events:all; }
+    .bonus-modal { background:rgba(12,31,20,0.98); border:1px solid rgba(238,175,0,0.28); border-radius:24px; max-width:520px; width:100%; padding:36px; position:relative; box-shadow:0 32px 80px rgba(0,0,0,0.7),0 0 0 1px rgba(238,175,0,0.1),0 0 40px rgba(238,175,0,0.06); transform:translateY(20px) scale(0.97); transition:transform 0.35s cubic-bezier(0.16,1,0.3,1); }
+    .bonus-modal-overlay.active .bonus-modal { transform:translateY(0) scale(1); }
+    .bonus-modal-close { position:absolute; top:14px; right:16px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); border-radius:50%; width:30px; height:30px; font-size:15px; color:rgba(255,255,255,0.45); cursor:pointer; display:flex; align-items:center; justify-content:center; transition:all 0.2s; }
+    .bonus-modal-close:hover { background:rgba(255,255,255,0.12); color:var(--white); }
+    .bonus-modal-inner { display:flex; gap:22px; align-items:flex-start; }
+    .bonus-book-wrap { position:relative; flex-shrink:0; }
+    .bonus-book-img { width:96px; border-radius:6px; border:1px solid rgba(238,175,0,0.4); box-shadow:0 12px 32px rgba(0,0,0,0.5); }
+    .bonus-gift-badge { position:absolute; top:-8px; right:-8px; background:var(--gradient-warm); color:var(--dark-forest); font-size:10px; font-weight:900; padding:4px 10px; border-radius:20px; }
+    .bonus-eyebrow { font-size:10px; text-transform:uppercase; letter-spacing:0.12em; color:var(--gold-mango); font-weight:700; margin-bottom:8px; }
+    .bonus-modal-content h3 { font-size:19px; font-weight:900; color:var(--white); margin-bottom:10px; line-height:1.25; font-family:var(--font-accent); }
+    .bonus-desc { font-size:13px; color:rgba(255,255,255,0.52); line-height:1.6; margin-bottom:16px; }
+    .bonus-checkbox-wrap { display:flex; align-items:center; gap:10px; cursor:pointer; margin-bottom:16px; }
+    .bonus-checkbox-wrap input { width:18px; height:18px; accent-color:var(--green-deep); cursor:pointer; flex-shrink:0; }
+    .bonus-checkbox-label { font-size:13px; font-weight:600; color:rgba(255,255,255,0.75); }
+    .bonus-confirm-btn { width:100%; justify-content:center; font-size:0.95rem; padding:14px 24px; margin-bottom:10px; }
+    .bonus-skip { font-size:12px; color:rgba(255,255,255,0.28); text-align:center; cursor:pointer; transition:color 0.2s; }
+    .bonus-skip:hover { color:rgba(255,255,255,0.6); }
+    @media(max-width:480px){ .bonus-modal-inner{flex-direction:column;} .bonus-book-img{width:80px;} }
+
+    /* === VIP UPSELL MODAL === */
+    .vip-modal-overlay { position:fixed; inset:0; background:rgba(3,13,8,0.93); backdrop-filter:blur(8px); z-index:10001; display:flex; align-items:center; justify-content:center; padding:20px; opacity:0; pointer-events:none; transition:opacity 0.3s ease; }
+    .vip-modal-overlay.active { opacity:1; pointer-events:all; }
+    .vip-modal { background:rgba(12,31,20,0.99); border:1px solid rgba(238,175,0,0.28); border-radius:28px; max-width:460px; width:100%; padding:40px; position:relative; box-shadow:0 40px 100px rgba(0,0,0,0.8),0 0 0 1px rgba(238,175,0,0.15),0 0 60px rgba(238,175,0,0.06); animation:register-box-glow 11s ease-in-out infinite; transform:translateY(24px) scale(0.96); transition:transform 0.4s cubic-bezier(0.16,1,0.3,1); }
+    .vip-modal-overlay.active .vip-modal { transform:translateY(0) scale(1); }
+    .vip-modal-close { position:absolute; top:14px; right:16px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); border-radius:50%; width:30px; height:30px; font-size:15px; color:rgba(255,255,255,0.45); cursor:pointer; display:flex; align-items:center; justify-content:center; transition:all 0.2s; }
+    .vip-modal-close:hover { background:rgba(255,255,255,0.12); color:var(--white); }
+    .vip-eyebrow { font-size:11px; text-transform:uppercase; letter-spacing:0.12em; color:var(--gold-mango); font-weight:700; margin-bottom:8px; }
+    .vip-modal h3 { font-size:26px; font-weight:900; color:var(--white); font-family:var(--font-accent); margin-bottom:6px; line-height:1.2; }
+    .vip-sub { font-size:13px; color:rgba(255,255,255,0.38); margin-bottom:20px; }
+    .vip-price-tag { display:flex; align-items:baseline; gap:10px; margin-bottom:20px; padding:14px 18px; background:rgba(238,175,0,0.05); border:1px solid rgba(238,175,0,0.18); border-radius:12px; }
+    .vip-price-amount { font-size:40px; font-weight:900; color:var(--gold-bright); font-family:var(--font-accent); }
+    .vip-price-desc { font-size:12px; color:rgba(255,255,255,0.38); line-height:1.5; }
+    .vip-perks { display:flex; flex-direction:column; gap:12px; margin-bottom:22px; }
+    .vip-perk { display:flex; gap:12px; align-items:flex-start; }
+    .vip-perk-icon { font-size:20px; flex-shrink:0; margin-top:1px; }
+    .vip-perk strong { font-size:14px; color:var(--white); display:block; margin-bottom:2px; }
+    .vip-perk span { font-size:12px; color:rgba(255,255,255,0.42); }
+    .vip-card-input { background:rgba(0,0,0,0.35); border:1px solid rgba(255,255,255,0.08); border-radius:12px; padding:14px 16px; margin-bottom:8px; transition:border-color 0.2s; min-height:42px; }
+    .vip-card-input.StripeElement--focus { border-color:var(--gold-mango); box-shadow:0 0 0 3px rgba(238,175,0,0.15); }
+    .vip-card-errors { color:#f87171; font-size:13px; min-height:18px; margin-bottom:10px; }
+    .vip-upgrade-btn { width:100%; justify-content:center; font-size:1.05rem; padding:16px 28px; margin-bottom:12px; }
+    .vip-skip { font-size:12px; color:rgba(255,255,255,0.28); text-align:center; cursor:pointer; margin-bottom:10px; transition:color 0.2s; }
+    .vip-skip:hover { color:rgba(255,255,255,0.6); }
+    .vip-security { font-size:11px; color:rgba(255,255,255,0.16); text-align:center; }
+    @media(max-width:640px){ .vip-modal{padding:28px 20px;} .vip-price-amount{font-size:32px;} }
+  </style>
+</head>
+<body>
+<div class="noise-overlay"></div>
+
+  <!-- ANNOUNCE BAR -->
+  <div class="announce-bar">⚡ Free AI Event For Financial Advisors, Sales Professionals & Entrepreneurs &nbsp;·&nbsp; <a href="/vip.html" style="color:#EEAF00;font-weight:700;text-decoration:none;">🏆 Limited VIP Passes Available →</a></div>
+
+  <!-- STICKY NAV -->
+  <nav class="sticky-nav" id="stickyNav">
+    <div class="nav-inner">
+      <div class="nav-logo"><span>⚡</span> Executive AI Advantage <span class="accent">Summit</span></div>
+      <div class="nav-links">
+        <a href="#agenda">Agenda</a>
+        <a href="#guide">Your Guide</a>
+        <a href="#qualify">Who It's For</a>
+        <a href="#register" class="nav-cta">Reserve My Free Seat →</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="mesh-blob mesh-blob-1"></div>
+    <div class="mesh-blob mesh-blob-2"></div>
+    <div class="mesh-blob mesh-blob-3"></div>
+    <div class="hero-glow" style="width:600px;height:600px;top:-200px;left:-100px;background:rgba(0,102,68,0.2);"></div>
+    <div class="hero-glow" style="width:500px;height:500px;bottom:-100px;right:-50px;background:rgba(238,175,0,0.1);animation-delay:3s;"></div>
+    <div class="container">
+      <div class="masthead-group">
+        <span class="event-masthead">The AI Mastery Summit</span>
+        <div class="hero-eyebrow">⚡ Free · Limited Seats</div>
+      </div>
+      <span class="event-tagline">AI Is the Equalizer. Psychology Is the Edge.</span>
+      <div class="hero-content">
+        <div>
+          <h1><span class="days-text" style="font-weight:900;">3 Days.</span> <span class="minutes-text" style="font-weight:900;">90 Minutes.</span><br><span class="shimmer-gold" style="font-weight:900;">Close the AI Skills Gap.</span></h1>
+          <!-- CREDENTIAL BAR -->
+          <div class="credential-bar">
+            <div class="cred-bar-item">
+              <span class="cred-bar-label">Harvard ALM</span>
+              <span class="cred-bar-sub">Masters in Psychology</span>
+            </div>
+            <div class="cred-bar-divider"></div>
+            <div class="cred-bar-item">
+              <span class="cred-bar-label">Babson MBA</span>
+              <span class="cred-bar-sub">Top Entrepreneurial College</span>
+            </div>
+            <div class="cred-bar-divider"></div>
+            <div class="cred-bar-item">
+              <span class="cred-bar-num shimmer-gold">4,127+</span>
+              <span class="cred-bar-sub">Leaders Trained</span>
+            </div>
+          </div>
+          <p class="hero-subtitle" id="heroSubtitle"></p>
+          <div class="countdown-row" id="countdown">
+            <div class="cd-unit"><span class="cd-num" id="cd-days">15</span><span class="cd-label">Days</span></div><span class="cd-sep">:</span>
+            <div class="cd-unit"><span class="cd-num" id="cd-hours">00</span><span class="cd-label">Hours</span></div><span class="cd-sep">:</span>
+            <div class="cd-unit"><span class="cd-num" id="cd-min">00</span><span class="cd-label">Min</span></div><span class="cd-sep">:</span>
+            <div class="cd-unit"><span class="cd-num" id="cd-sec">00</span><span class="cd-label">Sec</span></div>
+          </div>
+          <div class="meta-row">
+            <span class="meta-pill">📅 June 18, 2026</span>
+            <span class="meta-pill">🕐 11:00 AM PT / 2:00 PM ET</span>
+            <span class="meta-pill">🎯 90 Min / Day</span>
+          </div>
+          <a href="#register" class="cta-btn pulse-cta pulse-gold-border" style="font-size:1.15rem;">⚡ Reserve My Free Seat Now →</a>
+          <div><span class="hbr-badge">📊 HBR 2026 Research Aligned</span></div>
+          <div class="demand-badge"><span class="demand-dot"></span><span class="demand-badge-text">Available Seats &bull; 100% Free &bull; Virtual</span></div>
+          <!-- BONUS INCLUSION BADGE -->
+          <div class="bonus-hero-badge">
+            <span class="bonus-hero-icon">📖</span>
+            <span><strong>Bonus Inclusion:</strong> Free Chapter 1 of "Storyselling in the Age of AI" when you register</span>
+          </div>
+          <!-- VIP SECONDARY TEASER -->
+          <div style="margin-top:10px;">
+            <a href="/vip.html" class="vip-hero-teaser">
+              🏆 <span>Want to go deeper? <strong>VIP Pass</strong> — Signed Book + Workshop · <strong>$49</strong> →</span>
+            </a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-photo-wrap">
+            <img src="headshot-formal-2.png" alt="Scott Magnacca — Executive AI Advantage Summit Host" />
+            <div class="hero-photo-overlay">
+              <h3>Scott Magnacca</h3>
+              <p>Harvard ALM in Psychology · 4,127+ Advisors Trained</p>
+            </div>
+          </div>
+          <div class="hero-float-stat" style="top:20px;right:-20px;"><span class="num grad-text" data-target="56" data-suffix="%" data-prefix="Earn a " data-duration="7000">0%</span><span class="label">Wage Premium</span></div>
+          <div class="hero-float-stat" style="bottom:120px;left:-30px;animation-delay:1.5s;"><span class="num grad-text" data-target="4127" data-suffix="+" data-duration="9000">0</span><span class="label">Advisors Trained</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-bar"><div class="marquee-track">
+    <span class="marquee-item"><span class="dot"></span>ROI-First Thinking</span>
+    <span class="marquee-item"><span class="dot"></span>Decision Intelligence</span>
+    <span class="marquee-item"><span class="dot"></span>Advanced Prompting</span>
+    <span class="marquee-item"><span class="dot"></span>Hybrid Advisor Framework</span>
+    <span class="marquee-item"><span class="dot"></span>56% Wage Premium</span>
+    <span class="marquee-item"><span class="dot"></span>AI Skills Gap Audit</span>
+    <span class="marquee-item"><span class="dot"></span>Storyselling with AI</span>
+    <span class="marquee-item"><span class="dot"></span>Workflow Automation</span>
+    <span class="marquee-item"><span class="dot"></span>Client Connection</span>
+    <span class="marquee-item"><span class="dot"></span>Vibe Coding</span>
+    <span class="marquee-item"><span class="dot"></span>ROI-First Thinking</span>
+    <span class="marquee-item"><span class="dot"></span>Decision Intelligence</span>
+    <span class="marquee-item"><span class="dot"></span>Advanced Prompting</span>
+    <span class="marquee-item"><span class="dot"></span>Hybrid Advisor Framework</span>
+    <span class="marquee-item"><span class="dot"></span>56% Wage Premium</span>
+    <span class="marquee-item"><span class="dot"></span>AI Skills Gap Audit</span>
+    <span class="marquee-item"><span class="dot"></span>Storyselling with AI</span>
+    <span class="marquee-item"><span class="dot"></span>Workflow Automation</span>
+    <span class="marquee-item"><span class="dot"></span>Client Connection</span>
+    <span class="marquee-item"><span class="dot"></span>Vibe Coding</span>
+  </div></div>
+
+  <!-- VALUE PROPOSITION -->
+  <section class="value-section" id="value">
+    <div class="container">
+      <div class="eyebrow-glow">🎯 Why This Event</div>
+      <h2 class="value-headline"><span class="serif-accent">Master AI</span> <span class="grad-text">When It Actually Matters</span></h2>
+      <p class="subtitle">In 90 minutes a day for 3 consecutive days, gain the clarity, confidence, and practical skills to use AI as your competitive advantage — not another source of overwhelm.</p>
+      <div class="detail-chips">
+        <div class="detail-chip"><span class="icon">📅</span> June 18, 2026</div>
+        <div class="detail-chip"><span class="icon">🕐</span> 11:00 AM PT | 2:00 PM ET</div>
+        <div class="detail-chip"><span class="icon">⏱</span> 90 Minutes Per Day</div>
+        <div class="detail-chip"><span class="icon">🌍</span> Join Virtually From Anywhere</div>
+      </div>
+      <div class="value-grid" id="valueGrid">
+        <div class="value-card value-card-seq" id="vcard1">
+          <img class="value-card-img" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80" alt="ROI analytics dashboard" />
+          <div class="value-leader">
+            <img class="value-leader-img" src="sundar-pichai.jpg" alt="Sundar Pichai" />
+            <p class="value-leader-quote">"AI must be helpful."</p>
+            <span class="value-leader-name">— Sundar Pichai, Google CEO</span>
+          </div>
+          <h3>CFO-Validated ROI Thinking</h3>
+          <p>Stop chasing shiny AI tools. Learn to frame every technology decision as a revenue or time multiplier for your business.</p>
+        </div>
+        <div class="value-card value-card-seq" id="vcard2">
+          <img class="value-card-img" src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&q=80" alt="AI brain visualization" />
+          <div class="value-leader">
+            <img class="value-leader-img" src="demis-hassabis.jpg" alt="Demis Hassabis" />
+            <p class="value-leader-quote">"Solve intelligence, solve everything."</p>
+            <span class="value-leader-name">— Demis Hassabis, Google DeepMind</span>
+          </div>
+          <h3>Decision Intelligence &amp; Analytical/Practical AI</h3>
+          <p>Know exactly when to trust the model and when to override it. Build the judgment that separates AI-native professionals from everyone else.</p>
+        </div>
+        <div class="value-card value-card-seq" id="vcard3">
+          <img class="value-card-img" src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=600&q=80" alt="Advanced prompting code" />
+          <div class="value-leader">
+            <img class="value-leader-img" src="sam-altman.jpg" alt="Sam Altman" />
+            <p class="value-leader-quote">"Prompting is the new literacy."</p>
+            <span class="value-leader-name">— Sam Altman, OpenAI CEO</span>
+          </div>
+          <h3>Prompting as a Power Skill</h3>
+          <p>Go beyond basic ChatGPT. Master advanced prompting techniques for sales, research, client work, and content creation.</p>
+        </div>
+      </div>
+      <a href="#register" class="cta-btn cta-btn-gold pulse-cta cta-green-glow" id="valueCta">⚡ Reserve My Free Seat Now →</a>
+    </div>
+  </section>
+
+  <!-- BOOK SHOWCASE -->
+  <section class="book-section" id="book">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:48px;">
+        <div class="eyebrow eyebrow-light">📚 From the Author</div>
+        <h2 style="font-size:40px;font-weight:900;color:var(--white);">
+          Learn From the Author of<br><span class="shimmer-gold">Storyselling in the Age of AI</span>
+        </h2>
+      </div>
+      <div class="book-layout">
+        <div class="book-visual book-fade">
+          <div class="book-cover-wrap">
+            <img src="book-large.png" alt="Storyselling in the Age of AI — by Scott Magnacca" />
+          </div>
+        </div>
+        <div class="book-info">
+          <p class="book-fade">Scott Magnacca's book is the definitive guide to combining <strong>AI's computational power</strong> with the art of <strong>human persuasion and connection</strong>.</p>
+          <p class="book-fade">This summit distills the core frameworks from the book into three actionable, hands-on sessions. You'll walk away with the same tools and strategies that have helped <strong>4,127+ financial advisors</strong> transform their practices.</p>
+          <p class="book-fade">The book draws on Scott's unique background — studying the <strong style="color:var(--gold-mango);">science of influence</strong> at Harvard and building businesses at one of the world's top entrepreneurial colleges — combined with decades of real-world sales experience.</p>
+          <div class="book-stats">
+            <div class="book-stat"><span class="num grad-text" data-target="4127" data-suffix="+">0</span><span class="label">Advisors Trained</span></div>
+            <div class="book-stat"><span class="num grad-text" data-target="56" data-suffix="%">0%</span><span class="label">Wage Premium</span></div>
+            <div class="book-stat"><span class="num grad-text" data-target="3" data-suffix=" Days">0</span><span class="label">To Transform</span></div>
+          </div>
+          <div class="book-second">
+            <img src="7-strategies.jpeg" alt="7 Strategies for Sales Success" />
+            <div class="book-second-text"><strong>Also by Scott Magnacca:</strong><br>A proven playbook for sales professionals looking to build deeper client relationships and close more effectively.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIDEO SHOWCASE — 4 VIDEOS -->
+  <section class="video-section" id="video">
+    <div class="container">
+      <div class="eyebrow eyebrow-light video-heading-fade">🎬 Watch Before the Summit</div>
+      <h2 class="video-heading-fade" style="transition-delay:0.15s;">Get a Taste of What's <span class="shimmer-gold">Coming Your Way</span></h2>
+      <p class="subtitle video-heading-fade" style="transition-delay:0.3s;">These short videos capture the mindset, frameworks, and energy you'll experience across all 3 days.</p>
+
+      <!-- EXECUTIVE INVITATION VIDEO -->
+      <div class="invite-video-card video-heading-fade" style="transition-delay:0.45s;aspect-ratio:9/16;max-width:340px;cursor:default;">
+        <iframe src="https://www.youtube.com/embed/-inyT2amH7w?rel=0&modestbranding=1" title="A Personal Message From Scott Magnacca" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:none;border-radius:18px;"></iframe>
+      </div>
+      <p style="text-align:center;font-size:14px;font-weight:700;color:var(--white);margin-top:16px;">A Personal Message From Scott Magnacca</p>
+      <p style="text-align:center;font-size:13px;color:var(--green-sherwood);margin-top:4px;margin-bottom:32px;">Host — Executive AI Advantage Summit · Harvard ALM · Babson MBA</p>
+
+      <!-- Featured video — Storyselling in the Age of AI (large) -->
+      <div class="video-wrapper" id="vid1" style="margin-bottom:40px;">
+        <iframe src="https://www.youtube.com/embed/l1qDvC3-Al8?rel=0&modestbranding=1" title="Storyselling in the Age of AI" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <p style="text-align:center;font-size:15px;color:rgba(255,255,255,0.5);margin-bottom:48px;font-weight:600;">▲ Storyselling in the Age of AI — The Framework Behind Everything</p>
+
+      <!-- 2-up video grid -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;max-width:800px;margin:0 auto;">
+        <div>
+          <div class="video-wrapper" id="vid2" style="border-radius:16px;margin-bottom:12px;">
+            <iframe src="https://www.youtube.com/embed/sACovt1h1Xc?rel=0&modestbranding=1" title="The Unfair Advantage: Set Your Sail For Success in The Age of AI" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <p style="font-size:14px;font-weight:700;color:var(--white);margin-bottom:4px;">The Unfair Advantage: Set Your Sail For Success in The Age of AI</p>
+        </div>
+        <div>
+          <div class="video-wrapper" id="vid3" style="border-radius:16px;margin-bottom:12px;">
+            <iframe src="https://www.youtube.com/embed/USfPgRmZECg?rel=0&modestbranding=1" title="The Invisible Sign" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <p style="font-size:14px;font-weight:700;color:var(--white);margin-bottom:4px;">The Invisible Sign</p>
+          <p style="font-size:12px;color:rgba(255,255,255,0.5);">The hidden signal every client sends — and AI misses</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AGENDA -->
+  <section class="agenda-section" id="agenda">
+    <div class="container">
+      <div style="text-align:center;"><div class="eyebrow">📋 Your 3-Day Agenda</div></div>
+      <h2><span class="serif-accent">What You'll</span> <span class="grad-text">Master Each Day</span></h2>
+      <p class="section-sub">Each session is 90 minutes of focused, actionable training — no fluff, no filler.</p>
+      <div class="agenda-timeline">
+        <div class="agenda-day agenda-day-fade">
+          <div class="day-marker"><span class="label">Day</span><span class="num">01</span></div>
+          <div class="day-content">
+            <span class="day-tag">Strategic Foundation — 90 Min</span>
+            <span class="hbr-subtag">✦ Stage 3 ROI Benchmarks</span>
+            <h3>The AI Skills Gap Audit</h3>
+            <p class="day-desc">Quantify exactly where you stand, identify your biggest opportunities, and set your target for the 56% wage premium the market is paying AI-proficient professionals.</p>
+            <ul class="agenda-bullets">
+              <li>Audit your current AI skills against market benchmarks</li>
+              <li>Identify the 3 highest-ROI AI applications for your role</li>
+              <li>Build your personal AI adoption roadmap</li>
+              <li>Understand the Hybrid Advisor framework</li>
+            </ul>
+          </div>
+        </div>
+        <div class="agenda-day agenda-day-fade">
+          <div class="day-marker"><span class="label">Day</span><span class="num">02</span></div>
+          <div class="day-content">
+            <span class="day-tag">Applied Intelligence — 90 Min</span>
+            <span class="hbr-subtag">✦ High-Value Analytical Frameworks</span>
+            <h3>ROI-First AI + Decision Intelligence</h3>
+            <p class="day-desc">Learn to frame every AI tool as a revenue or time multiplier — and build the critical judgment to know when to trust the model and when to override it.</p>
+            <ul class="agenda-bullets">
+              <li>Apply the ROI-first framework to any AI tool or workflow</li>
+              <li>Master the decision intelligence matrix</li>
+              <li>Build AI-enhanced client communication systems</li>
+              <li>Combine AI speed with human relationship depth</li>
+            </ul>
+          </div>
+        </div>
+        <div class="agenda-day agenda-day-fade">
+          <div class="day-marker"><span class="label">Day</span><span class="num">03</span></div>
+          <div class="day-content">
+            <span class="day-tag">Technical Mastery — 90 Min</span>
+            <span class="hbr-subtag">✦ AI Digital Product Playbooks</span>
+            <h3>Prompting as a Power Skill</h3>
+            <p class="day-desc">Go beyond basic prompts. Master advanced techniques for sales conversations, research, client deliverables, and content creation.</p>
+            <ul class="agenda-bullets">
+              <li>Advanced prompting architectures for complex tasks</li>
+              <li>Build reusable prompt libraries for your workflows</li>
+              <li>Chain prompts for multi-step business processes</li>
+              <li>Live implementation: build your first AI workflow</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- VIP AGENDA CALLOUT -->
+      <div style="margin-top:32px;max-width:580px;margin-left:auto;margin-right:auto;padding:20px 28px;background:rgba(238,175,0,0.05);border:1px solid rgba(238,175,0,0.22);border-radius:12px;text-align:center;">
+        <p style="margin:0 0 6px;font-size:12px;font-weight:700;color:rgba(238,175,0,0.85);letter-spacing:0.1em;">🏆 WANT TO GO DEEPER AFTER THE SUMMIT?</p>
+        <p style="margin:0 0 12px;font-size:14px;color:rgba(255,255,255,0.7);line-height:1.5;">The VIP Implementation Workshop turns these 3 days into a personalized 30-day AI roadmap — with Scott, live.</p>
+        <a href="/vip.html" style="color:#EEAF00;font-size:13px;font-weight:700;text-decoration:none;letter-spacing:0.02em;">Add VIP Pass — $49 →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- GUIDE / BIO -->
+  <section class="guide-section" id="guide">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:48px;">
+        <div class="eyebrow eyebrow-light">👤 Meet Your Guide</div>
+        <h2 style="font-size:40px;font-weight:900;color:var(--white);">
+          <span class="serif-accent" style="color:var(--gold-mango);">The Science of Influence.</span><br>
+          The Grind of Selling. <span class="shimmer-gold">The Power of AI.</span>
+        </h2>
+      </div>
+      <div class="guide-content">
+        <div class="guide-photo">
+          <img src="scott-bio.png" alt="Scott Magnacca" />
+        </div>
+        <div class="guide-bio">
+          <p>I learned how businesses are built at one of the world's top entrepreneurial colleges. I learned the <strong>science of why people say yes</strong> at Harvard.</p>
+          <p>But my real education came from cold calls, lost deals, and the relentless grind of hitting quota. I wasn't just studying strategy — I was living it on the front lines.</p>
+          <p>When AI emerged, I didn't see a threat. I saw an <strong style="color:var(--gold-mango);">unprecedented opportunity</strong>. An unfair advantage that everyone has access to, but very few know how to effectively apply.</p>
+          <p>I've since trained <strong>4,127+ financial advisors</strong> across North America on AI adoption. This summit distills everything into 3 focused days.</p>
+          <p style="font-size:14px;color:var(--text-secondary);margin-top:-4px;">Co-participant with HBR author Tom Davenport on Babson College's AI in Teaching Taskforce.</p>
+          <p style="color:var(--gold-mango);font-family:var(--font-accent);font-style:italic;font-size:18px;margin-top:24px;">"Learn in days what took me decades to master."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS — REAL ENDORSEMENTS -->
+  <section class="testimonial-section" id="testimonials">
+    <div class="container">
+      <div style="text-align:center;"><div class="eyebrow">💬 What Leaders Are Saying About Scott</div></div>
+      <h2>Trusted by <span class="grad-text">Industry Leaders</span></h2>
+      <p style="text-align:center;font-size:17px;color:var(--text-secondary);max-width:600px;margin:0 auto 50px;">From Fortune 500 executives to top-performing advisors — here's what they say about working with Scott.</p>
+
+      <div class="testimonial-grid" id="testimonialGrid">
+        <div class="testimonial-card testimonial-seq" id="tcard1" style="border-left:3px solid var(--gold-mango);">
+          <div class="testimonial-stars">★★★★★</div>
+          <blockquote>"Scott has a strong track record of accomplishments in both marketing and sales. One of the key reasons I hired Scott was because of his long track record of marketing success."</blockquote>
+          <div class="testimonial-author">
+            <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,var(--green-deep),var(--gold-mango));display:flex;align-items:center;justify-content:center;color:white;font-weight:800;font-size:16px;flex-shrink:0;">JR</div>
+            <div><div class="name">John R.</div><div class="role">SVP, Fidelity Investments</div></div>
+          </div>
+        </div>
+
+        <div class="testimonial-card testimonial-seq" id="tcard2" style="border-left:3px solid var(--gold-mango);">
+          <div class="testimonial-stars">★★★★★</div>
+          <blockquote>"Scott was a high performing team member among a group of high achieving individuals. His personal characteristics of integrity, creativity, passion and maturity make him a high performer with tremendous potential."</blockquote>
+          <div class="testimonial-author">
+            <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,var(--green-deep),var(--gold-mango));display:flex;align-items:center;justify-content:center;color:white;font-weight:800;font-size:16px;flex-shrink:0;">FD</div>
+            <div><div class="name">Farrell D.</div><div class="role">EVP, Fidelity Investments</div></div>
+          </div>
+        </div>
+
+        <div class="testimonial-card testimonial-seq" id="tcard3" style="border-left:3px solid var(--green-deep);">
+          <div class="testimonial-stars">★★★★★</div>
+          <blockquote>"Scott was consistently one of our top producers. His impressive sales results have been achieved because of his tremendous enthusiasm, the focus he places on goal achievement and his solid ability to interact with customers."</blockquote>
+          <div class="testimonial-author">
+            <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,var(--green-deep),var(--gold-mango));display:flex;align-items:center;justify-content:center;color:white;font-weight:800;font-size:16px;flex-shrink:0;">TB</div>
+            <div><div class="name">Tai B.</div><div class="role">SVP National Sales, Fidelity Investments</div></div>
+          </div>
+        </div>
+
+        <div class="testimonial-card testimonial-seq" id="tcard4" style="border-left:3px solid var(--green-deep);">
+          <div class="testimonial-stars">★★★★★</div>
+          <blockquote>"Customers and co-workers genuinely trust and enjoy working with Scott. His sales and relationship building skills are second to none. He continues to play a major role in the success of the team."</blockquote>
+          <div class="testimonial-author">
+            <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,var(--green-deep),var(--gold-mango));display:flex;align-items:center;justify-content:center;color:white;font-weight:800;font-size:16px;flex-shrink:0;">TB</div>
+            <div><div class="name">Troy B.</div><div class="role">Regional Sales Director, Fidelity Investments</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Endorsement logos/trust strip -->
+      <div style="text-align:center;margin-top:48px;padding-top:32px;border-top:1px solid var(--light-border);">
+        <p class="gold-glow-text" style="font-size:13px;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:16px;">Scott's Track Record Includes</p>
+        <div style="display:flex;justify-content:center;gap:32px;flex-wrap:wrap;align-items:center;">
+          <span style="font-size:17px;font-weight:800;color:#006644;">Fidelity Investments</span>
+          <span style="font-size:14px;color:var(--light-border);">|</span>
+          <span style="font-size:17px;font-weight:700;font-family:'Crimson Text',Georgia,serif;color:#A6192E;letter-spacing:0.02em;">Harvard University</span>
+          <span style="font-size:14px;color:var(--light-border);">|</span>
+          <span style="font-size:16px;font-weight:800;color:var(--text-secondary);">4,127+ Advisors</span>
+          <span style="font-size:14px;color:var(--light-border);">|</span>
+          <span style="font-size:16px;font-weight:800;color:var(--text-secondary);">Published Author — 4 Books in Print</span>
+          <span style="font-size:14px;color:var(--light-border);">|</span>
+          <div class="hbr-logo-badge">Harvard Business Review<span>2026 Reference</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AUDIO TESTIMONIALS -->
+  <section class="audio-testimonial-section">
+    <div class="container">
+      <p class="fade-in" style="text-align:center;color:rgba(255,255,255,0.35);font-size:13px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:40px;">🎙️ Hear it in their own words</p>
+      <div class="audio-testimonial-grid">
+
+        <div class="audio-card fade-in">
+          <div class="audio-photo-wrap">
+            <img src="testimonial-anaaya.webp" alt="Anaaya" class="audio-photo">
+          </div>
+          <div class="audio-name">Anaaya</div>
+          <audio controls preload="none" class="audio-player">
+            <source src="testimonial-anaaya.mp4" type="video/mp4">
+          </audio>
+        </div>
+
+        <div class="audio-card fade-in">
+          <div class="audio-photo-wrap">
+            <img src="testimonial-pablo.webp" alt="Pablo" class="audio-photo">
+          </div>
+          <div class="audio-name">Pablo</div>
+          <audio controls preload="none" class="audio-player">
+            <source src="testimonial-pablo.mp3" type="audio/mpeg">
+          </audio>
+        </div>
+
+        <div class="audio-card fade-in">
+          <div class="audio-photo-wrap">
+            <img src="testimonial-olivia.webp" alt="Olivia" class="audio-photo">
+          </div>
+          <div class="audio-name">Olivia</div>
+          <audio controls preload="none" class="audio-player">
+            <source src="testimonial-olivia.mp4" type="video/mp4">
+          </audio>
+        </div>
+
+        <div class="audio-card fade-in">
+          <div class="audio-photo-wrap">
+            <img src="testimonial-jim.webp" alt="Jim" class="audio-photo">
+          </div>
+          <div class="audio-name">Jim</div>
+          <audio controls preload="none" class="audio-player">
+            <source src="testimonial-jim.mp3" type="audio/mpeg">
+          </audio>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- QUALIFY -->
+  <section class="qualify-section" id="qualify">
+    <div class="container">
+      <div style="text-align:center;"><div class="eyebrow">✅ Is This For You?</div></div>
+      <h2>This Free Event Is <span class="grad-text">Built For You</span></h2>
+      <ul class="qualify-list" id="qualifyList">
+        <li class="qualify-item qualify-fade">You're a financial advisor, sales professional, or entrepreneur who feels like AI is passing you by — and you're ready to catch up fast.</li>
+        <li class="qualify-item qualify-fade">You've tried dabbling in ChatGPT or AI tools but got stuck in overwhelm or wasted hours chasing shiny objects with no clear ROI.</li>
+        <li class="qualify-item qualify-fade">You want to work smarter, not harder — without losing the human touch and relationship skills that make you irreplaceable.</li>
+        <li class="qualify-item qualify-fade">You're ready to become a Hybrid Advisor: someone who combines AI's computational power with genuine human connection and influence.</li>
+        <li class="qualify-item qualify-fade">You want to unlock the 56% wage premium the market is already paying AI-proficient professionals — and you want a clear path to get there.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ROI CALCULATOR -->
+  <section class="roi-section" id="roi-calc">
+    <div class="container">
+      <div style="text-align:center;position:relative;z-index:1;">
+        <div class="eyebrow eyebrow-light">💰 Your AI Income Premium</div>
+        <h2 class="roi-headline">Calculate What You're <span id="leavingSpan" class="shimmer-gold">Leaving on the Table</span></h2>
+        <p style="font-size:17px;color:rgba(255,255,255,0.5);max-width:540px;margin:0 auto 40px;line-height:1.6;">AI-proficient professionals earn a documented 56% wage premium. Every week without it is money you're not making.</p>
+      </div>
+      <div class="roi-card fade-in">
+        <label class="roi-label" for="roiIncome">Your Annual Income</label>
+        <div class="roi-input-wrap">
+          <span class="roi-currency">$</span>
+          <input type="number" id="roiIncome" class="roi-input" placeholder="100,000" min="0" max="99999999" />
+        </div>
+        <div class="roi-divider"></div>
+        <div class="roi-toggle-row">
+          <div class="roi-toggle-pill active" data-period="annual">Annual</div>
+          <div class="roi-toggle-pill" data-period="monthly">Monthly</div>
+          <div class="roi-toggle-pill" data-period="weekly">Weekly</div>
+        </div>
+        <div class="roi-results">
+          <div class="roi-result-row">
+            <span class="roi-result-label" id="roiCurrentLabel">Your Current Income</span>
+            <span class="roi-result-val" id="roiCurrent">$—</span>
+          </div>
+          <div class="roi-result-row roi-result-premium">
+            <span class="roi-result-label">With AI Premium <span style="color:var(--gold-mango);font-size:11px;">(×1.56)</span></span>
+            <span class="roi-result-val shimmer-gold" id="roiProjected">$—</span>
+          </div>
+          <div class="roi-result-row roi-result-gap">
+            <span class="roi-result-label" id="roiGapLabel">💡 You're Leaving on the Table</span>
+            <span class="roi-result-val roi-gap-num" id="roiGap">$—</span>
+          </div>
+        </div>
+        <a href="#register" class="cta-btn cta-btn-gold pulse-cta roi-cta-btn">⚡ Stop Leaving It There — Reserve My Seat</a>
+        <p style="text-align:center;font-size:11px;color:rgba(255,255,255,0.45);margin-top:12px;">Aligned with Harvard Business Review 2026 "Value Surge" data · Individual results vary.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- REGISTRATION -->
+  <section class="register-section" id="register">
+    <div class="container">
+      <div class="register-box">
+        <div class="eyebrow eyebrow-light" style="margin-bottom:24px;">🎟 Free Registration</div>
+        <h2><span class="shimmer-gold">Claim Your Free Seat</span></h2>
+        <p class="sub">June 18, 2026 · 90 min/day · 100% Virtual</p>
+        <form id="registerForm" onsubmit="handleRegister(event)">
+          <div class="form-group"><label for="fname">First Name</label><input type="text" id="fname" class="form-input" placeholder="Your first name" required /></div>
+          <div class="form-group"><label for="lname">Last Name</label><input type="text" id="lname" class="form-input" placeholder="Your last name" required /></div>
+          <div class="form-group"><label for="email">Email Address</label><input type="email" id="email" class="form-input" placeholder="you@example.com" required /></div>
+          <button type="submit" class="cta-btn cta-btn-gold form-submit pulse-cta" style="justify-content:center;font-size:1.1rem;">⚡ Reserve My Free Seat Now →</button>
+          <div style="text-align:center;margin:14px 0 6px;font-size:12px;color:rgba(255,255,255,0.3);letter-spacing:0.12em;">— or —</div>
+          <button type="button" onclick="goToVIP()" style="width:100%;padding:14px 24px;background:transparent;border:1.5px solid rgba(238,175,0,0.35);border-radius:10px;color:rgba(255,255,255,0.8);font-size:1rem;font-weight:700;cursor:pointer;letter-spacing:0.02em;transition:all 0.3s;display:flex;align-items:center;justify-content:center;gap:8px;" onmouseover="this.style.borderColor='rgba(238,175,0,0.7)';this.style.background='rgba(238,175,0,0.08)'" onmouseout="this.style.borderColor='rgba(238,175,0,0.35)';this.style.background='transparent'">🏆 Elevate to VIP — Signed Book + Workshop · $49 →</button>
+          <p style="text-align:center;font-size:11px;color:rgba(255,255,255,0.35);margin:6px 0 0;">VIP Pass includes your summit seat — no separate registration needed</p>
+        </form>
+        <p class="form-note">By registering, you agree to receive event updates. Your information is secure and will never be shared. Unsubscribe anytime.</p>
+        <div class="enrolled-count"><span>✅</span><span><strong id="enrolledCount">312</strong> professionals already registered</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta-section">
+    <div class="container">
+      <h2>We Can't Wait To See You<br><span class="grad-text">June 18th</span></h2>
+      <p class="sub">3 Days · 90 Minutes · Your AI Transformation Starts Here</p>
+      <a href="#register" class="cta-btn pulse-cta" style="font-size:1.1rem;">⚡ Reserve My Free Seat Now →</a>
+      <p style="margin-top:18px;font-size:13px;color:rgba(255,255,255,0.38);">Already decided to go VIP? <a href="/vip.html" style="color:rgba(238,175,0,0.75);font-weight:600;text-decoration:none;">Get Your VIP Pass — $49 →</a></p>
+    </div>
+  </section>
+
+  <!-- PORTAL PREVIEW — Membership Tease -->
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-nav">
+        <a href="#">Terms & Conditions</a><a href="#">Privacy Policy</a><a href="#">Contact</a><a href="#">About</a>
+      </div>
+      <p class="copyright">© 2026 Scott Magnacca. All rights reserved.</p>
+      <p class="disclaimer">This event shares educational insights on AI adoption. Results vary based on individual effort, experience, and market conditions. This is not financial or investment advice.</p>
+      <p class="research-citation">Research reference: Davenport, T. H., &amp; Srinivasan, L. (2026, March 17). 7 factors that drive returns on AI investments according to a new survey. <em>Harvard Business Review.</em> <a href="https://hbr.org/2026/03/7-factors-that-drive-returns-on-ai-investments-according-to-a-new-survey" target="_blank" rel="noopener">hbr.org ↗</a></p>
+    </div>
+  </footer>
+
+  <!-- HIDDEN NETLIFY FORM — for email notifications to Scott -->
+  <form name="summit-registration" netlify netlify-honeypot="bot-field" hidden>
+    <input name="bot-field" />
+    <input name="site" type="text" />
+    <input name="name" type="text" />
+    <input name="email" type="email" />
+    <input name="message" type="text" />
+  </form>
+
+  <!-- BONUS CHAPTER MODAL -->
+  <div class="bonus-modal-overlay" id="bonusModalOverlay" aria-hidden="true">
+    <div class="bonus-modal" role="dialog">
+      <button class="bonus-modal-close" id="bonusModalClose" aria-label="Close">✕</button>
+      <div class="bonus-modal-inner">
+        <div class="bonus-book-wrap">
+          <img src="book-cover.png" alt="Storyselling in the Age of AI" class="bonus-book-img" />
+          <div class="bonus-gift-badge">FREE</div>
+        </div>
+        <div class="bonus-modal-content">
+          <div class="bonus-eyebrow">Exclusive Registrant Gift</div>
+          <h3>Get Chapter 1 of<br><span class="shimmer-gold">"Storyselling in the Age of AI"</span></h3>
+          <p class="bonus-desc">Scott's most-requested framework — delivered to your inbox alongside your event confirmation. No catch. Just value.</p>
+          <label class="bonus-checkbox-wrap">
+            <input type="checkbox" id="bonusChapterCheck" checked />
+            <span class="bonus-checkbox-label">Yes! Send me Chapter 1 — it's free!</span>
+          </label>
+          <button class="cta-btn cta-btn-gold bonus-confirm-btn" id="bonusConfirmBtn">✓ Claim My Free Chapter</button>
+          <p class="bonus-skip" id="bonusSkip">No thanks, I'll attend without the chapter</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VIP UPSELL MODAL -->
+  <div class="vip-modal-overlay" id="vipModalOverlay" aria-hidden="true">
+    <div class="vip-modal" role="dialog">
+      <button class="vip-modal-close" id="vipModalClose" aria-label="Close">✕</button>
+      <div class="vip-eyebrow">🏆 Exclusive VIP Upgrade</div>
+      <h3>Fast-Track Your Results</h3>
+      <p class="vip-sub">You're registered for free. Want to go deeper?</p>
+      <div class="vip-price-tag">
+        <span class="vip-price-amount">$9.99</span>
+        <span class="vip-price-desc">One-time · VIP Fast-Track<br>Access everything below</span>
+      </div>
+      <div class="vip-perks">
+        <div class="vip-perk">
+          <span class="vip-perk-icon">🎥</span>
+          <div><strong>Private VIP Zoom Room</strong><span>Exclusive Q&amp;A session with Scott — not available to general attendees</span></div>
+        </div>
+        <div class="vip-perk">
+          <span class="vip-perk-icon">📚</span>
+          <div><strong>Full Digital Book — All Chapters</strong><span>Complete "Storyselling in the Age of AI" delivered instantly</span></div>
+        </div>
+        <div class="vip-perk">
+          <span class="vip-perk-icon">⚡</span>
+          <div><strong>Priority Q&amp;A Access</strong><span>Your questions answered first, live during each session</span></div>
+        </div>
+      </div>
+      <div id="vip-card-element" class="vip-card-input"></div>
+      <div class="vip-card-errors" id="vip-card-errors"></div>
+      <button class="cta-btn cta-btn-gold vip-upgrade-btn" id="vipUpgradeBtn">🔐 Upgrade to VIP — $9.99</button>
+      <p class="vip-skip" id="vipSkip">No thanks, I'll attend for free</p>
+      <p class="vip-security">🔒 Secured by Stripe · 256-bit encryption</p>
+    </div>
+  </div>
+
+  <!-- SOCIAL PROOF POPUP -->
+  <div class="proof-popup" id="proofPopup">
+    <div class="proof-icon">✓</div>
+    <div><div class="proof-text"><strong id="proofName">Sarah from New York</strong> just registered!</div><div class="proof-time" id="proofTime">2 minutes ago</div></div>
+  </div>
+
+  <script>
+    // === Device Detection: Disable animations on older mobile (3+ years old) ===
+    const isOldMobile = (() => {
+      const ua = navigator.userAgent.toLowerCase();
+      if (!/iphone|ipad|android/.test(ua)) return false; // Not mobile
+      // iPhone: pre-iOS 15 (iPhone 6s, 7, 8 — released 2015–2017)
+      if (/iphone/.test(ua)) return /os (7|8|9|10|11|12|13|14)_/.test(ua);
+      // Android: pre-12 (roughly 2020 and earlier devices)
+      if (/android/.test(ua)) return /android (4|5|6|7|8|9|10|11)/.test(ua);
+      return false;
+    })();
+    if (isOldMobile) document.body.classList.add('old-mobile');
+
+    // Countdown
+    function updateCountdown(){const e=new Date('2026-06-18T11:00:00-07:00'),d=e-new Date();if(d<=0)return;const dy=Math.floor(d/864e5),h=Math.floor(d%864e5/36e5),m=Math.floor(d%36e5/6e4),s=Math.floor(d%6e4/1e3);document.getElementById('cd-days').textContent=String(dy).padStart(2,'0');document.getElementById('cd-hours').textContent=String(h).padStart(2,'0');document.getElementById('cd-min').textContent=String(m).padStart(2,'0');document.getElementById('cd-sec').textContent=String(s).padStart(2,'0');}
+    updateCountdown();setInterval(updateCountdown,1000);
+
+    // Sticky nav
+    const heroEl=document.getElementById('hero'),navEl=document.getElementById('stickyNav');
+    window.addEventListener('scroll',()=>{navEl.classList.toggle('show',window.scrollY>heroEl.offsetHeight-50);});
+
+    // Fade in
+    const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible');});},{threshold:0.1});
+    document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
+
+    // Stat count-up (supports data-prefix and data-duration)
+    const statObs=new IntersectionObserver(e=>{e.forEach(x=>{if(!x.isIntersecting||x.target.dataset.counted)return;x.target.dataset.counted='1';const t=parseInt(x.target.dataset.target),sf=x.target.dataset.suffix||'',pf=x.target.dataset.prefix||'',dur=parseInt(x.target.dataset.duration)||3500,st=performance.now();function tick(now){const p=Math.min((now-st)/dur,1),ez=1-Math.pow(1-p,3),c=Math.round(t*ez);x.target.textContent=pf+c.toLocaleString()+sf;if(p<1)requestAnimationFrame(tick);else x.target.style.animation='stat-flash 0.72s ease-out';}requestAnimationFrame(tick);});},{threshold:0.3});
+    document.querySelectorAll('.num[data-target]').forEach(el=>statObs.observe(el));
+
+    // Social proof
+    const proofs=[{name:'Sarah from New York',time:'2 minutes ago'},{name:'Michael from Chicago',time:'Just now'},{name:'Emily from San Francisco',time:'3 minutes ago'},{name:'David from Toronto',time:'1 minute ago'},{name:'Amanda from Austin',time:'4 minutes ago'},{name:'Chris from Boston',time:'2 minutes ago'},{name:'Jennifer from Miami',time:'Just now'},{name:'Robert from Seattle',time:'5 minutes ago'}];
+    let pi=0;const popup=document.getElementById('proofPopup'),pN=document.getElementById('proofName'),pT=document.getElementById('proofTime');
+    const eC=document.getElementById('enrolledCount');let en=parseInt(eC.textContent)||312;
+    function showProof(){const d=proofs[pi%proofs.length];pN.textContent=d.name;pT.textContent=d.time;popup.classList.remove('hide');popup.classList.add('show');eC.textContent=++en;setTimeout(()=>{popup.classList.remove('show');popup.classList.add('hide');pi++;},4500);}
+    setTimeout(()=>{showProof();setInterval(showProof,18000);},6000);
+
+    // Count-up when registration section scrolls into view (fires once)
+    let regViewed = false;
+    const regObserver = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting && !regViewed) {
+        regViewed = true;
+        regObserver.disconnect();
+        const bump = Math.floor(Math.random() * 5) + 1;
+        const target = en + bump;
+        const tick = setInterval(() => {
+          en++;
+          eC.textContent = en;
+          if (en >= target) clearInterval(tick);
+        }, 200);
+      }
+    }, { threshold: 0.15 });
+    regObserver.observe(document.getElementById('register'));
+
+    // VIP direct path — pass any typed form values as URL params
+    function goToVIP() {
+      const fn = (document.getElementById('fname') || {}).value || '';
+      const ln = (document.getElementById('lname') || {}).value || '';
+      const em = (document.getElementById('email') || {}).value || '';
+      const p = new URLSearchParams();
+      if (fn) p.set('firstName', fn);
+      if (ln) p.set('lastName', ln);
+      if (em) p.set('email', em);
+      const qs = p.toString();
+      window.location.href = '/vip.html' + (qs ? '?' + qs : '');
+    }
+
+    // Form — dual submission: Netlify Function (Google Sheets) + Netlify Form (email notification)
+    function handleRegister(e) {
+      e.preventDefault();
+      const btn = e.target.querySelector('button[type="submit"]');
+      const fn = document.getElementById('fname').value.trim();
+      const ln = document.getElementById('lname').value.trim();
+      const em = document.getElementById('email').value.trim();
+
+      if (!fn || !em) { alert('Please fill in all required fields.'); return; }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)) { alert('Please enter a valid email address.'); return; }
+
+      btn.innerHTML = '⏳ Registering...';
+      btn.disabled = true;
+      btn.style.opacity = '0.7';
+
+      // 1) POST to Netlify Function → Google Sheets
+      fetch('/.netlify/functions/submit-registration', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ firstName: fn, lastName: ln, email: em })
+      }).then(r => {
+        if (r.ok) console.log('Registration captured to Google Sheets');
+        else console.warn('Sheets response:', r.status);
+      }).catch(err => console.warn('Sheets capture failed (non-blocking):', err));
+
+      // 2) Fire-and-forget: Netlify Form for email notification to Scott
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams({
+          'form-name': 'summit-registration',
+          'site': 'Executive AI Advantage Summit',
+          'name': fn + (ln ? ' ' + ln : ''),
+          'email': em,
+          'message': fn + ' ' + ln + ' (' + em + ') just registered for the Executive AI Advantage Summit'
+        }).toString()
+      }).then(() => console.log('Email notification sent via Netlify Form'))
+        .catch(err => console.warn('Netlify Form notify failed (non-blocking):', err));
+
+      // 3) Show success state
+      setTimeout(() => {
+        btn.innerHTML = '✓ You\'re Registered! Check Your Email.';
+        btn.style.background = 'var(--green-deep)';
+        btn.style.color = 'var(--white)';
+        btn.style.opacity = '1';
+
+        // Update enrolled count
+        const ec = document.getElementById('enrolledCount');
+        ec.textContent = parseInt(ec.textContent) + 1;
+
+        // Disable form fields
+        document.getElementById('fname').disabled = true;
+        document.getElementById('lname').disabled = true;
+        document.getElementById('email').disabled = true;
+
+        // Show VIP upsell modal 1.8s after success
+        setTimeout(() => {
+          if (window.openVipModal) window.openVipModal({ firstName: fn, lastName: ln, email: em });
+        }, 1800);
+      }, 800);
+    }
+
+    // Hero subtitle typewriter with gold keywords
+    (function(){
+      const heroSub = document.getElementById('heroSubtitle');
+      if (!heroSub) return;
+      const segments = [
+        { text: 'Master ', gold: false },
+        { text: 'ROI-first AI thinking', gold: true },
+        { text: ', ', gold: false },
+        { text: 'decision intelligence', gold: true },
+        { text: ', and ', gold: false },
+        { text: 'advanced prompting', gold: true },
+        { text: ' — and become a Hybrid Advisor who combines AI power with irreplaceable human connection.', gold: false }
+      ];
+      const spans = segments.map(seg => {
+        const s = document.createElement('span');
+        if (seg.gold) s.style.cssText = 'color:#EEAF00;font-weight:700;';
+        else s.style.color = 'rgba(255,255,255,0.82)';
+        heroSub.appendChild(s);
+        return { span: s, text: seg.text };
+      });
+      const cur = document.createElement('span');
+      cur.style.cssText = 'display:inline-block;width:2px;height:0.8em;background:rgba(255,255,255,0.7);margin-left:2px;vertical-align:text-bottom;animation:blink-dot 0.9s step-end infinite;';
+      heroSub.appendChild(cur);
+      let si = 0, ci = 0;
+      function tick() {
+        if (si >= spans.length) { cur.remove(); return; }
+        const { span, text } = spans[si];
+        if (ci < text.length) { span.textContent += text[ci++]; setTimeout(tick, 38); }
+        else { si++; ci = 0; setTimeout(tick, 38); }
+      }
+      setTimeout(tick, 700);
+    })();
+
+
+    // === Value headline — pulse on scroll ===
+    (function(){
+      const h = document.querySelector('.value-headline');
+      if (!h) return;
+      const o = new IntersectionObserver(entries => {
+        if (entries[0].isIntersecting) { h.classList.add('pulse-visible'); o.disconnect(); }
+      }, { threshold: 0.3 });
+      o.observe(h);
+    })();
+
+    // === Sequential value card reveal — 7 seconds apart ===
+    (function(){
+      const grid = document.getElementById('valueGrid');
+      const cards = ['vcard1','vcard2','vcard3'].map(id=>document.getElementById(id)).filter(Boolean);
+      if (!grid || !cards.length) return;
+      let triggered = false;
+      const o = new IntersectionObserver(entries => {
+        if (entries[0].isIntersecting && !triggered) {
+          triggered = true;
+          cards.forEach((c,i) => setTimeout(() => c.classList.add('revealed'), i * 1000));
+          o.disconnect();
+        }
+      }, { threshold: 0.15 });
+      o.observe(grid);
+    })();
+
+    // === Book section — reading-pace sequential fade-in ===
+    (function(){
+      const section = document.getElementById('book');
+      const items = document.querySelectorAll('.book-fade');
+      if (!section || !items.length) return;
+      let triggered = false;
+      // Delays: image=0ms, then each paragraph 2500ms apart
+      const delays = [0, 2500, 5000, 7500];
+      const o = new IntersectionObserver(entries => {
+        if (entries[0].isIntersecting && !triggered) {
+          triggered = true;
+          items.forEach((el, i) => {
+            setTimeout(() => el.classList.add('visible'), delays[i] || i * 2500);
+          });
+          o.disconnect();
+        }
+      }, { threshold: 0.2 });
+      o.observe(section);
+    })();
+
+    // === Video section heading — fade in on scroll ===
+    (function(){
+      const items = document.querySelectorAll('.video-heading-fade');
+      if (!items.length) return;
+      const o = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); o.unobserve(e.target); } });
+      }, { threshold: 0.2 });
+      items.forEach(el => o.observe(el));
+    })();
+
+    // === Video wrappers — gold border capture on scroll ===
+    (function(){
+      const ids = ['vid1','vid2','vid3'];
+      const o = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('gold-captured'); o.unobserve(e.target); } });
+      }, { threshold: 0.35 });
+      ids.forEach(id => { const el = document.getElementById(id); if (el) o.observe(el); });
+    })();
+
+    // === Agenda days — sequential stagger on scroll ===
+    (function(){
+      const days = Array.from(document.querySelectorAll('.agenda-day-fade'));
+      if (!days.length) return;
+      let triggered = false;
+      function revealDays(startIndex) {
+        if (startIndex >= days.length) return;
+        const day = days[startIndex];
+        // Day card fades in
+        day.classList.add('visible');
+        // Day marker pops in after 100ms
+        setTimeout(() => day.classList.add('marker-visible'), 100);
+        // Content slides in 350ms after marker
+        setTimeout(() => day.classList.add('content-visible'), 450);
+        // Next day starts 2 seconds after this one appeared
+        setTimeout(() => revealDays(startIndex + 1), 2000);
+      }
+      const o = new IntersectionObserver(entries => {
+        if (entries[0].isIntersecting && !triggered) {
+          triggered = true;
+          o.disconnect();
+          revealDays(0);
+        }
+      }, { threshold: 0.1 });
+      o.observe(days[0]);
+    })();
+
+    // === Testimonials — sequential reveal at reading speed (7s apart) ===
+    (function(){
+      const grid = document.getElementById('testimonialGrid');
+      const cards = ['tcard1','tcard2','tcard3','tcard4'].map(id=>document.getElementById(id)).filter(Boolean);
+      if (!grid || !cards.length) return;
+      let triggered = false;
+      const o = new IntersectionObserver(entries => {
+        if (entries[0].isIntersecting && !triggered) {
+          triggered = true;
+          cards.forEach((c,i) => setTimeout(() => c.classList.add('t-revealed'), i * 7000));
+          o.disconnect();
+        }
+      }, { threshold: 0.1 });
+      o.observe(grid);
+    })();
+
+    // === Qualify items — sequential fade on scroll ===
+    (function(){
+      const list = document.getElementById('qualifyList');
+      const items = document.querySelectorAll('.qualify-fade');
+      if (!list || !items.length) return;
+      let triggered = false;
+      const o = new IntersectionObserver(entries => {
+        if (entries[0].isIntersecting && !triggered) {
+          triggered = true;
+          items.forEach((item,i) => setTimeout(() => item.classList.add('visible'), i * 700));
+          o.disconnect();
+        }
+      }, { threshold: 0.1 });
+      o.observe(list);
+    })();
+
+    // === Video section — Neural network constellation ===
+    if (!isOldMobile) {
+    (function(){
+      const section = document.getElementById('video');
+      if (!section) return;
+      const canvas = document.createElement('canvas');
+      canvas.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;';
+      section.insertBefore(canvas, section.firstChild);
+      const ctx = canvas.getContext('2d');
+      let W = 0, H = 0;
+
+      // Colors that complement dark green: white, gold, mint, pale sherwood, pale gold
+      const PALETTE = [
+        [255,255,255], // pearl
+        [238,175,0],   // gold
+        [100,212,155], // mint
+        [160,230,195], // pale mint
+        [255,215,100], // pale gold
+        [200,220,210], // silver-green
+      ];
+      const COUNT = 84, CONNECT_DIST = 135;
+      let nodes = [];
+
+      function initNodes(){
+        nodes = Array.from({length:COUNT}, ()=>({
+          x: Math.random()*W, y: Math.random()*H,
+          vx: (Math.random()-0.5)*0.35, vy: (Math.random()-0.5)*0.35,
+          r: 1.3+Math.random()*1.5,
+          c: PALETTE[Math.floor(Math.random()*PALETTE.length)],
+          ph: Math.random()*Math.PI*2,          // sparkle phase
+          sp: 0.016+Math.random()*0.022,        // sparkle speed
+          ba: 0.42+Math.random()*0.32,          // base alpha
+        }));
+      }
+
+      function resize(){
+        W = canvas.width = section.offsetWidth;
+        H = canvas.height = section.offsetHeight;
+        if (!nodes.length) initNodes();
+      }
+      resize(); window.addEventListener('resize', resize);
+
+      let t = 0, running = false;
+
+      function tick(){
+        t++;
+        ctx.clearRect(0, 0, W, H);
+
+        // Move nodes, soft bounce
+        for (const n of nodes){
+          n.x += n.vx; n.y += n.vy;
+          if (n.x < 0){ n.x = 0; n.vx *= -1; }
+          if (n.x > W){ n.x = W; n.vx *= -1; }
+          if (n.y < 0){ n.y = 0; n.vy *= -1; }
+          if (n.y > H){ n.y = H; n.vy *= -1; }
+        }
+
+        // Connections — drawn first so nodes sit on top
+        ctx.lineWidth = 0.5;
+        for (let i = 0; i < nodes.length; i++){
+          for (let j = i+1; j < nodes.length; j++){
+            const a = nodes[i], b = nodes[j];
+            const dx = b.x-a.x, dy = b.y-a.y;
+            const d = Math.sqrt(dx*dx+dy*dy);
+            if (d < CONNECT_DIST){
+              const alpha = (1 - d/CONNECT_DIST) * 0.18;
+              const R = (a.c[0]+b.c[0])>>1, G = (a.c[1]+b.c[1])>>1, B = (a.c[2]+b.c[2])>>1;
+              ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y);
+              ctx.strokeStyle = `rgba(${R},${G},${B},${alpha.toFixed(3)})`; ctx.stroke();
+            }
+          }
+        }
+
+        // Nodes — sparkling pinpoints with soft glow halo
+        for (const n of nodes){
+          const spark = Math.sin(t * n.sp + n.ph);
+          const alpha = Math.min(1, n.ba + spark * 0.24);
+          const r = n.r + spark * 0.55;
+          const [R, G, B] = n.c;
+
+          // Diffuse glow around the pinpoint
+          const grd = ctx.createRadialGradient(n.x,n.y,0, n.x,n.y,r*5);
+          grd.addColorStop(0, `rgba(${R},${G},${B},${(alpha*0.45).toFixed(3)})`);
+          grd.addColorStop(1, `rgba(${R},${G},${B},0)`);
+          ctx.beginPath(); ctx.arc(n.x,n.y,r*5,0,Math.PI*2);
+          ctx.fillStyle = grd; ctx.fill();
+
+          // Crisp core dot
+          ctx.beginPath(); ctx.arc(n.x,n.y,r,0,Math.PI*2);
+          ctx.fillStyle = `rgba(${R},${G},${B},${Math.min(1,alpha+0.18).toFixed(3)})`;
+          ctx.fill();
+        }
+
+        if (running) requestAnimationFrame(tick);
+      }
+
+      // Run only while section is visible — saves battery when scrolled away
+      const io = new IntersectionObserver(entries => {
+        if (entries[0].isIntersecting && !running){ running = true; tick(); }
+        else if (!entries[0].isIntersecting){ running = false; }
+      }, {threshold: 0.1});
+      io.observe(section);
+    })();
+    } // End old-mobile conditional
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{e.preventDefault();const t=document.querySelector(a.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth',block:'start'});});});
+
+    // Slide-left reveals (Agenda days) with JS stagger (150ms between cards)
+    const slideObs=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(!entry.isIntersecting)return;const siblings=Array.from(entry.target.parentElement.children);const idx=siblings.indexOf(entry.target);entry.target.style.transitionDelay=(idx*180)+'ms';entry.target.classList.add('visible');});},{threshold:0.15});
+    document.querySelectorAll('.slide-left').forEach(el=>slideObs.observe(el));
+
+    // Typewriter effect for testimonial blockquotes
+    function typeWriter(el,text,speed,onDone){el.textContent='';let i=0;const cur=document.createElement('span');cur.style.cssText='display:inline-block;width:2px;height:0.85em;background:currentColor;margin-left:1px;vertical-align:text-bottom;opacity:0.7;';el.appendChild(cur);function tick(){if(i<text.length){cur.insertAdjacentText('beforebegin',text[i++]);setTimeout(tick,speed);}else{cur.remove();if(onDone)onDone();}}tick();}
+    const twSeen=new WeakSet();
+    const twObs=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(!entry.isIntersecting||twSeen.has(entry.target))return;twSeen.add(entry.target);const bq=entry.target.querySelector('blockquote');const auth=entry.target.querySelector('.testimonial-author');if(!bq||!auth)return;const txt=bq.textContent.trim();auth.style.opacity='0';const cards=Array.from(document.querySelectorAll('.testimonial-card'));const idx=cards.indexOf(entry.target);setTimeout(()=>{typeWriter(bq,txt,22,()=>{setTimeout(()=>{auth.style.opacity='1';},200);});},idx*1680);});},{threshold:0.3});
+    document.querySelectorAll('.testimonial-card').forEach(c=>twObs.observe(c));
+
+    // Bio typewriter — paragraphs type in parallel with 360ms stagger
+    const bioSeen=new WeakSet();
+    const bioObs=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(!entry.isIntersecting||bioSeen.has(entry.target))return;bioSeen.add(entry.target);const paras=Array.from(entry.target.querySelectorAll('p'));paras.forEach((p,i)=>{const txt=p.textContent.trim();const savedStyle=p.getAttribute('style')||'';p.textContent='';if(savedStyle)p.setAttribute('style',savedStyle);setTimeout(()=>typeWriter(p,txt,22,null),i*360);});});},{threshold:0.2});
+    const guideBio=document.querySelector('.guide-bio');
+    if(guideBio)bioObs.observe(guideBio);
+
+    // Subtle parallax on video section header text
+    const vsSection=document.getElementById('video');
+    const vsHeaderEls=vsSection?vsSection.querySelectorAll('h2,.subtitle,.eyebrow'):[];
+    if(vsSection&&vsHeaderEls.length){window.addEventListener('scroll',()=>{const rect=vsSection.getBoundingClientRect();if(rect.bottom>0&&rect.top<window.innerHeight){const progress=Math.max(0,Math.min(1,-rect.top/window.innerHeight));const shift=-(progress*20);vsHeaderEls.forEach(el=>el.style.transform=`translateY(${shift}px)`);}},{passive:true});}
+
+    // === ROI CALCULATOR ===
+    (function(){
+      const input = document.getElementById('roiIncome');
+      const roiCurrent = document.getElementById('roiCurrent');
+      const roiProjected = document.getElementById('roiProjected');
+      const roiGap = document.getElementById('roiGap');
+      const roiCurrentLabel = document.getElementById('roiCurrentLabel');
+      const roiGapLabel = document.getElementById('roiGapLabel');
+      const pills = document.querySelectorAll('.roi-toggle-pill');
+      if (!input) return;
+      let period = 'annual';
+      const divisors = { annual: 1, monthly: 12, weekly: 52 };
+      const periodLabels = {
+        annual:  { current: 'Your Current Income',         gap: '💡 You\'re Leaving on the Table (Yearly)' },
+        monthly: { current: 'Your Monthly Income',         gap: '💡 You\'re Losing Per Month' },
+        weekly:  { current: 'Your Weekly Income',          gap: '💡 You\'re Losing Per Week' }
+      };
+      function fmt(n) { return '$' + Math.round(n).toLocaleString('en-US'); }
+      function updateLabels() {
+        roiCurrentLabel.textContent = periodLabels[period].current;
+        roiGapLabel.textContent = periodLabels[period].gap;
+      }
+      function updateValues() {
+        const v = parseFloat(input.value);
+        if (!v || v <= 0) {
+          roiCurrent.textContent = '$—';
+          roiProjected.textContent = '$—';
+          roiGap.textContent = '$—';
+          return;
+        }
+        const d = divisors[period];
+        roiCurrent.textContent = fmt(v / d);
+        roiProjected.textContent = fmt((v * 1.56) / d);
+        roiGap.textContent = fmt((v * 0.56) / d);
+      }
+      input.addEventListener('input', updateValues);
+      pills.forEach(pill => {
+        pill.addEventListener('click', function() {
+          pills.forEach(p => p.classList.remove('active'));
+          this.classList.add('active');
+          period = this.dataset.period;
+          updateLabels();
+          updateValues();
+        });
+      });
+      updateLabels();
+    })();
+
+    // === "Leaving on the Table" — one-time red flash on scroll-in ===
+    (function(){
+      const span = document.getElementById('leavingSpan');
+      if (!span) return;
+      const o = new IntersectionObserver(entries => {
+        if (entries[0].isIntersecting) {
+          span.classList.remove('shimmer-gold');
+          span.classList.add('leaving-flash');
+          o.disconnect();
+        }
+      }, { threshold: 0.5 });
+      o.observe(span);
+    })();
+
+    // === BONUS CHAPTER MODAL ===
+    (function(){
+      const overlay = document.getElementById('bonusModalOverlay');
+      const closeBtn = document.getElementById('bonusModalClose');
+      const confirmBtn = document.getElementById('bonusConfirmBtn');
+      const skip = document.getElementById('bonusSkip');
+      const emailField = document.getElementById('email');
+      if (!overlay || !emailField) return;
+      let shown = false;
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      function openBonus() {
+        overlay.classList.add('active');
+        overlay.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeBonus() {
+        overlay.classList.remove('active');
+        overlay.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+
+      emailField.addEventListener('blur', function(){
+        if (!shown && emailRegex.test(this.value.trim())) {
+          shown = true;
+          setTimeout(openBonus, 400);
+        }
+      });
+
+      closeBtn.addEventListener('click', closeBonus);
+      skip.addEventListener('click', closeBonus);
+      confirmBtn.addEventListener('click', function(){
+        const checked = document.getElementById('bonusChapterCheck').checked;
+        if (checked) console.log('Chapter 1 requested:', emailField.value);
+        closeBonus();
+      });
+      overlay.addEventListener('click', function(e){ if (e.target === overlay) closeBonus(); });
+    })();
+
+    // === VIP UPSELL MODAL + STRIPE ===
+    (function(){
+      const STRIPE_PK = 'pk_live_51TDtE2GdhGesPfdVUX07cjQWoBSKh8W0b2S1hmWaUalguV2Hmm35eLKkVEoXyNYlk49MqAIiS0lw9t9vsaP7gWSy003kQcspIX';
+      let stripe, cardElement, vipUserData = {};
+      const overlay = document.getElementById('vipModalOverlay');
+      if (!overlay) return;
+
+      function initStripe() {
+        if (!stripe && window.Stripe) {
+          stripe = window.Stripe(STRIPE_PK);
+          const elements = stripe.elements({
+            appearance: {
+              theme: 'night',
+              variables: {
+                colorPrimary: '#EEAF00',
+                colorBackground: '#0C1F14',
+                colorText: '#F9FAFB',
+                borderRadius: '12px',
+                fontFamily: 'Inter, system-ui, sans-serif'
+              }
+            }
+          });
+          cardElement = elements.create('card', { hidePostalCode: true });
+          cardElement.mount('#vip-card-element');
+          cardElement.on('change', function(event){
+            const el = document.getElementById('vip-card-errors');
+            if (el) el.textContent = event.error ? event.error.message : '';
+          });
+        }
+      }
+
+      window.openVipModal = function(userData) {
+        vipUserData = userData || {};
+        overlay.classList.add('active');
+        overlay.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        setTimeout(initStripe, 150);
+      };
+
+      function closeVipModal() {
+        overlay.classList.remove('active');
+        overlay.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+
+      document.getElementById('vipModalClose').addEventListener('click', closeVipModal);
+      document.getElementById('vipSkip').addEventListener('click', closeVipModal);
+      overlay.addEventListener('click', function(e){ if (e.target === overlay) closeVipModal(); });
+
+      document.getElementById('vipUpgradeBtn').addEventListener('click', async function(){
+        const btn = this;
+        btn.textContent = '⏳ Processing...';
+        btn.disabled = true;
+        const errEl = document.getElementById('vip-card-errors');
+
+        try {
+          const resp = await fetch('/.netlify/functions/create-vip-payment', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              email: vipUserData.email,
+              firstName: vipUserData.firstName,
+              amount: 999
+            })
+          });
+          if (!resp.ok) throw new Error('Server error');
+          const { clientSecret } = await resp.json();
+
+          const result = await stripe.confirmCardPayment(clientSecret, {
+            payment_method: {
+              card: cardElement,
+              billing_details: {
+                email: vipUserData.email,
+                name: ((vipUserData.firstName || '') + ' ' + (vipUserData.lastName || '')).trim()
+              }
+            }
+          });
+
+          if (result.error) {
+            if (errEl) errEl.textContent = result.error.message;
+            btn.innerHTML = '🔐 Upgrade to VIP — $9.99';
+            btn.disabled = false;
+          } else {
+            btn.innerHTML = '✓ Welcome to VIP!';
+            btn.style.background = 'var(--green-deep)';
+            btn.style.color = 'var(--white)';
+            setTimeout(closeVipModal, 2000);
+          }
+        } catch(err) {
+          if (errEl) errEl.textContent = 'Payment failed. Please try again.';
+          btn.innerHTML = '🔐 Upgrade to VIP — $9.99';
+          btn.disabled = false;
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

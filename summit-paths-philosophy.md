@@ -1,0 +1,11 @@
+# Sovereign Meridians
+
+A design movement rooted in the quiet authority of parallel lines. Like meridians on a globe — distinct, sovereign, unhurried — yet drawn irresistibly toward the same singular point. The philosophy holds that separate journeys may carry equal dignity while tracing fundamentally different geometries. Visual tension lives not in conflict but in the patient pull of convergence.
+
+Space is treated as active material. The void between paths breathes with intention — it is the distance a decision travels. Columns do not compete; they simply *are*, each weighted differently by purpose, not hierarchy. The dominant path earns its width through visual mass, not color aggression. Subordinate paths are quieter, narrower, but no less resolved in their execution. This restraint is meticulously calibrated — every margin, every gutter, every pause between cards the product of painstaking spatial judgment.
+
+Color operates as whisper and declaration simultaneously. Deep forest ground absorbs ambient noise. Gold performs its role with precision — not as decoration, but as directional signal. Silver carries the secondary voice, cool and clean. Acid green anchors the third register, alive but contained. No color shouts; each is placed by a hand that understands chromatic authority. The palette is the result of deep expertise in how the eye moves across a dark field, how luminance creates hierarchy without volume.
+
+Form language favors the rounded edge — approachable geometry in a technical context. Cards feel held, not filed. Arrows draw from mathematical precision: bezier paths describe flow, not force. Step indicators are geometric: circle, numeral, line — the simplest vocabulary executed with exacting craft. Every radius, every stroke weight, every ellipse origin is the decision of someone who has labored over such things for years.
+
+Typography is structural, not decorative. Display type is wide-shouldered and bold — carrying the scale of signage, the confidence of a wayfinding system. Body text steps back: thin, regular-weight, allowing content to surface without visual competition. The two registers never merge; they maintain careful separation as though each knows its station. This is not formula — it is the master-level understanding that hierarchy is invisible when executed flawlessly, and obvious only when broken.

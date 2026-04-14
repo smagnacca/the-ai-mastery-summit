@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HBR Prestige Updates — Mockup Preview</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --green-deep: #006644; --green-mid: #00875A; --gold-mango: #EEAF00;
+      --gold-cream: #FFF8E1; --dark-forest: #0A1A10; --dark-card: #132A1B;
+      --white: #F9FAFB; --text-dark: #1A2E1A; --text-secondary: #4B5563;
+      --light-card: #FFFFFF; --light-border: #E2E8DE;
+      --font-body: 'Inter', system-ui, sans-serif;
+      --font-accent: 'Playfair Display', Georgia, serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font-body); background: #0f1f14; color: var(--white); padding: 40px 24px 80px; -webkit-font-smoothing: antialiased; }
+
+    .page-header { text-align: center; margin-bottom: 56px; }
+    .page-header h1 { font-size: 24px; font-weight: 900; margin-bottom: 8px; }
+    .page-header p { color: rgba(255,255,255,0.4); font-size: 13px; }
+
+    .section-block { margin-bottom: 56px; }
+    .section-label { font-size: 10px; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-mango); margin-bottom: 6px; }
+    .section-title { font-size: 16px; font-weight: 800; color: var(--white); margin-bottom: 4px; }
+    .section-desc { font-size: 12px; color: rgba(255,255,255,0.4); margin-bottom: 20px; }
+    hr { border: none; border-top: 1px solid rgba(255,255,255,0.06); margin: 48px 0; }
+
+    /* === CHANGE HIGHLIGHT === */
+    .new-item { background: rgba(238,175,0,0.08); border: 1px solid rgba(238,175,0,0.3); border-radius: 6px; padding: 2px 8px; display: inline-block; }
+    .changed-text { background: rgba(238,175,0,0.12); border-bottom: 2px solid var(--gold-mango); padding: 0 2px; }
+
+    /* =============================================
+       1. HERO SECTION — HBR BADGE
+    ============================================= */
+    .hero-mock { background: radial-gradient(ellipse at 28% 30%, #004D30 0%, #0C2518 45%, #071510 80%, #030D08 100%); border-radius: 20px; padding: 36px; border: 1px solid rgba(238,175,0,0.15); }
+    .cta-btn-mock { display: inline-flex; align-items: center; gap: 10px; background: linear-gradient(135deg, #006644, #00875A); border-radius: 14px; padding: 18px 40px; font-weight: 700; font-size: 1.1rem; color: var(--white); margin-bottom: 16px; }
+    .hbr-badge { display: inline-flex; align-items: center; gap: 6px; border: 1px solid rgba(255,255,255,0.15); border-radius: 20px; padding: 5px 14px; font-size: 11px; font-weight: 600; color: rgba(255,255,255,0.5); letter-spacing: 0.06em; margin-top: 10px; }
+
+    /* =============================================
+       2. VALUE CARDS
+    ============================================= */
+    .cards-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+    .value-card-mock { background: var(--light-card); border: 1px solid var(--light-border); border-radius: 16px; padding: 24px 20px; }
+    .value-card-mock h3 { font-size: 16px; font-weight: 700; color: var(--text-dark); margin-bottom: 8px; line-height: 1.3; }
+    .value-card-mock p { font-size: 13px; color: var(--text-secondary); line-height: 1.5; }
+
+    /* =============================================
+       3. AGENDA SUB-TAGS
+    ============================================= */
+    .agenda-mock { display: flex; flex-direction: column; gap: 20px; }
+    .agenda-day-mock { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; padding: 20px 24px; display: flex; gap: 24px; align-items: flex-start; }
+    .day-num { font-size: 28px; font-weight: 900; color: rgba(255,255,255,0.15); min-width: 60px; }
+    .day-body { flex: 1; }
+    .day-tag { display: inline-block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--green-mid); margin-bottom: 4px; }
+    .hbr-subtag { display: block; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(238,175,0,0.65); margin-bottom: 8px; margin-top: 2px; }
+    .day-body h3 { font-size: 17px; font-weight: 800; color: var(--white); margin-bottom: 6px; }
+    .day-body p { font-size: 13px; color: rgba(255,255,255,0.55); line-height: 1.5; }
+
+    /* =============================================
+       4. BIO + TRACK RECORD
+    ============================================= */
+    .bio-mock { background: var(--light-card); border-radius: 16px; padding: 28px; }
+    .bio-mock p { font-size: 14px; color: var(--text-secondary); line-height: 1.65; margin-bottom: 14px; }
+    .bio-mock p strong { color: var(--text-dark); }
+    .track-record { margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--light-border); }
+    .track-record-label { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--green-deep); margin-bottom: 14px; }
+    .track-items { display: flex; gap: 20px; flex-wrap: wrap; align-items: center; }
+    .track-item { font-size: 14px; font-weight: 800; color: var(--text-secondary); }
+    .hbr-logo-badge { display: inline-flex; flex-direction: column; align-items: center; justify-content: center; border: 1px solid rgba(0,0,0,0.2); border-radius: 8px; padding: 6px 12px; font-size: 13px; font-weight: 900; color: rgba(0,0,0,0.4); letter-spacing: 0.05em; line-height: 1.2; filter: grayscale(1) opacity(0.55); }
+    .hbr-logo-badge span { font-size: 9px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; }
+
+    /* =============================================
+       5. ROI FOOTNOTE
+    ============================================= */
+    .roi-mock { background: linear-gradient(180deg, #0C1F14 0%, #132A1B 50%, #0C1F14 100%); border-radius: 20px; padding: 36px; text-align: center; }
+    .roi-mock .premium-text { font-size: 17px; color: rgba(255,255,255,0.5); max-width: 540px; margin: 0 auto 16px; line-height: 1.6; }
+    .roi-footnote { font-size: 11px; color: rgba(255,255,255,0.45); margin-top: 8px; }
+  </style>
+</head>
+<body>
+
+  <div class="page-header">
+    <h1>HBR 2026 Prestige Updates — Preview</h1>
+    <p>5 changes shown below. <span style="color:var(--gold-mango);font-weight:700;">Gold highlights</span> = new additions. Nothing is live yet.</p>
+  </div>
+
+  <!-- ===== CHANGE 1: HBR BADGE IN HERO ===== -->
+  <div class="section-block">
+    <div class="section-label">Change 1 — Hero Section</div>
+    <div class="section-title">HBR 2026 Research Aligned Badge</div>
+    <div class="section-desc">Small muted pill added below the CTA button. Understated — authority without flash.</div>
+    <div class="hero-mock">
+      <div class="cta-btn-mock">⚡ Reserve My Free Seat Now →</div>
+      <br>
+      <div class="new-item">
+        <div class="hbr-badge">📊 HBR 2026 Research Aligned</div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- ===== CHANGE 2: VALUE CARD RENAMES ===== -->
+  <div class="section-block">
+    <div class="section-label">Change 2 — Value Cards</div>
+    <div class="section-title">Two Title Renames</div>
+    <div class="section-desc">Card titles only — no other copy changed.</div>
+    <div class="cards-grid">
+      <div class="value-card-mock">
+        <h3><span class="changed-text">CFO-Validated ROI Thinking</span></h3>
+        <p style="font-size:11px;color:#aaa;margin-bottom:8px;">was: "ROI-First AI Thinking"</p>
+        <p>Stop chasing shiny AI tools. Learn to frame every technology decision as a revenue or time multiplier for your business.</p>
+      </div>
+      <div class="value-card-mock">
+        <h3><span class="changed-text">Decision Intelligence &amp; Analytical/Practical AI</span></h3>
+        <p style="font-size:11px;color:#aaa;margin-bottom:8px;">was: "Decision Intelligence"</p>
+        <p>Know exactly when to trust the model and when to override it. Build the judgment that separates AI-native professionals.</p>
+      </div>
+      <div class="value-card-mock">
+        <h3>Prompting as a Power Skill</h3>
+        <p style="font-size:11px;color:#aaa;margin-bottom:8px;">unchanged</p>
+        <p>Go beyond basic ChatGPT. Master advanced prompting techniques for sales, research, client work, and content creation.</p>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- ===== CHANGE 3: AGENDA SUB-TAGS ===== -->
+  <div class="section-block">
+    <div class="section-label">Change 3 — 3-Day Agenda</div>
+    <div class="section-title">HBR Sub-Tags Under Each Day</div>
+    <div class="section-desc">Small gold sub-tag line added directly under each existing day-tag. Subtle — doesn't compete.</div>
+    <div class="agenda-mock">
+      <div class="agenda-day-mock">
+        <div class="day-num">01</div>
+        <div class="day-body">
+          <span class="day-tag">Strategic Foundation — 90 Min</span>
+          <span class="hbr-subtag new-item">✦ Stage 3 ROI Benchmarks</span>
+          <h3>The AI Skills Gap Audit</h3>
+          <p>Quantify exactly where you stand, identify your biggest opportunities, and set your target for the 56% wage premium.</p>
+        </div>
+      </div>
+      <div class="agenda-day-mock">
+        <div class="day-num">02</div>
+        <div class="day-body">
+          <span class="day-tag">Applied Intelligence — 90 Min</span>
+          <span class="hbr-subtag new-item">✦ High-Value Analytical Frameworks</span>
+          <h3>ROI-First AI + Decision Intelligence</h3>
+          <p>Learn to frame every AI tool as a revenue or time multiplier — and build critical judgment to know when to trust the model.</p>
+        </div>
+      </div>
+      <div class="agenda-day-mock">
+        <div class="day-num">03</div>
+        <div class="day-body">
+          <span class="day-tag">Technical Mastery — 90 Min</span>
+          <span class="hbr-subtag new-item">✦ AI Digital Product Playbooks</span>
+          <h3>Prompting as a Power Skill</h3>
+          <p>Go beyond basic prompts. Master advanced techniques for sales conversations, research, client deliverables, and content.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- ===== CHANGE 4: BIO + TRACK RECORD ===== -->
+  <div class="section-block">
+    <div class="section-label">Change 4 — Meet Your Guide</div>
+    <div class="section-title">Babson/Davenport Sentence + HBR Logo in Track Record</div>
+    <div class="section-desc">One sentence added to bio. Grayscale HBR badge added to the Track Record strip.</div>
+    <div class="bio-mock">
+      <p>I've since trained <strong>4,127+ financial advisors</strong> across North America on AI adoption. This summit distills everything into 3 focused days.</p>
+      <p class="new-item" style="display:block;padding:10px 14px;margin-top:4px;">Co-participant with HBR author Tom Davenport on Babson College's AI in Teaching Taskforce.</p>
+
+      <div class="track-record">
+        <div class="track-record-label">Scott's Track Record Includes</div>
+        <div class="track-items">
+          <span class="track-item" style="color:#006644;font-size:15px;">Fidelity Investments</span>
+          <span style="color:#ddd;">|</span>
+          <span class="track-item" style="color:#A6192E;font-family:Georgia,serif;">Harvard University</span>
+          <span style="color:#ddd;">|</span>
+          <span class="track-item">4,127+ Advisors</span>
+          <span style="color:#ddd;">|</span>
+          <span class="track-item">Published Author — 4 Books in Print</span>
+          <span style="color:#ddd;">|</span>
+          <span class="new-item">
+            <div class="hbr-logo-badge">HBR<span>2026 Reference</span></div>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- ===== CHANGE 5: ROI FOOTNOTE ===== -->
+  <div class="section-block">
+    <div class="section-label">Change 5 — ROI Calculator</div>
+    <div class="section-title">HBR Footnote Under 56% Wage Premium</div>
+    <div class="section-desc">Existing generic footnote replaced with HBR citation. Same size and opacity — just more authoritative.</div>
+    <div class="roi-mock">
+      <p class="premium-text">AI-proficient professionals earn a documented 56% wage premium. Every week without it is money you're not making.</p>
+      <p class="roi-footnote new-item">Aligned with HBR 2026 "Value Surge" data · Individual results vary.</p>
+      <p style="font-size:10px;color:rgba(255,255,255,0.2);margin-top:12px;">was: "Based on documented AI wage premium research. Individual results vary."</p>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- ===== CHANGE 6: FOOTER CITATION ===== -->
+  <div class="section-block">
+    <div class="section-label">Change 6 — Footer</div>
+    <div class="section-title">APA Research Citation</div>
+    <div class="section-desc">One quiet line at the very bottom — McKinsey style. Small, muted, sentence case. Links out to the HBR article.</div>
+
+    <!-- Light section footer mock -->
+    <div style="background:#f8faf7;border-radius:16px;padding:32px 36px;border-top:3px solid #e2e8de;">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;margin-bottom:24px;">
+        <span style="font-size:16px;font-weight:800;color:#1a2e1a;">⚡ Executive AI Advantage <span style="color:#006644;">Summit</span></span>
+        <span style="font-size:13px;color:#6b7280;">© 2026 Scott Magnacca · All rights reserved</span>
+      </div>
+      <!-- THE NEW CITATION LINE -->
+      <div style="border-top:1px solid #e2e8de;padding-top:16px;">
+        <p class="new-item" style="display:block;padding:8px 0;font-size:11px;color:#9ca3af;line-height:1.7;font-style:normal;">
+          Research reference: Davenport, T. H., &amp; Srinivasan, L. (2026, March 17). 7 factors that drive returns on AI investments. <em>Harvard Business Review.</em>
+          <a href="https://hbr.org/2026/03/7-factors-that-drive-returns-on-ai-investments" target="_blank" style="color:#6b7280;text-decoration:underline;text-underline-offset:3px;">hbr.org ↗</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

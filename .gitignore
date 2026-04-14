@@ -1,0 +1,13 @@
+# Large media files
+*.mp4
+*.mp3
+*.webm
+vip-template-reference.pdf
+src/demis-hassabis.jpg
+
+# Node / build
+node_modules/
+.DS_Store
+
+# Netlify cache
+.netlify/
