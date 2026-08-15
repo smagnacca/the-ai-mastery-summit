@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /.netlify
+Disallow: /.env
+
+Sitemap: https://the-ai-mastery-summit.netlify.app/sitemap.xml
